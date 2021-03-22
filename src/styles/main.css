@@ -27306,6 +27306,16 @@ video {
           animation: bounce 1s infinite;
 }
 
+.navbar-box {
+  border-bottom: 2pt transparent solid;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.navbar-box-active {
+  border-bottom: 2pt #ff652e solid;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

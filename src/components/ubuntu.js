@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "./navbar";
+import Navbar from "./screen/navbar";
 
 export default class Ubuntu extends Component {
   render() {

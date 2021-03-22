@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.navbar-box {
+    border-bottom: 2pt transparent solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.navbar-box-active {
+    border-bottom: 2pt #ff652e solid;
+}
