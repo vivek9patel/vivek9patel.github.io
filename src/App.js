@@ -1,9 +1,7 @@
+import Ubuntu from "./components/ubuntu";
+
 function App() {
-  return (
-    <div className="App">
-      Hello World!
-    </div>
-  );
+  return <Ubuntu />;
 }
 
 export default App;
