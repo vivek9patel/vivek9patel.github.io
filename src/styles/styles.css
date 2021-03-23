@@ -12,3 +12,25 @@
 .navbar-box-active {
     border-bottom: 2pt #ff652e solid;
 }
+
+.top-arrow-up {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #333333;
+}
+
+.animateShow {
+    animation: transformDownShow 200ms 1 forwards;
+}
+
+@keyframes transformDownShow {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

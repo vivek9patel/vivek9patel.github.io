@@ -27316,6 +27316,45 @@ video {
   border-bottom: 2pt #ff652e solid;
 }
 
+.top-arrow-up {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #333333;
+}
+
+.animateShow {
+  -webkit-animation: transformDownShow 200ms 1 forwards;
+          animation: transformDownShow 200ms 1 forwards;
+}
+
+@-webkit-keyframes transformDownShow {
+  0% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes transformDownShow {
+  0% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

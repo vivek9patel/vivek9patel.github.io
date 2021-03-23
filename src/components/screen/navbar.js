@@ -1,36 +1,71 @@
 import React, { Component } from 'react'
 import Clock from '../util components/clock';
 import $ from "jquery";
+import Status from '../util components/status';
+import StatusCard from '../util components/status_card';
 
 export default class Navbar extends Component {
 
     constructor(){
         super();
         this.state = {
-            component_focused: false,
+            status_card_focused: false,
+            calendar_card_focused: false,
+            activity_card_focused: false,
             prev_component: null,
         }
     }
 
+    hide_all_cards = (e) => {
+        let curr_component = e.target;
+        if($(curr_component).hasClass("main-navbar-vp")){
+            this.setState({status_card_focused: false, calendar_card_focused: false, activity_card_focused: false});
+        }
+    }
+
     display_btm_bar = (e) => {
-        if(!$(e.target).is("div")) return;
+        let curr_component = e.target;
+        if($(curr_component).parent().parent().parent().hasClass("navbar-box"))  curr_component = $(e.target).parent().parent().parent().get();
+        if(!$(curr_component).hasClass("navbar-box")) return;
+
         if(this.state.prev_component !== null){
-            this.state.prev_component.target.classList.remove("navbar-box-active");
+            if(curr_component === this.state.prev_component || curr_component[0] === this.state.prev_component[0] || curr_component === this.state.prev_component[0] || curr_component[0] === this.state.prev_component){
+                if($(curr_component).attr("data-nav-comp") === "clock"){
+                    this.setState({prev_component: curr_component, status_card_focused: false, calendar_card_focused: !this.state.calendar_card_focused, activity_card_focused: false});
+                }
+                else if($(curr_component).attr("data-nav-comp") === "status"){
+                    this.setState({prev_component: curr_component, status_card_focused: !this.state.status_card_focused, calendar_card_focused: false, activity_card_focused: false});
+                }
+                else if($(curr_component).attr("data-nav-comp") === "activities"){
+                    this.setState({prev_component: curr_component, status_card_focused: false, calendar_card_focused: false, activity_card_focused: !this.state.activity_card_focused});
+                }
+                return;
+            }
         }
 
-        e.target.classList.add("navbar-box-active");
-        this.setState({component_focused: true, prev_component: e});
+        if($(curr_component).attr("data-nav-comp") === "clock"){
+            this.setState({prev_component: curr_component, status_card_focused: false, calendar_card_focused: true, activity_card_focused: false});
+        }
+        else if($(curr_component).attr("data-nav-comp") === "status"){
+            this.setState({prev_component: curr_component, status_card_focused: true, calendar_card_focused: false, activity_card_focused: false});
+        }
+        else if($(curr_component).attr("data-nav-comp") === "activities"){
+            this.setState({prev_component: curr_component, status_card_focused: false, calendar_card_focused: false, activity_card_focused: true});
+        }
     }
 
     render() {
         return (
-            <div className="w-screen flex flex-nowrap justify-between items-center bg-ub-grey text-ubt-grey text-sm select-none	cursor-default">
-                <div className="pl-3 pr-3 navbar-box" onClick={this.display_btm_bar}>Activities</div>
-                <div className="pl-2 pr-2 navbar-box" onClick={this.display_btm_bar}><Clock/></div>
-                <div className="pr-3 pl-3 navbar-box" onClick={this.display_btm_bar}>
-                    <span className="mx-2"><img src="./images/icons/status/network-wireless-signal-good-symbolic.svg" alt="ubuntu wifi" className="inline"/></span>
-                    <span className="mx-2"><img src="./images/icons/status/audio-volume-medium-symbolic.svg" alt="ubuntu sound" className="inline"/></span>
-                    <span className="mx-2"><img src="./images/icons/status/battery-good-symbolic.svg" alt="ubuntu battry" className="inline"/></span>
+            <div onClick={this.hide_all_cards} className="main-navbar-vp w-screen shadow-md flex flex-nowrap justify-between items-center bg-ub-grey text-ubt-grey text-sm select-none cursor-default">
+                <div className={"pl-3 pr-3 transition duration-100 ease-in-out navbar-box" + (this.state.activity_card_focused? " navbar-box-active": "")} data-nav-comp="activities" onClick={this.display_btm_bar}>
+                    Activities
+                </div>
+                <div className={"pl-2 pr-2 transition duration-100 ease-in-out navbar-box" + (this.state.calendar_card_focused? " navbar-box-active": "")} data-nav-comp="clock" onClick={this.display_btm_bar}>
+                    <Clock/>
+                </div>
+                <div className={"relative pr-3 pl-3 transition duration-100 ease-in-out navbar-box status-bar-icons" + (this.state.status_card_focused? " navbar-box-active": "")} data-nav-comp="status" onClick={this.display_btm_bar}>
+                    <Status/>
+                    <StatusCard visible = {this.state.status_card_focused}/>
                 </div>
             </div>
         )
