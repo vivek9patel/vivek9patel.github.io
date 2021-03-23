@@ -56,7 +56,7 @@ export default class Navbar extends Component {
 
     render() {
         return (
-            <div onClick={this.hide_all_cards} className="main-navbar-vp w-screen shadow-md flex flex-nowrap justify-between items-center bg-ub-grey text-ubt-grey text-sm select-none">
+            <div onClick={this.hide_all_cards} className="main-navbar-vp absolute top-0 right-0 w-screen shadow-md flex flex-nowrap justify-between items-center bg-ub-grey text-ubt-grey text-sm select-none">
                 <div className={"pl-3 pr-3 transition duration-100 ease-in-out navbar-box" + (this.state.activity_card_focused ? " navbar-box-active" : "")} data-nav-comp="activities" onClick={this.display_btm_bar}>
                     Activities
                 </div>

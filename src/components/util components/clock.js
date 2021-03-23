@@ -31,7 +31,7 @@ export default class Clock extends Component {
         let date = current_time.getDate().toLocaleString();
         let meridiem = (hour < 12 ? "AM" : "PM");
 
-        if (minute.toLocaleString().length == 1) {
+        if (minute.toLocaleString().length === 1) {
             minute = "0" + minute
         }
 
