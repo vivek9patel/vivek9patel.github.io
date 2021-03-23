@@ -11,6 +11,7 @@ module.exports = {
       'ub-lite-abrgn': "#77216F",
       'ub-med-abrgn': "#5E2750",
       'ub-drk-abrgn': "#2C001E",
+      'ub-window-title': "#201f1f",
     }),
     textColor: theme => ({
       ...theme('colors'),
