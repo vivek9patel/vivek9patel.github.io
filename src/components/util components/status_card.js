@@ -20,7 +20,7 @@ export class StatusCard extends Component {
 
     render() {
         return (
-            <div className={"absolute bg-ub-cool-grey rounded-md py-4 top-9 right-3 shadow border-black status-card" + (this.props.visible ? " visible animateShow" : " invisible")}> {/* Status Card */}
+            <div className={"absolute bg-ub-cool-grey rounded-md py-4 top-9 right-3 shadow border-black border border-opacity-20 status-card" + (this.props.visible ? " visible animateShow" : " invisible")}> {/* Status Card */}
                 <div className="absolute w-0 h-0 -top-1 right-6 top-arrow-up"></div>
                 <div className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
                     <div className="w-8">
