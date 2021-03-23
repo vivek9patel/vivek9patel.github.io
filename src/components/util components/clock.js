@@ -3,11 +3,11 @@ import { Component } from 'react'
 export default class Clock extends Component {
     constructor() {
         super();
-        this.month_list = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        this.month_list = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         this.day_list = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-        this.state = { 
+        this.state = {
             hour_12: true,
-            current_time: new Date() 
+            current_time: new Date()
         };
     }
 
@@ -31,7 +31,11 @@ export default class Clock extends Component {
         let date = current_time.getDate().toLocaleString();
         let meridiem = (hour < 12 ? "AM" : "PM");
 
-        if(this.state.hour_12 && hour > 12) hour -= 12;
+        if (minute.toLocaleString().length == 1) {
+            minute = "0" + minute
+        }
+
+        if (this.state.hour_12 && hour > 12) hour -= 12;
 
         let display_time = day + " " + month + " " + date + " " + hour + ":" + minute + " " + meridiem;
 
