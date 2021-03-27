@@ -14,7 +14,6 @@ export class Window extends Component {
             width: 60,
             height: 85,
             closed: false,
-            isFocused: true,
             parentSize: {
                 height: 100,
                 width: 100
@@ -24,7 +23,6 @@ export class Window extends Component {
 
     componentDidMount() {
         this.id = this.props.id;
-        this.setState({ isFocused: this.props.isFocused });
         this.resizeBoundries();
     }
 
@@ -65,13 +63,16 @@ export class Window extends Component {
         r.style.setProperty('--window-transform-y', (rect.y.toFixed(1) - 24).toString() + "px");
     }
 
+    focusWindow = () => {
+        this.props.focus(this.id);
+    }
+
     closeWindow = () => {
         this.setWinowsPosition();
         this.setState({ closed: true });
     }
 
     render() {
-        console.log(this.state.isFocused);
         return (
             <Draggable
                 axis="both"
@@ -85,8 +86,8 @@ export class Window extends Component {
                 bounds={{ left: 0, top: 5, right: this.state.parentSize.width, bottom: this.state.parentSize.height }}
             >
                 <div style={{ width: `${this.state.width}%`, height: `${this.state.height}%` }}
-                    className={this.state.cursorType + " " + (this.state.closed ? "closed-window " : "") + " min-w-1/4 min-h-1/4 main-window absolute rounded-lg rounded-b-sm window-shadow border-black border border-opacity-40 flex flex-col z-10"}
-                    onClick={this.props.focus(this.id)}
+                    className={this.state.cursorType + " " + (this.state.closed ? "closed-window " : "") + (this.props.isFocused ? " z-20 " : " z-10 notFocused") + " min-w-1/4 min-h-1/4 main-window absolute rounded-lg rounded-b-sm window-shadow border-black border border-opacity-40 flex flex-col"}
+                    onClick={this.focusWindow}
                     id={this.id}
                 >
                     <WindowYBorder resize={this.handleHorizontalResize} />
