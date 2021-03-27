@@ -4,14 +4,14 @@ export class WindowEditButtons extends Component {
     render() {
         return (
             <div className="absolute right-0 top-0 mt-1 mr-1 flex justify-center items-center">
-                <span className="mx-1.5 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={() => { console.log("fuck"); }}>
+                <span className="mx-1.5 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={this.props.minimize}>
                     <img
                         src="./themes/Yaru/window/window-minimize-symbolic.svg"
                         alt="ubuntu window minimize"
                         className="inline"
                     />
                 </span>
-                <span className="mx-2 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={() => { console.log("fuck"); }}>
+                <span className="mx-2 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={this.props.maximize}>
                     <img
                         src="./themes/Yaru/window/window-maximize-symbolic.svg"
                         alt="ubuntu window restore"
