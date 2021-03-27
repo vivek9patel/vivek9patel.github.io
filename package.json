@@ -9,6 +9,7 @@
     "jquery": "^3.6.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-draggable": "^4.4.3",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.0"
   },

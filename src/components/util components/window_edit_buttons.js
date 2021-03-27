@@ -1,0 +1,33 @@
+import React, { Component } from 'react'
+
+export class WindowEditButtons extends Component {
+    render() {
+        return (
+            <div className="absolute right-0 top-0 mt-1 mr-1 flex justify-center items-center">
+                <span className="mx-1.5 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={() => { console.log("fuck"); }}>
+                    <img
+                        src="./themes/Yaru/window/window-minimize-symbolic.svg"
+                        alt="ubuntu window minimize"
+                        className="inline"
+                    />
+                </span>
+                <span className="mx-2 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={() => { console.log("fuck"); }}>
+                    <img
+                        src="./themes/Yaru/window/window-maximize-symbolic.svg"
+                        alt="ubuntu window restore"
+                        className="inline"
+                    />
+                </span>
+                <span className="mx-1.5 bg-ub-orange bg-opacity-90 hover:bg-opacity-100 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={this.props.close}>
+                    <img
+                        src="./themes/Yaru/window/window-close-symbolic.svg"
+                        alt="ubuntu window close"
+                        className="inline"
+                    />
+                </span>
+            </div>
+        )
+    }
+}
+
+export default WindowEditButtons

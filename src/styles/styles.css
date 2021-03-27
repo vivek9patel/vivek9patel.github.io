@@ -94,3 +94,15 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-left: 5px solid white;
     width: 0;
 }
+
+.window-y-border {
+    height: calc(100% - 10px);
+    width: calc(100% + 10px);
+    cursor: e-resize;
+}
+
+.window-x-border {
+    height: calc(100% + 10px);
+    width: calc(100% - 10px);
+    cursor: n-resize;
+}

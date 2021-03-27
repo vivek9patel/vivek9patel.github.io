@@ -2555,6 +2555,11 @@ video {
   background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
 }
 
+.bg-ub-window-title {
+  --tw-bg-opacity: 1;
+  background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:bg-transparent {
   background-color: transparent;
 }
@@ -3006,6 +3011,11 @@ video {
 .group:hover .group-hover\:bg-ub-drk-abrgn {
   --tw-bg-opacity: 1;
   background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-ub-window-title {
+  --tw-bg-opacity: 1;
+  background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
 }
 
 .focus-within\:bg-transparent:focus-within {
@@ -3461,6 +3471,11 @@ video {
   background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-ub-window-title:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -3914,6 +3929,11 @@ video {
   background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
 }
 
+.hover\:bg-ub-window-title:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -4365,6 +4385,11 @@ video {
 .focus\:bg-ub-drk-abrgn:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+}
+
+.focus\:bg-ub-window-title:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
 }
 
 .bg-none {
@@ -14215,35 +14240,43 @@ video {
 }
 
 .min-h-0 {
-  min-height: 0px;
+  min-height: 0;
+}
+
+.min-h-1\/4 {
+  min-height: 25%;
+}
+
+.min-h-1\/2 {
+  min-height: 50%;
+}
+
+.min-h-3\/4 {
+  min-height: 75%;
 }
 
 .min-h-full {
   min-height: 100%;
 }
 
-.min-h-screen {
-  min-height: 100vh;
+.min-w-0 {
+  min-width: 0;
 }
 
-.min-w-0 {
-  min-width: 0px;
+.min-w-1\/4 {
+  min-width: 25%;
+}
+
+.min-w-1\/2 {
+  min-width: 50%;
+}
+
+.min-w-3\/4 {
+  min-width: 75%;
 }
 
 .min-w-full {
   min-width: 100%;
-}
-
-.min-w-min {
-  min-width: -webkit-min-content;
-  min-width: -moz-min-content;
-  min-width: min-content;
-}
-
-.min-w-max {
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
 }
 
 .object-contain {
@@ -31605,6 +31638,18 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   width: 0;
 }
 
+.window-y-border {
+  height: calc(100% - 10px);
+  width: calc(100% + 10px);
+  cursor: e-resize;
+}
+
+.window-x-border {
+  height: calc(100% + 10px);
+  width: calc(100% - 10px);
+  cursor: n-resize;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -33611,6 +33656,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .group:hover .sm\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -34062,6 +34112,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .sm\:group-hover\:bg-ub-drk-abrgn {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .sm\:focus-within\:bg-transparent:focus-within {
@@ -34517,6 +34572,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-ub-window-title:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -34970,6 +35030,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .sm\:hover\:bg-ub-window-title:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -35421,6 +35486,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .sm\:focus\:bg-ub-drk-abrgn:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-ub-window-title:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .sm\:bg-none {
@@ -45271,35 +45341,43 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   }
 
   .sm\:min-h-0 {
-    min-height: 0px;
+    min-height: 0;
+  }
+
+  .sm\:min-h-1\/4 {
+    min-height: 25%;
+  }
+
+  .sm\:min-h-1\/2 {
+    min-height: 50%;
+  }
+
+  .sm\:min-h-3\/4 {
+    min-height: 75%;
   }
 
   .sm\:min-h-full {
     min-height: 100%;
   }
 
-  .sm\:min-h-screen {
-    min-height: 100vh;
+  .sm\:min-w-0 {
+    min-width: 0;
   }
 
-  .sm\:min-w-0 {
-    min-width: 0px;
+  .sm\:min-w-1\/4 {
+    min-width: 25%;
+  }
+
+  .sm\:min-w-1\/2 {
+    min-width: 50%;
+  }
+
+  .sm\:min-w-3\/4 {
+    min-width: 75%;
   }
 
   .sm\:min-w-full {
     min-width: 100%;
-  }
-
-  .sm\:min-w-min {
-    min-width: -webkit-min-content;
-    min-width: -moz-min-content;
-    min-width: min-content;
-  }
-
-  .sm\:min-w-max {
-    min-width: -webkit-max-content;
-    min-width: -moz-max-content;
-    min-width: max-content;
   }
 
   .sm\:object-contain {
@@ -64474,6 +64552,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .md\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .group:hover .md\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -64925,6 +65008,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .md\:group-hover\:bg-ub-drk-abrgn {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .md\:focus-within\:bg-transparent:focus-within {
@@ -65380,6 +65468,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-ub-window-title:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -65833,6 +65926,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .md\:hover\:bg-ub-window-title:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -66284,6 +66382,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .md\:focus\:bg-ub-drk-abrgn:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-ub-window-title:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .md\:bg-none {
@@ -76134,35 +76237,43 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   }
 
   .md\:min-h-0 {
-    min-height: 0px;
+    min-height: 0;
+  }
+
+  .md\:min-h-1\/4 {
+    min-height: 25%;
+  }
+
+  .md\:min-h-1\/2 {
+    min-height: 50%;
+  }
+
+  .md\:min-h-3\/4 {
+    min-height: 75%;
   }
 
   .md\:min-h-full {
     min-height: 100%;
   }
 
-  .md\:min-h-screen {
-    min-height: 100vh;
+  .md\:min-w-0 {
+    min-width: 0;
   }
 
-  .md\:min-w-0 {
-    min-width: 0px;
+  .md\:min-w-1\/4 {
+    min-width: 25%;
+  }
+
+  .md\:min-w-1\/2 {
+    min-width: 50%;
+  }
+
+  .md\:min-w-3\/4 {
+    min-width: 75%;
   }
 
   .md\:min-w-full {
     min-width: 100%;
-  }
-
-  .md\:min-w-min {
-    min-width: -webkit-min-content;
-    min-width: -moz-min-content;
-    min-width: min-content;
-  }
-
-  .md\:min-w-max {
-    min-width: -webkit-max-content;
-    min-width: -moz-max-content;
-    min-width: max-content;
   }
 
   .md\:object-contain {
@@ -95337,6 +95448,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .group:hover .lg\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -95788,6 +95904,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .lg\:group-hover\:bg-ub-drk-abrgn {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .lg\:focus-within\:bg-transparent:focus-within {
@@ -96243,6 +96364,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-ub-window-title:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -96696,6 +96822,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-ub-window-title:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -97147,6 +97278,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .lg\:focus\:bg-ub-drk-abrgn:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-ub-window-title:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .lg\:bg-none {
@@ -106997,35 +107133,43 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   }
 
   .lg\:min-h-0 {
-    min-height: 0px;
+    min-height: 0;
+  }
+
+  .lg\:min-h-1\/4 {
+    min-height: 25%;
+  }
+
+  .lg\:min-h-1\/2 {
+    min-height: 50%;
+  }
+
+  .lg\:min-h-3\/4 {
+    min-height: 75%;
   }
 
   .lg\:min-h-full {
     min-height: 100%;
   }
 
-  .lg\:min-h-screen {
-    min-height: 100vh;
+  .lg\:min-w-0 {
+    min-width: 0;
   }
 
-  .lg\:min-w-0 {
-    min-width: 0px;
+  .lg\:min-w-1\/4 {
+    min-width: 25%;
+  }
+
+  .lg\:min-w-1\/2 {
+    min-width: 50%;
+  }
+
+  .lg\:min-w-3\/4 {
+    min-width: 75%;
   }
 
   .lg\:min-w-full {
     min-width: 100%;
-  }
-
-  .lg\:min-w-min {
-    min-width: -webkit-min-content;
-    min-width: -moz-min-content;
-    min-width: min-content;
-  }
-
-  .lg\:min-w-max {
-    min-width: -webkit-max-content;
-    min-width: -moz-max-content;
-    min-width: max-content;
   }
 
   .lg\:object-contain {
@@ -126200,6 +126344,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .group:hover .xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -126651,6 +126800,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .xl\:group-hover\:bg-ub-drk-abrgn {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .xl\:focus-within\:bg-transparent:focus-within {
@@ -127106,6 +127260,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-ub-window-title:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -127559,6 +127718,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .xl\:hover\:bg-ub-window-title:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -128010,6 +128174,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .xl\:focus\:bg-ub-drk-abrgn:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-ub-window-title:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .xl\:bg-none {
@@ -137860,35 +138029,43 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   }
 
   .xl\:min-h-0 {
-    min-height: 0px;
+    min-height: 0;
+  }
+
+  .xl\:min-h-1\/4 {
+    min-height: 25%;
+  }
+
+  .xl\:min-h-1\/2 {
+    min-height: 50%;
+  }
+
+  .xl\:min-h-3\/4 {
+    min-height: 75%;
   }
 
   .xl\:min-h-full {
     min-height: 100%;
   }
 
-  .xl\:min-h-screen {
-    min-height: 100vh;
+  .xl\:min-w-0 {
+    min-width: 0;
   }
 
-  .xl\:min-w-0 {
-    min-width: 0px;
+  .xl\:min-w-1\/4 {
+    min-width: 25%;
+  }
+
+  .xl\:min-w-1\/2 {
+    min-width: 50%;
+  }
+
+  .xl\:min-w-3\/4 {
+    min-width: 75%;
   }
 
   .xl\:min-w-full {
     min-width: 100%;
-  }
-
-  .xl\:min-w-min {
-    min-width: -webkit-min-content;
-    min-width: -moz-min-content;
-    min-width: min-content;
-  }
-
-  .xl\:min-w-max {
-    min-width: -webkit-max-content;
-    min-width: -moz-max-content;
-    min-width: max-content;
   }
 
   .xl\:object-contain {
@@ -157063,6 +157240,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -157514,6 +157696,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .\32xl\:group-hover\:bg-ub-drk-abrgn {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-ub-window-title {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within {
@@ -157969,6 +158156,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-ub-window-title:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .\32xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -158422,6 +158614,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
   }
 
+  .\32xl\:hover\:bg-ub-window-title:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -158873,6 +159070,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .\32xl\:focus\:bg-ub-drk-abrgn:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(44, 0, 30, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-ub-window-title:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
   .\32xl\:bg-none {
@@ -168723,35 +168925,43 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   }
 
   .\32xl\:min-h-0 {
-    min-height: 0px;
+    min-height: 0;
+  }
+
+  .\32xl\:min-h-1\/4 {
+    min-height: 25%;
+  }
+
+  .\32xl\:min-h-1\/2 {
+    min-height: 50%;
+  }
+
+  .\32xl\:min-h-3\/4 {
+    min-height: 75%;
   }
 
   .\32xl\:min-h-full {
     min-height: 100%;
   }
 
-  .\32xl\:min-h-screen {
-    min-height: 100vh;
+  .\32xl\:min-w-0 {
+    min-width: 0;
   }
 
-  .\32xl\:min-w-0 {
-    min-width: 0px;
+  .\32xl\:min-w-1\/4 {
+    min-width: 25%;
+  }
+
+  .\32xl\:min-w-1\/2 {
+    min-width: 50%;
+  }
+
+  .\32xl\:min-w-3\/4 {
+    min-width: 75%;
   }
 
   .\32xl\:min-w-full {
     min-width: 100%;
-  }
-
-  .\32xl\:min-w-min {
-    min-width: -webkit-min-content;
-    min-width: -moz-min-content;
-    min-width: min-content;
-  }
-
-  .\32xl\:min-w-max {
-    min-width: -webkit-max-content;
-    min-width: -moz-max-content;
-    min-width: max-content;
   }
 
   .\32xl\:object-contain {
