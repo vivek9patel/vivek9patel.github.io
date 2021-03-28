@@ -114,8 +114,8 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
 .root,
 #root,
 #docs-root {
-    --window-transform-x: 100px;
-    --window-transform-y: 100px;
+    --window-transform-x: 0px;
+    --window-transform-y: 0px;
 }
 
 .window-shadow {
