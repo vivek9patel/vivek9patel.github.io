@@ -16,6 +16,8 @@ export class Window extends Component {
             closed: false,
             maximized: false,
             minimized: false,
+            startX: 35,
+            startY: 10,
             parentSize: {
                 height: 100,
                 width: 100
@@ -25,7 +27,12 @@ export class Window extends Component {
 
     componentDidMount() {
         this.id = this.props.id;
-        this.resizeBoundries();
+        if (window.innerWidth < 640) {
+            this.setState({ height: 60, width: 85 }, this.resizeBoundries);
+        }
+        else {
+            this.setState({ height: 85, width: 60 }, this.resizeBoundries);
+        }
     }
 
     resizeBoundries = () => {
@@ -97,7 +104,7 @@ export class Window extends Component {
                 onStart={this.changeCursorToMove}
                 onStop={this.changeCursorToDefault}
                 allowAnyClick={false}
-                defaultPosition={{ x: 100, y: 10 }}
+                defaultPosition={{ x: this.state.startX, y: this.state.startY }}
                 bounds={{ left: 0, top: 5, right: this.state.parentSize.width, bottom: this.state.parentSize.height }}
             >
                 <div style={{ width: `${this.state.width}%`, height: `${this.state.height}%` }}
