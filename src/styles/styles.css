@@ -129,7 +129,7 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
 }
 
 .closed-window {
-    animation: closeWindow 300ms 1 forwards;
+    animation: closeWindow 200ms 1 forwards;
 }
 
 @keyframes closeWindow {
