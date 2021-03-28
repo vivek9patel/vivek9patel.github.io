@@ -75,10 +75,11 @@ export class Window extends Component {
     }
 
     maximizeWindow = () => {
-        var r = document.getElementById(this.id);
-        r.style.transform = "translate(5px,2px)";
-        this.setState({ maximized: true, height: 95, width: 99 });
-        this.resizeBoundries();
+        return;
+        // var r = document.getElementById(this.id);
+        // r.style.transform = "translate(5px,2px)";
+        // this.setState({ maximized: true, height: 95, width: 99 });
+        // this.resizeBoundries();
     }
 
     closeWindow = () => {
