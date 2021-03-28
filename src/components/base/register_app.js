@@ -6,7 +6,7 @@ export class RegisterApp extends Component {
     render() {
         return (
             <>
-                <UbuntuApp name={this.props.name} id={this.props.id} openApp={this.props.openApp} />
+                <UbuntuApp name={this.props.name} id={this.props.id} icon={this.props.icon} position={this.props.position} openApp={this.props.openApp} />
                 {
                     this.props.closed_windows[this.props.id] ? null : <Window title={this.props.name} id={this.props.id} closed={this.props.closeApp} focus={this.props.focus} isFocused={this.props.focused_windows[this.props.id]} />
                 }

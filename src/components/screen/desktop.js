@@ -5,6 +5,9 @@ import BackgroundImage from '../util components/background-image'
 export class Desktop extends Component {
     constructor() {
         super();
+        this.icons = {
+            chrome: "./themes/Yaru/apps/google_chrome_48.png",
+        }
         this.state = {
             focused_windows: {
                 "chrome_0": false,
@@ -46,11 +49,11 @@ export class Desktop extends Component {
 
     render() {
         return (
-            <div className="h-full w-full pt-6 bg-transparent overflow-hidden overscroll-none window-parent">
+            <div className="h-full w-full pt-6 bg-transparent relative overflow-hidden overscroll-none window-parent">
                 <BackgroundImage img={this.props.bg_img_path} />
 
-                <RegisterApp name="Google Chrome" id="chrome_0" openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
-                <RegisterApp name="Google Chrome 2" id="chrome_1" openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
+                <RegisterApp name="Google Chrome" id="chrome_0" icon={this.icons.chrome} position={{ top: 40, right: 4 }} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
+                <RegisterApp name="Google Chrome 2" id="chrome_1" icon={this.icons.chrome} position={{ top: 40 + 80 * 1 + 3, right: 4 }} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
 
             </div>
         )
