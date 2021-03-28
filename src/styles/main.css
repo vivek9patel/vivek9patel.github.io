@@ -31651,7 +31651,8 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
 }
 
 .notFocused {
-  opacity: 0.9;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
 }
 
 .root,
