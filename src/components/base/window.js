@@ -112,7 +112,7 @@ export class Window extends Component {
                 bounds={{ left: 0, top: 5, right: this.state.parentSize.width, bottom: this.state.parentSize.height }}
             >
                 <div style={{ width: `${this.state.width}%`, height: `${this.state.height}%` }}
-                    className={this.state.cursorType + " " + (this.state.closed ? " closed-window " : "") + (this.state.maximized ? " maximized-window " : "") + (this.state.minimized ? " minimized-window " : "") + (this.props.isFocused ? " z-20 " : " z-10 notFocused") + " min-w-1/4 min-h-1/4 main-window absolute rounded-lg rounded-b-sm window-shadow border-black border border-opacity-40 flex flex-col"}
+                    className={this.state.cursorType + " " + (this.state.closed ? " closed-window " : "") + (this.state.maximized ? " maximized-window " : "") + (this.state.minimized ? " minimized-window " : "") + (this.props.isFocused ? " z-20 " : " z-10 notFocused") + " opened-window min-w-1/4 min-h-1/4 main-window absolute rounded-lg rounded-b-sm window-shadow border-black border border-opacity-40 flex flex-col"}
                     onClick={this.focusWindow}
                     id={this.id}
                 >

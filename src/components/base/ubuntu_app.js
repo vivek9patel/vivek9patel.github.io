@@ -30,7 +30,7 @@ export class UbuntuApp extends Component {
                 onDoubleClick={this.openApp}
                 tabIndex={0}
             >
-                <img className="w-8 mb-1" src={this.state.icon} alt="Ubuntu Chrome" />
+                <img className="mb-1 w-10" src={this.state.icon} alt="Ubuntu Chrome" />
                 {this.state.name}
             </div>
         )
