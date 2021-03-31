@@ -7,8 +7,6 @@ export class UbuntuApp extends Component {
             id: "",
             name: "",
             icon: "",
-            desktop_shortcut: true,
-            favourite: true,
         }
     }
 
@@ -30,7 +28,7 @@ export class UbuntuApp extends Component {
                 onDoubleClick={this.openApp}
                 tabIndex={0}
             >
-                <img className="mb-1 w-10" src={this.state.icon} alt="Ubuntu Chrome" />
+                <img className="mb-1 w-10" src={this.state.icon} alt={"Ubuntu " + this.state.name} />
                 {this.state.name}
             </div>
         )

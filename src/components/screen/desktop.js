@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RegisterApp from '../base/register_app';
 import BackgroundImage from '../util components/background-image'
+import SideBar from './side_bar';
 
 export class Desktop extends Component {
     constructor() {
@@ -54,6 +55,8 @@ export class Desktop extends Component {
     render() {
         return (
             <div className="h-full w-full pt-6 bg-transparent relative overflow-hidden overscroll-none window-parent">
+                <SideBar icons={this.icons} openAppByAppId={this.openApp} />
+
                 <BackgroundImage img={this.props.bg_img_path} />
 
                 <RegisterApp name="Google Chrome" id="chrome" icon={this.icons.chrome} position={{ top: 40, right: 4 }} disabled={false} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
