@@ -9,6 +9,8 @@ export class Window extends Component {
     constructor() {
         super();
         this.id = null;
+        this.startX = 60;
+        this.startY = 10;
         this.state = {
             cursorType: "cursor-default",
             width: 60,
@@ -16,8 +18,6 @@ export class Window extends Component {
             closed: false,
             maximized: false,
             minimized: false,
-            startX: 35,
-            startY: 10,
             parentSize: {
                 height: 100,
                 width: 100
@@ -108,7 +108,7 @@ export class Window extends Component {
                 onStart={this.changeCursorToMove}
                 onStop={this.changeCursorToDefault}
                 allowAnyClick={false}
-                defaultPosition={{ x: this.state.startX, y: this.state.startY }}
+                defaultPosition={{ x: this.startX, y: this.startY }}
                 bounds={{ left: 0, top: 5, right: this.state.parentSize.width, bottom: this.state.parentSize.height }}
             >
                 <div style={{ width: `${this.state.width}%`, height: `${this.state.height}%` }}

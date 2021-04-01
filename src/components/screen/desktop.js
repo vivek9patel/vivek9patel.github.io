@@ -12,6 +12,7 @@ export class Desktop extends Component {
             home_folder: "./themes/Yaru/system/user-home.png"
         }
         this.state = {
+            cursorWait: false,
             focused_windows: {
                 "chrome": false,
                 "trash": false,
@@ -27,8 +28,11 @@ export class Desktop extends Component {
 
     openApp = (objId) => {
         let closed_windows = this.state.closed_windows;
-        closed_windows[objId] = false;
-        this.setState({ closed_windows }, this.focus(objId));
+        this.setState({ cursorWait: true });
+        setTimeout(() => {
+            closed_windows[objId] = false;
+            this.setState({ closed_windows, cursorWait: false }, this.focus(objId));
+        }, Math.random() * 1500);
     }
 
     closeApp = (objId) => {
@@ -54,7 +58,7 @@ export class Desktop extends Component {
 
     render() {
         return (
-            <div className="h-full w-full pt-6 bg-transparent relative overflow-hidden overscroll-none window-parent">
+            <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full pt-6 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
                 <SideBar icons={this.icons} openAppByAppId={this.openApp} />
 
                 <BackgroundImage img={this.props.bg_img_path} />
