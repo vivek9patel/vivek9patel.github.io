@@ -59,7 +59,7 @@ export class Desktop extends Component {
     render() {
         return (
             <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full pt-6 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
-                <SideBar icons={this.icons} openAppByAppId={this.openApp} />
+                <SideBar icons={this.icons} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} openAppByAppId={this.openApp} />
 
                 <BackgroundImage img={this.props.bg_img_path} />
 
