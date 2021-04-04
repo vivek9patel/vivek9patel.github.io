@@ -2,28 +2,48 @@ import React, { Component } from 'react'
 import RegisterApp from '../base/register_app';
 import BackgroundImage from '../util components/background-image'
 import SideBar from './side_bar';
+import apps from '../../apps.config';
 
 export class Desktop extends Component {
     constructor() {
         super();
-        this.icons = {
-            chrome: "./themes/Yaru/apps/google_chrome_48.png",
-            trash: "./themes/Yaru/system/user-trash-full.png",
-            home_folder: "./themes/Yaru/system/user-home.png"
-        }
         this.state = {
             cursorWait: false,
-            focused_windows: {
-                "chrome": false,
-                "trash": false,
-                "home": false,
-            },
-            closed_windows: {
-                "chrome": true,
-                "trash": true,
-                "home": true,
-            }
+            focused_windows: {},
+            closed_windows: {}
         }
+    }
+
+    componentDidMount() {
+        // set window properties for all apps
+        let focused_windows = {}, closed_windows = {};
+        apps.forEach((app) => {
+            focused_windows = {
+                ...focused_windows,
+                [app.id]: false,
+            };
+            closed_windows = {
+                ...closed_windows,
+                [app.id]: true,
+            };
+        });
+        this.setState({
+            focused_windows: focused_windows,
+            closed_windows: closed_windows,
+        });
+    }
+
+    renderDesktopApps = () => {
+        if (Object.keys(this.state.closed_windows).length === 0) return;
+        let appsJsx = [];
+        let extra = 40, padd = 3;
+        apps.forEach((app, index) => {
+            appsJsx.push(
+                <RegisterApp key={index} name={app.title} id={app.id} icon={app.icon} position={{ top: extra + 80 * index + padd, right: 4 }} disabled={false} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
+            );
+            extra += padd;
+        });
+        return appsJsx;
     }
 
     openApp = (objId) => {
@@ -32,7 +52,7 @@ export class Desktop extends Component {
         setTimeout(() => {
             closed_windows[objId] = false;
             this.setState({ closed_windows, cursorWait: false }, this.focus(objId));
-        }, Math.random() * 1500);
+        }, Math.random() * 1000);
     }
 
     closeApp = (objId) => {
@@ -59,13 +79,12 @@ export class Desktop extends Component {
     render() {
         return (
             <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full pt-6 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
-                <SideBar icons={this.icons} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} openAppByAppId={this.openApp} />
-
                 <BackgroundImage img={this.props.bg_img_path} />
 
-                <RegisterApp name="Google Chrome" id="chrome" icon={this.icons.chrome} position={{ top: 40, right: 4 }} disabled={false} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
-                <RegisterApp name="Trash" id="trash" icon={this.icons.trash} position={{ top: 40 + 80 * 1 + 3, right: 4 }} disabled={true} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
-                <RegisterApp name="Vivek" id="home" icon={this.icons.home_folder} position={{ top: 43 + 80 * 2 + 3, right: 4 }} disabled={true} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
+                <SideBar apps={apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} openAppByAppId={this.openApp} />
+
+                {/* Desktop Apps */}
+                {this.renderDesktopApps()}
 
             </div>
         )
