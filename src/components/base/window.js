@@ -50,6 +50,7 @@ export class Window extends Component {
     }
 
     changeCursorToMove = () => {
+        this.focusWindow();
         this.setState({ cursorType: "cursor-move" })
     }
 
