@@ -3,6 +3,7 @@ import RegisterApp from '../base/register_app';
 import BackgroundImage from '../util components/background-image'
 import SideBar from './side_bar';
 import apps from '../../apps.config';
+import Window from '../base/window';
 
 export class Desktop extends Component {
     constructor() {
@@ -46,6 +47,18 @@ export class Desktop extends Component {
         return appsJsx;
     }
 
+    renderWindows = () => {
+        let windowsJsx = [];
+        apps.forEach((app, index) => {
+            if (app.disabled === false && this.state.closed_windows[app.id] === false) {
+                windowsJsx.push(
+                    <Window key={index} title={app.title} id={app.id} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} />
+                )
+            }
+        });
+        return windowsJsx;
+    }
+
     openApp = (objId) => {
         let closed_windows = this.state.closed_windows;
         this.setState({ cursorWait: true });
@@ -78,9 +91,17 @@ export class Desktop extends Component {
 
     render() {
         return (
-            <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full pt-6 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
+            <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full flex flex-col flex-wrap items-end pt-8 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
+
+                {/* Window Area */}
+                <div className="absolute h-full w-full bg-transparent">
+                    {this.renderWindows()}
+                </div>
+
+                {/* Background Image */}
                 <BackgroundImage img={this.props.bg_img_path} />
 
+                {/* Ubuntu Side Menu Bar */}
                 <SideBar apps={apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} openAppByAppId={this.openApp} />
 
                 {/* Desktop Apps */}
