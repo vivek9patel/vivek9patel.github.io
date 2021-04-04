@@ -14,12 +14,16 @@ export class Desktop extends Component {
             focused_windows: {},
             closed_windows: {},
             disabled_apps: {},
+            favourite_apps: {},
         }
     }
 
     componentDidMount() {
-        // set window properties for all apps
-        let focused_windows = {}, closed_windows = {}, disabled_apps = {};
+        this.fetchAppsData();
+    }
+
+    fetchAppsData = () => {
+        let focused_windows = {}, closed_windows = {}, disabled_apps = {}, favourite_apps = {};
         apps.forEach((app) => {
             focused_windows = {
                 ...focused_windows,
@@ -33,11 +37,16 @@ export class Desktop extends Component {
                 ...disabled_apps,
                 [app.id]: app.disabled,
             }
+            favourite_apps = {
+                ...favourite_apps,
+                [app.id]: app.favourite,
+            }
         });
         this.setState({
             focused_windows: focused_windows,
             closed_windows: closed_windows,
-            disabled_apps: disabled_apps
+            disabled_apps: disabled_apps,
+            favourite_apps: favourite_apps
         });
     }
 
@@ -119,7 +128,7 @@ export class Desktop extends Component {
                 <BackgroundImage img={this.props.bg_img_path} />
 
                 {/* Ubuntu Side Menu Bar */}
-                <SideBar apps={apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} openAppByAppId={this.openApp} />
+                <SideBar apps={apps} favourite_apps={this.state.favourite_apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} openAppByAppId={this.openApp} />
 
                 {/* Desktop Apps */}
                 {this.renderDesktopApps()}
