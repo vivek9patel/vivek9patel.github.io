@@ -9,12 +9,12 @@ module.exports = [
         id: "trash",
         title: "Trash",
         icon: './themes/Yaru/system/user-trash-full.png',
-        disabled: false,
+        disabled: true,
     },
     {
         id: "home_folder",
         title: "Home",
         icon: './themes/Yaru/system/user-home.png',
-        disabled: false,
+        disabled: true,
     },
 ]

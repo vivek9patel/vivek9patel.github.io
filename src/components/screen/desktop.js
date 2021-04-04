@@ -11,13 +11,14 @@ export class Desktop extends Component {
         this.state = {
             cursorWait: false,
             focused_windows: {},
-            closed_windows: {}
+            closed_windows: {},
+            disabled_apps: {},
         }
     }
 
     componentDidMount() {
         // set window properties for all apps
-        let focused_windows = {}, closed_windows = {};
+        let focused_windows = {}, closed_windows = {}, disabled_apps = {};
         apps.forEach((app) => {
             focused_windows = {
                 ...focused_windows,
@@ -27,10 +28,15 @@ export class Desktop extends Component {
                 ...closed_windows,
                 [app.id]: true,
             };
+            disabled_apps = {
+                ...disabled_apps,
+                [app.id]: app.disabled,
+            }
         });
         this.setState({
             focused_windows: focused_windows,
             closed_windows: closed_windows,
+            disabled_apps: disabled_apps
         });
     }
 
@@ -40,7 +46,7 @@ export class Desktop extends Component {
         let extra = 40, padd = 3;
         apps.forEach((app, index) => {
             appsJsx.push(
-                <RegisterApp key={index} name={app.title} id={app.id} icon={app.icon} position={{ top: extra + 80 * index + padd, right: 4 }} disabled={false} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
+                <RegisterApp key={index} name={app.title} id={app.id} icon={app.icon} position={{ top: extra + 80 * index + padd, right: 4 }} disabled={app.disabled} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
             );
             extra += padd;
         });
@@ -50,7 +56,7 @@ export class Desktop extends Component {
     renderWindows = () => {
         let windowsJsx = [];
         apps.forEach((app, index) => {
-            if (app.disabled === false && this.state.closed_windows[app.id] === false) {
+            if (this.state.closed_windows[app.id] === false) {
                 windowsJsx.push(
                     <Window key={index} title={app.title} id={app.id} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} />
                 )
@@ -60,6 +66,8 @@ export class Desktop extends Component {
     }
 
     openApp = (objId) => {
+        if (this.state.disabled_apps[objId]) return;
+
         let closed_windows = this.state.closed_windows;
         this.setState({ cursorWait: true });
         setTimeout(() => {
