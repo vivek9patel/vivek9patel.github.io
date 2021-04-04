@@ -8,6 +8,7 @@ import Window from '../base/window';
 export class Desktop extends Component {
     constructor() {
         super();
+        this.app_stack = [];
         this.state = {
             cursorWait: false,
             focused_windows: {},
@@ -73,10 +74,18 @@ export class Desktop extends Component {
         setTimeout(() => {
             closed_windows[objId] = false;
             this.setState({ closed_windows, cursorWait: false }, this.focus(objId));
+            this.app_stack.push(objId);
         }, Math.random() * 1000);
     }
 
     closeApp = (objId) => {
+        // give focus to last opened window
+        this.app_stack.splice(this.app_stack.indexOf(objId), 1);
+        if (this.app_stack.length !== 0) {
+            this.focus(this.app_stack[this.app_stack.length - 1]);
+        }
+
+        // close window
         let closed_windows = this.state.closed_windows;
         closed_windows[objId] = true;
         this.setState({ closed_windows });
