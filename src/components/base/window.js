@@ -73,6 +73,17 @@ export class Window extends Component {
         r.style.setProperty('--window-transform-y', (rect.y.toFixed(1) - 24).toString() + "px");
     }
 
+    checkOverlap = () => {
+        var r = document.querySelector("#" + this.id);
+        var rect = r.getBoundingClientRect();
+        if (rect.x.toFixed(1) < 50) { // if this window overlapps with SideBar
+            this.props.hideSideBar(this.id, true);
+        }
+        else {
+            this.props.hideSideBar(this.id, false);
+        }
+    }
+
     focusWindow = () => {
         this.props.focus(this.id);
     }
@@ -108,6 +119,7 @@ export class Window extends Component {
                 scale={1}
                 onStart={this.changeCursorToMove}
                 onStop={this.changeCursorToDefault}
+                onDrag={this.checkOverlap}
                 allowAnyClick={false}
                 defaultPosition={{ x: this.startX, y: this.startY }}
                 bounds={{ left: 0, top: 5, right: this.state.parentSize.width, bottom: this.state.parentSize.height }}
