@@ -17,7 +17,6 @@ export class Window extends Component {
             height: 85,
             closed: false,
             maximized: false,
-            minimized: false,
             parentSize: {
                 height: 100,
                 width: 100
@@ -89,8 +88,15 @@ export class Window extends Component {
     }
 
     minimizeWindow = () => {
-        this.setState({ minimized: true });
-        this.resizeBoundries();
+        this.setWinowsPosition();
+        // get corrosponding sidebar app's position
+        var r = document.querySelector("#sidebar-" + this.id);
+        var sidebBarApp = r.getBoundingClientRect();
+
+        r = document.querySelector("#" + this.id);
+        // translate window to that position
+        r.style.transform = `translate(-310px,${sidebBarApp.y.toFixed(1) - 240}px) scale(0.2)`;
+        this.props.hasMinimised(this.id);
     }
 
     maximizeWindow = () => {
@@ -122,11 +128,10 @@ export class Window extends Component {
                 onDrag={this.checkOverlap}
                 allowAnyClick={false}
                 defaultPosition={{ x: this.startX, y: this.startY }}
-                bounds={{ left: 0, top: 5, right: this.state.parentSize.width, bottom: this.state.parentSize.height }}
+                bounds={{ left: 0, top: 0, right: this.state.parentSize.width, bottom: this.state.parentSize.height }}
             >
                 <div style={{ width: `${this.state.width}%`, height: `${this.state.height}%` }}
-                    className={this.state.cursorType + " " + (this.state.closed ? " closed-window " : "") + (this.state.maximized ? " maximized-window " : "") + (this.state.minimized ? " minimized-window " : "") + (this.props.isFocused ? " z-30 " : " z-20 notFocused") + " opened-window min-w-1/4 min-h-1/4 main-window absolute rounded-lg rounded-b-sm window-shadow border-black border border-opacity-40 flex flex-col"}
-                    onClick={this.focusWindow}
+                    className={this.state.cursorType + " " + (this.state.closed ? " closed-window " : "") + (this.state.maximized ? " maximized-window " : "") + (this.props.minimized ? " opacity-0 invisible duration-200 " : "") + (this.props.isFocused ? " z-30 " : " z-20 notFocused") + " opened-window min-w-1/4 min-h-1/4 main-window absolute rounded-lg rounded-b-sm window-shadow border-black border border-opacity-40 flex flex-col"}
                     id={this.id}
                 >
                     <WindowYBorder resize={this.handleHorizontalResize} />

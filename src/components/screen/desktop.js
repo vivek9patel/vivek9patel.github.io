@@ -18,6 +18,7 @@ export class Desktop extends Component {
             disabled_apps: {},
             favourite_apps: {},
             hideSideBar: false,
+            minimized_windows: {},
         }
     }
 
@@ -26,7 +27,7 @@ export class Desktop extends Component {
     }
 
     fetchAppsData = () => {
-        let focused_windows = {}, closed_windows = {}, disabled_apps = {}, favourite_apps = {}, overlapped_windows = {};
+        let focused_windows = {}, closed_windows = {}, disabled_apps = {}, favourite_apps = {}, overlapped_windows = {}, minimized_windows = {};
         apps.forEach((app) => {
             focused_windows = {
                 ...focused_windows,
@@ -47,6 +48,10 @@ export class Desktop extends Component {
             overlapped_windows = {
                 ...overlapped_windows,
                 [app.id]: false,
+            };
+            minimized_windows = {
+                ...minimized_windows,
+                [app.id]: false,
             }
         });
         this.setState({
@@ -54,7 +59,8 @@ export class Desktop extends Component {
             closed_windows: closed_windows,
             disabled_apps: disabled_apps,
             favourite_apps: favourite_apps,
-            overlapped_windows: overlapped_windows
+            overlapped_windows: overlapped_windows,
+            minimized_windows: minimized_windows
         });
         this.initFavourite = { ...favourite_apps };
     }
@@ -75,7 +81,7 @@ export class Desktop extends Component {
         apps.forEach((app, index) => {
             if (this.state.closed_windows[app.id] === false) {
                 windowsJsx.push(
-                    <Window key={index} title={app.title} id={app.id} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} />
+                    <Window key={index} title={app.title} id={app.id} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} hasMinimised={this.hasMinimised} minimized={this.state.minimized_windows[app.id]} />
                 )
             }
         });
@@ -98,9 +104,59 @@ export class Desktop extends Component {
         this.setState({ hideSideBar: hide, overlapped_windows: overlapped_windows });
     }
 
+    hasMinimised = (objId) => {
+        // tell child that this app has been minimised
+        let minimized_windows = this.state.minimized_windows;
+        minimized_windows[objId] = true;
+
+        this.setState({ minimized_windows });
+
+        // remove focus from this window & give focus to last opened window
+        if (this.app_stack.length > 1) {
+            let indexOfLastOpenedWindow = this.app_stack.indexOf(objId);
+            this.focus(this.app_stack[(indexOfLastOpenedWindow === 0 ? indexOfLastOpenedWindow + 1 : indexOfLastOpenedWindow - 1)]);
+        }
+
+        this.hideSideBar(null, false);
+
+        // if all apps are minimised remove focus from all & show sidebar
+        if (this.checkAllMinimised()) {
+            var focused_windows = this.state.focused_windows;
+            for (let key in focused_windows) {
+                focused_windows[key] = false;
+            }
+            this.setState({ focused_windows });
+        }
+    }
+
+    checkAllMinimised = () => {
+        let result = true;
+        for (const key in this.state.minimized_windows) {
+            if (!this.state.closed_windows[key]) { // if app is opened
+                result = result & this.state.minimized_windows[key];
+            }
+        }
+        return result;
+    }
+
     openApp = (objId) => {
         // if the app is disabled
         if (this.state.disabled_apps[objId]) return;
+
+        if (this.state.minimized_windows[objId]) {
+            // focus this app's window
+            this.focus(objId);
+
+            // set window's last position
+            var r = document.querySelector("#" + objId);
+            r.style.transform = `translate(${r.style.getPropertyValue("--window-transform-x")},${r.style.getPropertyValue("--window-transform-y")}) scale(1)`;
+
+            // tell childs that his app has been not minimised
+            let minimized_windows = this.state.minimized_windows;
+            minimized_windows[objId] = false;
+            this.setState({ minimized_windows: minimized_windows });
+            return;
+        }
 
         //if app is already opened
         if (this.app_stack.includes(objId)) this.focus(objId);
@@ -166,7 +222,7 @@ export class Desktop extends Component {
                 <BackgroundImage img={this.props.bg_img_path} />
 
                 {/* Ubuntu Side Menu Bar */}
-                <SideBar apps={apps} hide={this.state.hideSideBar} favourite_apps={this.state.favourite_apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} openAppByAppId={this.openApp} />
+                <SideBar apps={apps} hide={this.state.hideSideBar} favourite_apps={this.state.favourite_apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} isMinimized={this.state.minimized_windows} openAppByAppId={this.openApp} />
 
                 {/* Desktop Apps */}
                 {this.renderDesktopApps()}

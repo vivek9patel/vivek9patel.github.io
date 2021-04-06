@@ -9,7 +9,7 @@ export class SideBar extends Component {
         this.props.apps.forEach((app, index) => {
             if (this.props.favourite_apps[app.id] === false) return;
             sideBarAppsJsx.push(
-                <SideBarApp key={index} id={app.id} title={app.title} icon={app.icon} isClose={this.props.closed_windows} isFocus={this.props.focused_windows} openApp={this.props.openAppByAppId} />
+                <SideBarApp key={index} id={app.id} title={app.title} icon={app.icon} isClose={this.props.closed_windows} isFocus={this.props.focused_windows} openApp={this.props.openAppByAppId} isMinimized={this.props.isMinimized} openFromMinimised={this.props.openFromMinimised} />
             );
         });
         return sideBarAppsJsx;
