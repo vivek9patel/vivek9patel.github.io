@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import RegisterApp from '../base/register_app';
-import BackgroundImage from '../util components/background-image'
+import React, { Component } from 'react';
+import BackgroundImage from '../util components/background-image';
 import SideBar from './side_bar';
 import apps from '../../apps.config';
 import Window from '../base/window';
+import UbuntuApp from '../base/ubuntu_app';
 
 export class Desktop extends Component {
     constructor() {
@@ -62,12 +62,10 @@ export class Desktop extends Component {
     renderDesktopApps = () => {
         if (Object.keys(this.state.closed_windows).length === 0) return;
         let appsJsx = [];
-        let extra = 40, padd = 3;
         apps.forEach((app, index) => {
             appsJsx.push(
-                <RegisterApp key={index} name={app.title} id={app.id} icon={app.icon} position={{ top: extra + 80 * index + padd, right: 4 }} disabled={app.disabled} openApp={this.openApp} closeApp={this.closeApp} focus={this.focus} focused_windows={this.state.focused_windows} closed_windows={this.state.closed_windows} />
+                <UbuntuApp key={index} name={app.title} id={app.id} icon={app.icon} openApp={this.openApp} />
             );
-            extra += padd;
         });
         return appsJsx;
     }
