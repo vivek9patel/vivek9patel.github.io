@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* Top NavBar styling */
 .navbar-box {
     border-bottom: 2pt transparent solid;
     padding-top: 3px;
@@ -67,6 +67,7 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     position: relative;
 }
 
+/* Window's styling */
 .arrow-custom-up {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -142,6 +143,29 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     100% {
         opacity: 0;
         transform: translate(var(--window-transform-x), var(--window-transform-y)) scale(0.85);
+        visibility: hidden;
+    }
+}
+
+/* SideBarApp Scale image onClick */
+.scalable-app-icon {
+    visibility: hidden;
+}
+
+.scalable-app-icon.scale {
+    animation: scaleAppImage 400ms 1 forwards;
+}
+
+@keyframes scaleAppImage {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
         visibility: hidden;
     }
 }

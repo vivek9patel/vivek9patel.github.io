@@ -31531,6 +31531,8 @@ video {
           animation: bounce 1s infinite;
 }
 
+/* Top NavBar styling */
+
 .navbar-box {
   border-bottom: 2pt transparent solid;
   padding-top: 3px;
@@ -31609,6 +31611,8 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   height: 12px;
   position: relative;
 }
+
+/* Window's styling */
 
 .arrow-custom-up {
   border-left: 5px solid transparent;
@@ -31705,6 +31709,49 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     opacity: 0;
     -webkit-transform: translate(var(--window-transform-x), var(--window-transform-y)) scale(0.85);
             transform: translate(var(--window-transform-x), var(--window-transform-y)) scale(0.85);
+    visibility: hidden;
+  }
+}
+
+/* SideBarApp Scale image onClick */
+
+.scalable-app-icon {
+  visibility: hidden;
+}
+
+.scalable-app-icon.scale {
+  -webkit-animation: scaleAppImage 400ms 1 forwards;
+          animation: scaleAppImage 400ms 1 forwards;
+}
+
+@-webkit-keyframes scaleAppImage {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(3);
+            transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes scaleAppImage {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(3);
+            transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
     visibility: hidden;
   }
 }

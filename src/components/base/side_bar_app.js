@@ -6,6 +6,7 @@ export class SideBarApp extends Component {
         this.id = null;
         this.state = {
             showTitle: false,
+            scaleImage: false,
         };
     }
 
@@ -15,7 +16,10 @@ export class SideBarApp extends Component {
 
     openApp = () => {
         this.props.openApp(this.id);
-        this.setState({ showTitle: false });
+        setTimeout(() => {
+            this.setState({ scaleImage: false });
+        }, 400);
+        this.setState({ showTitle: false, scaleImage: true });
     };
 
     render() {
@@ -32,6 +36,7 @@ export class SideBarApp extends Component {
                 className={(this.props.isClose[this.id] === false && this.props.isFocus[this.id] ? "bg-white bg-opacity-10 " : null) + " w-auto p-2 outline-none relative transition hover:bg-white hover:bg-opacity-10 rounded m-1"}
             >
                 <img className="w-7" src={this.props.icon} alt="Ubuntu App Icon" />
+                <img className={(this.state.scaleImage ? " scale " : "") + " scalable-app-icon w-7 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"} src={this.props.icon} alt="" />
                 {
                     (
                         this.props.isClose[this.id] === false
