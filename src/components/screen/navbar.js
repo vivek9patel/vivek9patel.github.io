@@ -60,7 +60,7 @@ export default class Navbar extends Component {
                 <div className={"pl-3 pr-3 transition duration-100 ease-in-out navbar-box" + (this.state.activity_card_focused ? " navbar-box-active" : "")} data-nav-comp="activities" onClick={this.display_btm_bar}>
                     Activities
                 </div>
-                <div className={"pl-2 pr-2 transition duration-100 ease-in-out navbar-box" + (this.state.calendar_card_focused ? " navbar-box-active" : "")} data-nav-comp="clock" onClick={this.display_btm_bar}>
+                <div className={"pl-2 pr-2 text-xs md:text-sm transition duration-100 ease-in-out navbar-box" + (this.state.calendar_card_focused ? " navbar-box-active" : "")} data-nav-comp="clock" onClick={this.display_btm_bar}>
                     <Clock />
                 </div>
                 <div className={"relative pr-3 pl-3 transition duration-100 ease-in-out navbar-box status-bar-icons" + (this.state.status_card_focused ? " navbar-box-active" : "")} data-nav-comp="status" onClick={this.display_btm_bar}>
