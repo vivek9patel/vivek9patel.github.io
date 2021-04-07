@@ -101,7 +101,7 @@ export class Desktop extends Component {
 
         let overlapped_windows = this.state.overlapped_windows;
         overlapped_windows[objId] = hide;
-        this.setState({ hideSideBar: hide, overlapped_windows: overlapped_windows });
+        this.setState({ hideSideBar: hide, overlapped_windows });
     }
 
     hasMinimised = (objId) => {
@@ -180,9 +180,7 @@ export class Desktop extends Component {
         if (this.app_stack.length !== 0) {
             this.focus(this.app_stack[this.app_stack.length - 1]);
         }
-        else { // if all window's are closed, then unhide sidebar
-            this.hideSideBar(null, false);
-        }
+        this.hideSideBar(null, false);
 
         // close window
         let closed_windows = this.state.closed_windows;

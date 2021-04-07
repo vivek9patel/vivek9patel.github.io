@@ -26,6 +26,10 @@ export class Window extends Component {
 
     componentDidMount() {
         this.id = this.props.id;
+        this.setDefaultWindowDimenstion();
+    }
+
+    setDefaultWindowDimenstion = () => {
         if (window.innerWidth < 640) {
             this.setState({ height: 60, width: 85 }, this.resizeBoundries);
         }
@@ -50,6 +54,9 @@ export class Window extends Component {
 
     changeCursorToMove = () => {
         this.focusWindow();
+        if (this.state.maximized) {
+            this.restoreWindow();
+        }
         this.setState({ cursorType: "cursor-move" })
     }
 
@@ -69,7 +76,7 @@ export class Window extends Component {
         var r = document.querySelector("#" + this.id);
         var rect = r.getBoundingClientRect();
         r.style.setProperty('--window-transform-x', rect.x.toFixed(1).toString() + "px");
-        r.style.setProperty('--window-transform-y', (rect.y.toFixed(1) - 24).toString() + "px");
+        r.style.setProperty('--window-transform-y', (rect.y.toFixed(1) - 32).toString() + "px");
     }
 
     checkOverlap = () => {
@@ -88,6 +95,10 @@ export class Window extends Component {
     }
 
     minimizeWindow = () => {
+        let posx = -310;
+        if (this.state.maximized) {
+            posx = -510;
+        }
         this.setWinowsPosition();
         // get corrosponding sidebar app's position
         var r = document.querySelector("#sidebar-" + this.id);
@@ -95,21 +106,43 @@ export class Window extends Component {
 
         r = document.querySelector("#" + this.id);
         // translate window to that position
-        r.style.transform = `translate(-310px,${sidebBarApp.y.toFixed(1) - 240}px) scale(0.2)`;
+        r.style.transform = `translate(${posx}px,${sidebBarApp.y.toFixed(1) - 240}px) scale(0.2)`;
         this.props.hasMinimised(this.id);
     }
 
+    restoreWindow = () => {
+        var r = document.querySelector("#" + this.id);
+        this.setDefaultWindowDimenstion();
+        // get previous position
+        let posx = r.style.getPropertyValue("--window-transform-x");
+        let posy = r.style.getPropertyValue("--window-transform-y");
+
+        r.style.transform = `translate(${posx},${posy})`;
+        setTimeout(() => {
+            this.setState({ maximized: false });
+            this.checkOverlap();
+        }, 300);
+    }
+
     maximizeWindow = () => {
-        return;
-        // var r = document.getElementById(this.id);
-        // r.style.transform = "translate(5px,2px)";
-        // this.setState({ maximized: true, height: 95, width: 99 });
-        // this.resizeBoundries();
+        if (this.state.maximized) {
+            this.restoreWindow();
+        }
+        else {
+            this.focusWindow();
+            var r = document.querySelector("#" + this.id);
+            this.setWinowsPosition();
+            // translate window to maximize position
+            r.style.transform = `translate(0px,-3px)`;
+            this.setState({ maximized: true, height: 95.5, width: 100 });
+            this.props.hideSideBar(this.id, true);
+        }
     }
 
     closeWindow = () => {
         this.setWinowsPosition();
         this.setState({ closed: true }, () => {
+            this.props.hideSideBar(this.id, false);
             setTimeout(() => {
                 this.props.closed(this.id)
             }, 300) // after 300ms this window will be unmounted from parent (Desktop)
@@ -131,13 +164,13 @@ export class Window extends Component {
                 bounds={{ left: 0, top: 0, right: this.state.parentSize.width, bottom: this.state.parentSize.height }}
             >
                 <div style={{ width: `${this.state.width}%`, height: `${this.state.height}%` }}
-                    className={this.state.cursorType + " " + (this.state.closed ? " closed-window " : "") + (this.state.maximized ? " maximized-window " : "") + (this.props.minimized ? " opacity-0 invisible duration-200 " : "") + (this.props.isFocused ? " z-30 " : " z-20 notFocused") + " opened-window min-w-1/4 min-h-1/4 main-window absolute rounded-lg rounded-b-sm window-shadow border-black border border-opacity-40 flex flex-col"}
+                    className={this.state.cursorType + " " + (this.state.closed ? " closed-window " : "") + (this.state.maximized ? " duration-300 " : "") + (this.props.minimized ? " opacity-0 invisible duration-200 " : "") + (this.props.isFocused ? " z-30 " : " z-20 notFocused") + " opened-window min-w-1/4 min-h-1/4 main-window absolute rounded-lg rounded-b-sm window-shadow border-black border border-opacity-40 flex flex-col"}
                     id={this.id}
                 >
                     <WindowYBorder resize={this.handleHorizontalResize} />
                     <WindowXBorder resize={this.handleVerticleResize} />
                     <WindowTopBar title={this.props.title} />
-                    <WindowEditButtons minimize={this.minimizeWindow} maximize={this.maximizeWindow} close={this.closeWindow} />
+                    <WindowEditButtons minimize={this.minimizeWindow} maximize={this.maximizeWindow} isMaximised={this.state.maximized} close={this.closeWindow} />
                     <WindowMainScreen />
                 </div>
             </Draggable >
