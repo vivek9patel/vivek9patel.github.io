@@ -91,11 +91,24 @@ export class Desktop extends Component {
     hideSideBar = (objId, hide) => {
         if (hide === this.state.hideSideBar) return;
 
-        if (objId === null) this.setState({ hideSideBar: false });
+        if (objId === null) {
+            if (hide === false) {
+                this.setState({ hideSideBar: false });
+            }
+            else {
+                for (const key in this.state.overlapped_windows) {
+                    if (this.state.overlapped_windows[key]) {
+                        this.setState({ hideSideBar: true });
+                        return;
+                    }  // if any window is overlapped then hide the SideBar
+                }
+            }
+            return;
+        }
 
         if (hide === false) {
             for (const key in this.state.overlapped_windows) {
-                if (this.state.overlapped_windows[key] && key !== objId) return; // if any window is overlapped then don't unhide the SideBar
+                if (this.state.overlapped_windows[key] && key !== objId) return; // if any window is overlapped then don't show the SideBar
             }
         }
 
@@ -220,7 +233,7 @@ export class Desktop extends Component {
                 <BackgroundImage img={this.props.bg_img_path} />
 
                 {/* Ubuntu Side Menu Bar */}
-                <SideBar apps={apps} hide={this.state.hideSideBar} favourite_apps={this.state.favourite_apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} isMinimized={this.state.minimized_windows} openAppByAppId={this.openApp} />
+                <SideBar apps={apps} hide={this.state.hideSideBar} hideSideBar={this.hideSideBar} favourite_apps={this.state.favourite_apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} isMinimized={this.state.minimized_windows} openAppByAppId={this.openApp} />
 
                 {/* Desktop Apps */}
                 {this.renderDesktopApps()}
