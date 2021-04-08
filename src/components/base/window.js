@@ -171,7 +171,7 @@ export class Window extends Component {
                     <WindowXBorder resize={this.handleVerticleResize} />
                     <WindowTopBar title={this.props.title} />
                     <WindowEditButtons minimize={this.minimizeWindow} maximize={this.maximizeWindow} isMaximised={this.state.maximized} close={this.closeWindow} />
-                    <WindowMainScreen />
+                    <WindowMainScreen screen={this.props.screen} title={this.props.title} />
                 </div>
             </Draggable >
         )

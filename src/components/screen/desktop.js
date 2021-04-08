@@ -81,7 +81,7 @@ export class Desktop extends Component {
         apps.forEach((app, index) => {
             if (this.state.closed_windows[app.id] === false) {
                 windowsJsx.push(
-                    <Window key={index} title={app.title} id={app.id} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} hasMinimised={this.hasMinimised} minimized={this.state.minimized_windows[app.id]} />
+                    <Window key={index} title={app.title} id={app.id} screen={app.screen} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} hasMinimised={this.hasMinimised} minimized={this.state.minimized_windows[app.id]} />
                 )
             }
         });
