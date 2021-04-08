@@ -5,6 +5,7 @@ module.exports = [
         icon: './themes/Yaru/apps/chrome.png',
         disabled: false,
         favourite: true,
+        desktop_shortcut: true,
         screen: "about.html",
     },
 
@@ -14,6 +15,7 @@ module.exports = [
         icon: './themes/Yaru/apps/filemanager-app.png',
         disabled: false,
         favourite: true,
+        desktop_shortcut: false,
         screen: "about.html",
     },
     {
@@ -22,6 +24,7 @@ module.exports = [
         icon: './themes/Yaru/apps/todoist.png',
         disabled: false,
         favourite: true,
+        desktop_shortcut: false,
         screen: "about.html",
     },
     {
@@ -30,6 +33,7 @@ module.exports = [
         icon: './themes/Yaru/apps/vscode.png',
         disabled: true,
         favourite: true,
+        desktop_shortcut: false,
         screen: "#",
     },
     {
@@ -38,6 +42,7 @@ module.exports = [
         icon: './themes/Yaru/apps/msteams.png',
         disabled: false,
         favourite: true,
+        desktop_shortcut: true,
         screen: "about.html",
     },
     {
@@ -46,6 +51,7 @@ module.exports = [
         icon: './themes/Yaru/apps/bash.png',
         disabled: true,
         favourite: true,
+        desktop_shortcut: false,
         screen: "about.html",
     },
     {
@@ -54,6 +60,7 @@ module.exports = [
         icon: './themes/Yaru/apps/spotify.png',
         disabled: false,
         favourite: true,
+        desktop_shortcut: true,
         screen: "https://open.spotify.com/embed/playlist/37i9dQZEVXbLZ52XmnySJg", // India Top 50 Playlist 😅
     },
     {
@@ -62,6 +69,7 @@ module.exports = [
         icon: './themes/Yaru/apps/gnome-control-center.png',
         disabled: true,
         favourite: true,
+        desktop_shortcut: false,
         screen: "about.html",
     },
     {
@@ -70,6 +78,7 @@ module.exports = [
         icon: './themes/Yaru/apps/software-store.png',
         disabled: true,
         favourite: true,
+        desktop_shortcut: false,
         screen: "about.html",
     },
     {
@@ -78,6 +87,7 @@ module.exports = [
         icon: './themes/Yaru/system/user-home.png',
         disabled: true,
         favourite: false,
+        desktop_shortcut: true,
         screen: "about.html",
     },
 
@@ -87,6 +97,7 @@ module.exports = [
         icon: './themes/Yaru/system/user-trash-full.png',
         disabled: true,
         favourite: false,
+        desktop_shortcut: true,
         screen: "about.html",
     },
     {
@@ -95,6 +106,7 @@ module.exports = [
         icon: './themes/Yaru/apps/gedit.png',
         disabled: true,
         favourite: false,
+        desktop_shortcut: true,
         screen: "about.html",
     },
 
@@ -104,6 +116,7 @@ module.exports = [
         icon: './themes/Yaru/apps/clock-app.png',
         disabled: true,
         favourite: false,
+        desktop_shortcut: true,
         screen: "about.html",
     },
 ]

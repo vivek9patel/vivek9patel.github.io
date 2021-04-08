@@ -19,6 +19,7 @@ export class Desktop extends Component {
             favourite_apps: {},
             hideSideBar: false,
             minimized_windows: {},
+            desktop_apps: [],
         }
     }
 
@@ -28,6 +29,7 @@ export class Desktop extends Component {
 
     fetchAppsData = () => {
         let focused_windows = {}, closed_windows = {}, disabled_apps = {}, favourite_apps = {}, overlapped_windows = {}, minimized_windows = {};
+        let desktop_apps = [];
         apps.forEach((app) => {
             focused_windows = {
                 ...focused_windows,
@@ -53,6 +55,7 @@ export class Desktop extends Component {
                 ...minimized_windows,
                 [app.id]: false,
             }
+            if (app.desktop_shortcut) desktop_apps.push(app.id);
         });
         this.setState({
             focused_windows: focused_windows,
@@ -60,7 +63,8 @@ export class Desktop extends Component {
             disabled_apps: disabled_apps,
             favourite_apps: favourite_apps,
             overlapped_windows: overlapped_windows,
-            minimized_windows: minimized_windows
+            minimized_windows: minimized_windows,
+            desktop_apps: desktop_apps
         });
         this.initFavourite = { ...favourite_apps };
     }
@@ -69,9 +73,11 @@ export class Desktop extends Component {
         if (Object.keys(this.state.closed_windows).length === 0) return;
         let appsJsx = [];
         apps.forEach((app, index) => {
-            appsJsx.push(
-                <UbuntuApp key={index} name={app.title} id={app.id} icon={app.icon} openApp={this.openApp} />
-            );
+            if (this.state.desktop_apps.includes(app.id)) {
+                appsJsx.push(
+                    <UbuntuApp key={index} name={app.title} id={app.id} icon={app.icon} openApp={this.openApp} />
+                );
+            }
         });
         return appsJsx;
     }
