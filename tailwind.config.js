@@ -18,6 +18,8 @@ module.exports = {
       'ubt-grey': '#F6F6F5',
       'ubt-warm-grey': "#AEA79F",
       'ubt-cool-grey': "#333333",
+      'ubt-blue': "#3465A4",
+      'ubt-green': "#4E9A06",
     }),
     minWidth: {
       '0': '0',

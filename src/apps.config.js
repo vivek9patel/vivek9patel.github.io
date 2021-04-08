@@ -1,4 +1,6 @@
-module.exports = [
+import displaySpotify from './components/apps/spotify';
+import { displayTerminal } from './components/apps/terminal';
+const apps = [
     {
         id: "chrome",
         title: "Google Chrome",
@@ -6,7 +8,7 @@ module.exports = [
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
-        screen: "about.html",
+        screen: () => { },
     },
 
     {
@@ -16,7 +18,7 @@ module.exports = [
         disabled: false,
         favourite: true,
         desktop_shortcut: false,
-        screen: "about.html",
+        screen: () => { },
     },
     {
         id: "todo-ist",
@@ -25,7 +27,7 @@ module.exports = [
         disabled: false,
         favourite: true,
         desktop_shortcut: false,
-        screen: "about.html",
+        screen: () => { },
     },
     {
         id: "vscode",
@@ -34,7 +36,7 @@ module.exports = [
         disabled: true,
         favourite: true,
         desktop_shortcut: false,
-        screen: "#",
+        screen: () => { },
     },
     {
         id: "msteams",
@@ -43,16 +45,16 @@ module.exports = [
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
-        screen: "about.html",
+        screen: () => { },
     },
     {
         id: "terminal",
         title: "Terminal",
         icon: './themes/Yaru/apps/bash.png',
-        disabled: true,
+        disabled: false,
         favourite: true,
         desktop_shortcut: false,
-        screen: "about.html",
+        screen: displayTerminal,
     },
     {
         id: "spotify",
@@ -61,7 +63,7 @@ module.exports = [
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
-        screen: "https://open.spotify.com/embed/playlist/37i9dQZEVXbLZ52XmnySJg", // India Top 50 Playlist 😅
+        screen: displaySpotify, // India Top 50 Playlist 😅
     },
     {
         id: "settings",
@@ -70,7 +72,7 @@ module.exports = [
         disabled: true,
         favourite: true,
         desktop_shortcut: false,
-        screen: "about.html",
+        screen: () => { },
     },
     {
         id: "store",
@@ -79,7 +81,7 @@ module.exports = [
         disabled: true,
         favourite: true,
         desktop_shortcut: false,
-        screen: "about.html",
+        screen: () => { },
     },
     {
         id: "home_folder",
@@ -88,7 +90,7 @@ module.exports = [
         disabled: true,
         favourite: false,
         desktop_shortcut: true,
-        screen: "about.html",
+        screen: () => { },
     },
 
     {
@@ -98,7 +100,7 @@ module.exports = [
         disabled: true,
         favourite: false,
         desktop_shortcut: true,
-        screen: "about.html",
+        screen: () => { },
     },
     {
         id: "gedit",
@@ -107,7 +109,7 @@ module.exports = [
         disabled: true,
         favourite: false,
         desktop_shortcut: true,
-        screen: "about.html",
+        screen: () => { },
     },
 
     {
@@ -117,6 +119,8 @@ module.exports = [
         disabled: true,
         favourite: false,
         desktop_shortcut: true,
-        screen: "about.html",
+        screen: () => { },
     },
 ]
+
+export default apps;

@@ -24847,6 +24847,16 @@ video {
   color: rgba(51, 51, 51, var(--tw-text-opacity));
 }
 
+.text-ubt-blue {
+  --tw-text-opacity: 1;
+  color: rgba(52, 101, 164, var(--tw-text-opacity));
+}
+
+.text-ubt-green {
+  --tw-text-opacity: 1;
+  color: rgba(78, 154, 6, var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:text-transparent {
   color: transparent;
 }
@@ -25278,6 +25288,16 @@ video {
 .group:hover .group-hover\:text-ubt-cool-grey {
   --tw-text-opacity: 1;
   color: rgba(51, 51, 51, var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-ubt-blue {
+  --tw-text-opacity: 1;
+  color: rgba(52, 101, 164, var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-ubt-green {
+  --tw-text-opacity: 1;
+  color: rgba(78, 154, 6, var(--tw-text-opacity));
 }
 
 .focus-within\:text-transparent:focus-within {
@@ -25713,6 +25733,16 @@ video {
   color: rgba(51, 51, 51, var(--tw-text-opacity));
 }
 
+.focus-within\:text-ubt-blue:focus-within {
+  --tw-text-opacity: 1;
+  color: rgba(52, 101, 164, var(--tw-text-opacity));
+}
+
+.focus-within\:text-ubt-green:focus-within {
+  --tw-text-opacity: 1;
+  color: rgba(78, 154, 6, var(--tw-text-opacity));
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -26146,6 +26176,16 @@ video {
   color: rgba(51, 51, 51, var(--tw-text-opacity));
 }
 
+.hover\:text-ubt-blue:hover {
+  --tw-text-opacity: 1;
+  color: rgba(52, 101, 164, var(--tw-text-opacity));
+}
+
+.hover\:text-ubt-green:hover {
+  --tw-text-opacity: 1;
+  color: rgba(78, 154, 6, var(--tw-text-opacity));
+}
+
 .focus\:text-transparent:focus {
   color: transparent;
 }
@@ -26577,6 +26617,16 @@ video {
 .focus\:text-ubt-cool-grey:focus {
   --tw-text-opacity: 1;
   color: rgba(51, 51, 51, var(--tw-text-opacity));
+}
+
+.focus\:text-ubt-blue:focus {
+  --tw-text-opacity: 1;
+  color: rgba(52, 101, 164, var(--tw-text-opacity));
+}
+
+.focus\:text-ubt-green:focus {
+  --tw-text-opacity: 1;
+  color: rgba(78, 154, 6, var(--tw-text-opacity));
 }
 
 .text-opacity-0 {
@@ -56037,6 +56087,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .sm\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .sm\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .group:hover .sm\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -56468,6 +56528,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .sm\:group-hover\:text-ubt-cool-grey {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .sm\:focus-within\:text-transparent:focus-within {
@@ -56903,6 +56973,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .sm\:focus-within\:text-ubt-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .sm\:focus-within\:text-ubt-green:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -57336,6 +57416,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .sm\:hover\:text-ubt-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .sm\:hover\:text-ubt-green:hover {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .sm\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -57767,6 +57857,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .sm\:focus\:text-ubt-cool-grey:focus {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .sm\:focus\:text-ubt-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .sm\:focus\:text-ubt-green:focus {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .sm\:text-opacity-0 {
@@ -86933,6 +87033,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .md\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .md\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .group:hover .md\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -87364,6 +87474,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .md\:group-hover\:text-ubt-cool-grey {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .group:hover .md\:group-hover\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .group:hover .md\:group-hover\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .md\:focus-within\:text-transparent:focus-within {
@@ -87799,6 +87919,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .md\:focus-within\:text-ubt-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .md\:focus-within\:text-ubt-green:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -88232,6 +88362,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .md\:hover\:text-ubt-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .md\:hover\:text-ubt-green:hover {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .md\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -88663,6 +88803,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .md\:focus\:text-ubt-cool-grey:focus {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .md\:focus\:text-ubt-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .md\:focus\:text-ubt-green:focus {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .md\:text-opacity-0 {
@@ -117829,6 +117979,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .lg\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .lg\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .group:hover .lg\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -118260,6 +118420,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .lg\:group-hover\:text-ubt-cool-grey {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .lg\:focus-within\:text-transparent:focus-within {
@@ -118695,6 +118865,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .lg\:focus-within\:text-ubt-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .lg\:focus-within\:text-ubt-green:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -119128,6 +119308,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .lg\:hover\:text-ubt-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .lg\:hover\:text-ubt-green:hover {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .lg\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -119559,6 +119749,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .lg\:focus\:text-ubt-cool-grey:focus {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .lg\:focus\:text-ubt-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .lg\:focus\:text-ubt-green:focus {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .lg\:text-opacity-0 {
@@ -148725,6 +148925,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .xl\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .xl\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .group:hover .xl\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -149156,6 +149366,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .xl\:group-hover\:text-ubt-cool-grey {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .xl\:focus-within\:text-transparent:focus-within {
@@ -149591,6 +149811,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .xl\:focus-within\:text-ubt-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .xl\:focus-within\:text-ubt-green:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -150024,6 +150254,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .xl\:hover\:text-ubt-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .xl\:hover\:text-ubt-green:hover {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -150455,6 +150695,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .xl\:focus\:text-ubt-cool-grey:focus {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .xl\:focus\:text-ubt-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .xl\:focus\:text-ubt-green:focus {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .xl\:text-opacity-0 {
@@ -179621,6 +179871,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .\32xl\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .\32xl\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -180052,6 +180312,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .\32xl\:group-hover\:text-ubt-cool-grey {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:text-ubt-blue {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:text-ubt-green {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .\32xl\:focus-within\:text-transparent:focus-within {
@@ -180487,6 +180757,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .\32xl\:focus-within\:text-ubt-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .\32xl\:focus-within\:text-ubt-green:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .\32xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -180920,6 +181200,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(51, 51, 51, var(--tw-text-opacity));
   }
 
+  .\32xl\:hover\:text-ubt-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .\32xl\:hover\:text-ubt-green:hover {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
   .\32xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -181351,6 +181641,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .\32xl\:focus\:text-ubt-cool-grey:focus {
     --tw-text-opacity: 1;
     color: rgba(51, 51, 51, var(--tw-text-opacity));
+  }
+
+  .\32xl\:focus\:text-ubt-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(52, 101, 164, var(--tw-text-opacity));
+  }
+
+  .\32xl\:focus\:text-ubt-green:focus {
+    --tw-text-opacity: 1;
+    color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
   .\32xl\:text-opacity-0 {
