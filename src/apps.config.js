@@ -1,5 +1,7 @@
+import displayTeams from './components/apps/msteams';
 import displaySpotify from './components/apps/spotify';
 import { displayTerminal } from './components/apps/terminal';
+
 const apps = [
     {
         id: "chrome",
@@ -42,10 +44,10 @@ const apps = [
         id: "msteams",
         title: "Microsoft Teams",
         icon: './themes/Yaru/apps/msteams.png',
-        disabled: false,
+        disabled: true,
         favourite: true,
         desktop_shortcut: true,
-        screen: () => { },
+        screen: displayTeams,
     },
     {
         id: "terminal",
