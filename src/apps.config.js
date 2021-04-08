@@ -1,3 +1,4 @@
+import displayTodoist from './components/apps/todoist';
 import displayTeams from './components/apps/msteams';
 import displaySpotify from './components/apps/spotify';
 import { displayTerminal } from './components/apps/terminal';
@@ -29,7 +30,7 @@ const apps = [
         disabled: false,
         favourite: true,
         desktop_shortcut: false,
-        screen: () => { },
+        screen: displayTodoist,
     },
     {
         id: "vscode",
