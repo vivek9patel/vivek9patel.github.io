@@ -1,3 +1,4 @@
+import displayUbuntuStore from './components/apps/ubuntuStore';
 import displayTodoist from './components/apps/todoist';
 import displayTeams from './components/apps/msteams';
 import displaySpotify from './components/apps/spotify';
@@ -84,7 +85,7 @@ const apps = [
         disabled: true,
         favourite: true,
         desktop_shortcut: false,
-        screen: () => { },
+        screen: displayUbuntuStore,
     },
     {
         id: "home_folder",
