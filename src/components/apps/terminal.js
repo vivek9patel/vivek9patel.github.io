@@ -126,7 +126,7 @@ export class Terminal extends Component {
         files.push(`<div class="flex justify-start flex-wrap">`)
         this.child_directories[parent].forEach(file => {
             files.push(
-                `<span class="font-bold mr-2 text-ubt-blue">${file}</span>`
+                `<span class="font-bold mr-2 text-ubt-blue">'${file}'</span>`
             )
         });
         files.push(`</div>`)
@@ -162,7 +162,7 @@ export class Terminal extends Component {
                     this.curr_dir_name = rest;
                 }
                 else if (rest === ".." || rest === "../") {
-                    result = "Type 'cd' for this 😅,<br> was a hazzle to implement this!";
+                    result = "Type 'cd' for this 😅";
                     break;
                 }
                 else {

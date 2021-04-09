@@ -48,7 +48,7 @@ const apps = [
         icon: './themes/Yaru/apps/msteams.png',
         disabled: true,
         favourite: true,
-        desktop_shortcut: true,
+        desktop_shortcut: false,
         screen: displayTeams,
     },
     {
@@ -66,7 +66,7 @@ const apps = [
         icon: './themes/Yaru/apps/spotify.png',
         disabled: false,
         favourite: true,
-        desktop_shortcut: true,
+        desktop_shortcut: false,
         screen: displaySpotify, // India Top 50 Playlist 😅
     },
     {
@@ -101,25 +101,6 @@ const apps = [
         id: "trash",
         title: "Trash",
         icon: './themes/Yaru/system/user-trash-full.png',
-        disabled: true,
-        favourite: false,
-        desktop_shortcut: true,
-        screen: () => { },
-    },
-    {
-        id: "gedit",
-        title: "Text Editor",
-        icon: './themes/Yaru/apps/gedit.png',
-        disabled: true,
-        favourite: false,
-        desktop_shortcut: true,
-        screen: () => { },
-    },
-
-    {
-        id: "clock",
-        title: "Clock",
-        icon: './themes/Yaru/apps/clock-app.png',
         disabled: true,
         favourite: false,
         desktop_shortcut: true,
