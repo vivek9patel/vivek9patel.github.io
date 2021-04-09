@@ -4,6 +4,7 @@ import SideBar from './side_bar';
 import apps from '../../apps.config';
 import Window from '../base/window';
 import UbuntuApp from '../base/ubuntu_app';
+import DesktopMenu from '../context menus/desktop-menu';
 
 export class Desktop extends Component {
     constructor() {
@@ -20,11 +21,68 @@ export class Desktop extends Component {
             hideSideBar: false,
             minimized_windows: {},
             desktop_apps: [],
+            context_menus: {
+                desktop: false,
+            },
+            showNameBar: false,
         }
     }
 
     componentDidMount() {
         this.fetchAppsData();
+        this.setContextListeners();
+    }
+
+    setContextListeners = () => {
+        let desktop = 'desktop-area';
+
+        // Disabling Global context menu
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        })
+
+        // on click, anywhere, hide all menus
+        document.addEventListener('click', () => {
+            this.hideAllContextMenu();
+        })
+
+        // Context Menu for Desktop
+        document.getElementById(desktop).addEventListener('contextmenu', (e) => {
+            let { posx, posy } = this.getMenuPosition(e);
+            document.getElementById("desktop-menu").style.left = posx;
+            document.getElementById("desktop-menu").style.top = posy;
+            this.setState({ context_menus: { ...this.state.context_menus, desktop: true } });
+        })
+    }
+
+    hideAllContextMenu = () => {
+        let menus = this.state.context_menus;
+        Object.keys(menus).forEach(key => {
+            menus[key] = false;
+        });
+        this.setState({ context_menus: menus });
+    }
+
+    getMenuPosition = (e) => {
+        var posx = 0;
+        var posy = 0;
+
+        if (!e) e = window.event;
+
+        if (e.pageX || e.pageY) {
+            posx = e.pageX;
+            posy = e.pageY;
+        } else if (e.clientX || e.clientY) {
+            posx = e.clientX + document.body.scrollLeft +
+                document.documentElement.scrollLeft;
+            posy = e.clientY + document.body.scrollTop +
+                document.documentElement.scrollTop;
+        }
+        posx = posx.toString() + "px";
+        posy = posy.toString() + "px";
+        return {
+            posx, posy
+        }
     }
 
     fetchAppsData = () => {
@@ -64,6 +122,43 @@ export class Desktop extends Component {
             favourite_apps: favourite_apps,
             overlapped_windows: overlapped_windows,
             minimized_windows: minimized_windows,
+            desktop_apps: desktop_apps
+        });
+        this.initFavourite = { ...favourite_apps };
+    }
+
+    updateAppsData = () => {
+        let focused_windows = {}, closed_windows = {}, favourite_apps = {}, minimized_windows = {}, disabled_apps = {};
+        let desktop_apps = [];
+        apps.forEach((app) => {
+            focused_windows = {
+                ...focused_windows,
+                [app.id]: ((this.state.focused_windows[app.id] !== undefined || this.state.focused_windows[app.id] !== null) ? this.state.focused_windows[app.id] : false),
+            };
+            minimized_windows = {
+                ...minimized_windows,
+                [app.id]: ((this.state.minimized_windows[app.id] !== undefined || this.state.minimized_windows[app.id] !== null) ? this.state.minimized_windows[app.id] : false)
+            };
+            disabled_apps = {
+                ...disabled_apps,
+                [app.id]: app.disabled
+            };
+            closed_windows = {
+                ...closed_windows,
+                [app.id]: ((this.state.closed_windows[app.id] !== undefined || this.state.closed_windows[app.id] !== null) ? this.state.closed_windows[app.id] : true)
+            };
+            favourite_apps = {
+                ...favourite_apps,
+                [app.id]: app.favourite
+            }
+            if (app.desktop_shortcut) desktop_apps.push(app.id);
+        });
+        this.setState({
+            focused_windows: focused_windows,
+            closed_windows: closed_windows,
+            disabled_apps: disabled_apps,
+            minimized_windows: minimized_windows,
+            favourite_apps: favourite_apps,
             desktop_apps: desktop_apps
         });
         this.initFavourite = { ...favourite_apps };
@@ -226,12 +321,51 @@ export class Desktop extends Component {
         this.setState({ focused_windows });
     }
 
+    addNewFolder = () => {
+        this.setState({ showNameBar: true });
+    }
+
+    renderNameBar = () => {
+        let addFolder = () => {
+            let folder_name = document.getElementById("folder-name-input").value;
+            folder_name = folder_name.trim();
+            let folder_id = folder_name.replace(/\s+/g, '-').toLowerCase();
+            apps.push({
+                id: `new-folder-${folder_id}`,
+                title: folder_name,
+                icon: './themes/Yaru/system/folder.png',
+                disabled: true,
+                favourite: false,
+                desktop_shortcut: true,
+                screen: () => { },
+            });
+            this.setState({ showNameBar: false }, this.updateAppsData);
+        }
+
+        let removeCard = () => {
+            this.setState({ showNameBar: false });
+        }
+
+        return (
+            <div className="absolute rounded-md top-1/2 left-1/2 text-center text-white font-light text-sm bg-ub-cool-grey transform -translate-y-1/2 -translate-x-1/2 w-96">
+                <div className="w-full flex flex-col justify-around items-start pl-6 pb-8 pt-6">
+                    <span>New folder name</span>
+                    <input className="outline-none mt-5 px-1 w-10/12  context-menu-bg border-2 border-yellow-700 rounded py-0.5" id="folder-name-input" type="text" autoComplete="off" spellCheck="false" autoFocus={true} />
+                </div>
+                <div className="flex">
+                    <div onClick={addFolder} className="w-1/2 px-4 py-2 border border-gray-900 border-opacity-50 border-r-0 hover:bg-ub-warm-grey hover:bg-opacity-10 hover:border-opacity-50">Create</div>
+                    <div onClick={removeCard} className="w-1/2 px-4 py-2 border border-gray-900 border-opacity-50 hover:bg-ub-warm-grey hover:bg-opacity-10 hover:border-opacity-50">Cancel</div>
+                </div>
+            </div>
+        );
+    }
+
     render() {
         return (
             <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full flex flex-col items-end justify-start content-end flex-wrap pt-8 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
 
                 {/* Window Area */}
-                <div className="absolute h-full w-full bg-transparent">
+                <div className="absolute h-full w-full bg-transparent" id="desktop-area">
                     {this.renderWindows()}
                 </div>
 
@@ -244,6 +378,16 @@ export class Desktop extends Component {
                 {/* Desktop Apps */}
                 {this.renderDesktopApps()}
 
+                {/* Context Menus */}
+                <DesktopMenu active={this.state.context_menus.desktop} openApp={this.openApp} addNewFolder={this.addNewFolder} />
+
+                {/* Folder Input Name Bar */}
+                {
+                    (this.state.showNameBar
+                        ? this.renderNameBar()
+                        : null
+                    )
+                }
             </div>
         )
     }

@@ -21,6 +21,11 @@ module.exports = {
       'ubt-blue': "#3465A4",
       'ubt-green': "#4E9A06",
     }),
+    borderColor: theme => ({
+      ...theme('colors'),
+      DEFAULT: theme('colors.gray.300', 'currentColor'),
+      'ubb-orange': '#E95420'
+    }),
     minWidth: {
       '0': '0',
       '1/4': '25%',

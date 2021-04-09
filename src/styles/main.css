@@ -411,7 +411,7 @@ body {
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  border-color: #d1d5db; /* 2 */
 }
 
 /*
@@ -1916,6 +1916,11 @@ video {
 .divide-pink-900 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgba(131, 24, 67, var(--tw-divide-opacity));
+}
+
+.divide-ubb-orange > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgba(233, 84, 32, var(--tw-divide-opacity));
 }
 
 .divide-solid > :not([hidden]) ~ :not([hidden]) {
@@ -8502,6 +8507,11 @@ video {
   border-color: rgba(131, 24, 67, var(--tw-border-opacity));
 }
 
+.border-ubb-orange {
+  --tw-border-opacity: 1;
+  border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+}
+
 .group:hover .group-hover\:border-transparent {
   border-color: transparent;
 }
@@ -8918,6 +8928,11 @@ video {
 .group:hover .group-hover\:border-pink-900 {
   --tw-border-opacity: 1;
   border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+}
+
+.group:hover .group-hover\:border-ubb-orange {
+  --tw-border-opacity: 1;
+  border-color: rgba(233, 84, 32, var(--tw-border-opacity));
 }
 
 .focus-within\:border-transparent:focus-within {
@@ -9338,6 +9353,11 @@ video {
   border-color: rgba(131, 24, 67, var(--tw-border-opacity));
 }
 
+.focus-within\:border-ubb-orange:focus-within {
+  --tw-border-opacity: 1;
+  border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+}
+
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
@@ -9756,6 +9776,11 @@ video {
   border-color: rgba(131, 24, 67, var(--tw-border-opacity));
 }
 
+.hover\:border-ubb-orange:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+}
+
 .focus\:border-transparent:focus {
   border-color: transparent;
 }
@@ -10172,6 +10197,11 @@ video {
 .focus\:border-pink-900:focus {
   --tw-border-opacity: 1;
   border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+}
+
+.focus\:border-ubb-orange:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(233, 84, 32, var(--tw-border-opacity));
 }
 
 .border-opacity-0 {
@@ -31817,6 +31847,12 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   }
 }
 
+/* Context Menu */
+
+.context-menu-bg {
+  background-color: rgb(43, 43, 43);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -33184,6 +33220,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .sm\:divide-pink-900 > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-divide-opacity));
+  }
+
+  .sm\:divide-ubb-orange > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-divide-opacity));
   }
 
   .sm\:divide-solid > :not([hidden]) ~ :not([hidden]) {
@@ -39770,6 +39811,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .sm\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .group:hover .sm\:group-hover\:border-transparent {
     border-color: transparent;
   }
@@ -40186,6 +40232,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .sm\:group-hover\:border-pink-900 {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .sm\:focus-within\:border-transparent:focus-within {
@@ -40606,6 +40657,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .sm\:focus-within\:border-ubb-orange:focus-within {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .sm\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -41024,6 +41080,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .sm\:hover\:border-ubb-orange:hover {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .sm\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -41440,6 +41501,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .sm\:focus\:border-pink-900:focus {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .sm\:focus\:border-ubb-orange:focus {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .sm\:border-opacity-0 {
@@ -64132,6 +64198,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-divide-opacity));
   }
 
+  .md\:divide-ubb-orange > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-divide-opacity));
+  }
+
   .md\:divide-solid > :not([hidden]) ~ :not([hidden]) {
     border-style: solid;
   }
@@ -70716,6 +70787,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .md\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .group:hover .md\:group-hover\:border-transparent {
     border-color: transparent;
   }
@@ -71132,6 +71208,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .md\:group-hover\:border-pink-900 {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .group:hover .md\:group-hover\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .md\:focus-within\:border-transparent:focus-within {
@@ -71552,6 +71633,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .md\:focus-within\:border-ubb-orange:focus-within {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .md\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -71970,6 +72056,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .md\:hover\:border-ubb-orange:hover {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .md\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -72386,6 +72477,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .md\:focus\:border-pink-900:focus {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .md\:focus\:border-ubb-orange:focus {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .md\:border-opacity-0 {
@@ -95078,6 +95174,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-divide-opacity));
   }
 
+  .lg\:divide-ubb-orange > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-divide-opacity));
+  }
+
   .lg\:divide-solid > :not([hidden]) ~ :not([hidden]) {
     border-style: solid;
   }
@@ -101662,6 +101763,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .lg\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .group:hover .lg\:group-hover\:border-transparent {
     border-color: transparent;
   }
@@ -102078,6 +102184,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .lg\:group-hover\:border-pink-900 {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .lg\:focus-within\:border-transparent:focus-within {
@@ -102498,6 +102609,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .lg\:focus-within\:border-ubb-orange:focus-within {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .lg\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -102916,6 +103032,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .lg\:hover\:border-ubb-orange:hover {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .lg\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -103332,6 +103453,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .lg\:focus\:border-pink-900:focus {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .lg\:focus\:border-ubb-orange:focus {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .lg\:border-opacity-0 {
@@ -126024,6 +126150,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-divide-opacity));
   }
 
+  .xl\:divide-ubb-orange > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-divide-opacity));
+  }
+
   .xl\:divide-solid > :not([hidden]) ~ :not([hidden]) {
     border-style: solid;
   }
@@ -132608,6 +132739,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .xl\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .group:hover .xl\:group-hover\:border-transparent {
     border-color: transparent;
   }
@@ -133024,6 +133160,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .xl\:group-hover\:border-pink-900 {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .xl\:focus-within\:border-transparent:focus-within {
@@ -133444,6 +133585,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .xl\:focus-within\:border-ubb-orange:focus-within {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .xl\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -133862,6 +134008,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .xl\:hover\:border-ubb-orange:hover {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .xl\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -134278,6 +134429,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .xl\:focus\:border-pink-900:focus {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .xl\:focus\:border-ubb-orange:focus {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .xl\:border-opacity-0 {
@@ -156970,6 +157126,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-divide-opacity));
   }
 
+  .\32xl\:divide-ubb-orange > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-divide-opacity));
+  }
+
   .\32xl\:divide-solid > :not([hidden]) ~ :not([hidden]) {
     border-style: solid;
   }
@@ -163554,6 +163715,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .\32xl\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:border-transparent {
     border-color: transparent;
   }
@@ -163970,6 +164136,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .\32xl\:group-hover\:border-pink-900 {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:border-ubb-orange {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .\32xl\:focus-within\:border-transparent:focus-within {
@@ -164390,6 +164561,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .\32xl\:focus-within\:border-ubb-orange:focus-within {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .\32xl\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -164808,6 +164984,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
   }
 
+  .\32xl\:hover\:border-ubb-orange:hover {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
+  }
+
   .\32xl\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -165224,6 +165405,11 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .\32xl\:focus\:border-pink-900:focus {
     --tw-border-opacity: 1;
     border-color: rgba(131, 24, 67, var(--tw-border-opacity));
+  }
+
+  .\32xl\:focus\:border-ubb-orange:focus {
+    --tw-border-opacity: 1;
+    border-color: rgba(233, 84, 32, var(--tw-border-opacity));
   }
 
   .\32xl\:border-opacity-0 {
