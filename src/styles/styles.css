@@ -143,6 +143,21 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     }
 }
 
+.windowMainScreen::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+}
+
+.windowMainScreen::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+
+.windowMainScreen::-webkit-scrollbar-thumb {
+    background-color: #D3D7CF;
+    border-radius: 5px;
+}
+
 /* SideBarApp Scale image onClick */
 .scalable-app-icon {
     visibility: hidden;

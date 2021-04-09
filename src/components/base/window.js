@@ -1,9 +1,5 @@
-import React, { Component } from 'react'
-import Draggable from 'react-draggable'
-import WindowTopBar from '../util components/window-top-bar'
-import { WindowYBorder, WindowXBorder } from '../util components/window_border';
-import WindowMainScreen from '../util components/window_main_screen';
-import WindowEditButtons from '../util components/window_edit_buttons';
+import React, { Component } from 'react';
+import Draggable from 'react-draggable';
 
 export class Window extends Component {
     constructor() {
@@ -179,3 +175,105 @@ export class Window extends Component {
 }
 
 export default Window
+
+// Window's title bar
+export function WindowTopBar(props) {
+    return (
+        <div className="relative bg-ub-window-title border-white border-t-2 border-opacity-5 py-1.5 px-3 text-white w-full select-none rounded-lg rounded-b-none">
+            <div className="flex justify-center text-sm font-bold">{props.title}</div>
+        </div>
+    )
+}
+
+// Window's Borders
+export class WindowYBorder extends Component {
+    componentDidMount() {
+        this.trpImg = new Image(0, 0);
+        this.trpImg.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        this.trpImg.style.opacity = 0;
+    }
+    render() {
+        return (
+            <div className=" window-y-border border-transparent border-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" onDragStart={(e) => { e.dataTransfer.setDragImage(this.trpImg, 0, 0) }} onDrag={this.props.resize}>
+            </div>
+        )
+    }
+}
+
+export class WindowXBorder extends Component {
+    componentDidMount() {
+        this.trpImg = new Image(0, 0);
+        this.trpImg.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        this.trpImg.style.opacity = 0;
+    }
+    render() {
+        return (
+            <div className=" window-x-border border-transparent border-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" onDragStart={(e) => { e.dataTransfer.setDragImage(this.trpImg, 0, 0) }} onDrag={this.props.resize}>
+            </div>
+        )
+    }
+}
+
+// Window's Edit Buttons
+export function WindowEditButtons(props) {
+    return (
+        <div className="absolute select-none right-0 top-0 mt-1 mr-1 flex justify-center items-center">
+            <span className="mx-1.5 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={props.minimize}>
+                <img
+                    src="./themes/Yaru/window/window-minimize-symbolic.svg"
+                    alt="ubuntu window minimize"
+                    className="inline"
+                />
+            </span>
+            {
+                (props.isMaximised
+                    ?
+                    <span className="mx-2 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={props.maximize}>
+                        <img
+                            src="./themes/Yaru/window/window-restore-symbolic.svg"
+                            alt="ubuntu window restore"
+                            className="inline"
+                        />
+                    </span>
+                    :
+                    <span className="mx-2 bg-white bg-opacity-0 hover:bg-opacity-10 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={props.maximize}>
+                        <img
+                            src="./themes/Yaru/window/window-maximize-symbolic.svg"
+                            alt="ubuntu window maximize"
+                            className="inline"
+                        />
+                    </span>
+                )
+            }
+            <span className="mx-1.5 bg-ub-orange bg-opacity-90 hover:bg-opacity-100 rounded-full flex justify-center mt-1 h-5 w-5 items-center" onClick={props.close}>
+                <img
+                    src="./themes/Yaru/window/window-close-symbolic.svg"
+                    alt="ubuntu window close"
+                    className="inline"
+                />
+            </span>
+        </div>
+    )
+}
+
+// Window's Main Screen
+export class WindowMainScreen extends Component {
+    constructor() {
+        super();
+        this.state = {
+            setDarkBg: false,
+        }
+    }
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ setDarkBg: true });
+        }, 3000);
+    }
+    render() {
+        return (
+            <div className={"w-full flex-grow z-20 max-h-full overflow-y-auto windowMainScreen" + (this.state.setDarkBg ? " bg-ub-drk-abrgn " : " bg-ub-cool-grey")}>
+                {this.props.screen()}
+            </div>
+        )
+    }
+}

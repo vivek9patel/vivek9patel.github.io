@@ -104,8 +104,6 @@ export class Terminal extends Component {
     }
 
     clearInput = (id) => {
-        $(`#cmd span#show-${id}`).text('');
-        $(`input#terminal-input-${id}`).val('');
         $(`input#terminal-input-${id}`).trigger("blur");
     }
 

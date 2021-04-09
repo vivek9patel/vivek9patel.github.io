@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SideBarApp from '../base/side_bar_app';
-import AllApps from '../util components/sidebar_all_apps';
 
 let renderApps = (props) => {
     let sideBarAppsJsx = [];
@@ -40,4 +39,31 @@ export default function SideBar(props) {
             <div onMouseEnter={showSideBar} onMouseLeave={hideSideBar} className={"w-1 h-full absolute top-0 left-0 bg-transparent z-50"}></div>
         </>
     )
+}
+
+export function AllApps() {
+
+    const [title, setTitle] = useState(false);
+
+    return (
+        <div
+            className="absolute bottom-0 w-10 h-10 rounded m-1 hover:bg-white hover:bg-opacity-10 flex items-center justify-center"
+            onMouseEnter={() => {
+                setTitle(true);
+            }}
+            onMouseLeave={() => {
+                setTitle(false);
+            }}
+        >
+            <img className="w-7" src="./themes/Yaru/system/view-app-grid-symbolic.svg" alt="Ubuntu view app" />
+            <div
+                className={
+                    (title ? " visible " : " invisible ") +
+                    " w-max py-0.5 px-1.5 absolute top-1 left-full ml-3 m-1 text-ubt-grey text-opacity-90 text-sm bg-ub-grey bg-opacity-70 border-gray-400 border border-opacity-40 rounded-md"
+                }
+            >
+                Show Applications
+                        </div>
+        </div>
+    );
 }
