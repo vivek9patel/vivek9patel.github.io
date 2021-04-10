@@ -10,6 +10,19 @@ export class Chrome extends Component {
         }
     }
 
+    componentDidMount() {
+        let lastVisitedUrl = localStorage.getItem("chrome-url");
+        let lastDisplayedUrl = localStorage.getItem("chrome-display-url");
+        if (lastVisitedUrl !== null && lastVisitedUrl !== undefined) {
+            this.setState({ url: lastVisitedUrl, display_url: lastDisplayedUrl }, this.refreshChrome);
+        }
+    }
+
+    storeVisitedUrl = (url, display_url) => {
+        localStorage.setItem("chrome-url", url);
+        localStorage.setItem("chrome-display-url", display_url);
+    }
+
     refreshChrome = () => {
         document.getElementById("chrome-screen").src += '';
     }
@@ -22,6 +35,7 @@ export class Chrome extends Component {
     checkKey = (e) => {
         if (e.key === "Enter") {
             let url = e.target.value;
+            let display_url = "";
 
             url = url.trim();
             if (url.length === 0) return;
@@ -31,12 +45,13 @@ export class Chrome extends Component {
             }
 
             url = encodeURI(url);
-
+            display_url = url;
             if (url.includes("google.com")) { // 😅
-                this.setState({ url: 'https://www.google.com/webhp?igu=1', display_url: "https://www.google.com" });
+                url = 'https://www.google.com/webhp?igu=1';
+                display_url = "https://www.google.com";
             }
-            else this.setState({ url, display_url: url });
-
+            this.setState({ url, display_url: url });
+            this.storeVisitedUrl(url, display_url);
             document.getElementById("chrome-url-bar").blur();
         }
     }

@@ -28,6 +28,10 @@ function DefaultMenu(props) {
             <a rel="noreferrer" href="mailto:vivek.p9737@gmail.com" target="_blank" className="w-full block cursor-default py-0.5 hover:bg-ub-warm-grey hover:bg-opacity-20 mb-1.5">
                 <span className="ml-5">📥</span> <span className="ml-2">Contact Me</span>
             </a>
+            {devider()}
+            <div onClick={() => { localStorage.clear(); window.location.reload() }} className="w-full block cursor-default py-0.5 hover:bg-ub-warm-grey hover:bg-opacity-20 mb-1.5">
+                <span className="ml-5">🧹</span> <span className="ml-2">Reset Ubuntu</span>
+            </div>
         </div>
     )
 }

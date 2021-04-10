@@ -35,6 +35,15 @@ export class Desktop extends Component {
     componentDidMount() {
         this.fetchAppsData();
         this.setContextListeners();
+        this.getLocalData();
+    }
+
+    getLocalData = () => {
+        // Get Previously selected Background Image
+        let bg_image_path = localStorage.getItem("bg-image");
+        if (bg_image_path !== null && bg_image_path !== undefined) {
+            this.setState({ bg_image_path });
+        }
     }
 
     setContextListeners = () => {
@@ -207,6 +216,7 @@ export class Desktop extends Component {
 
     changeBackgroundImage = (img_path) => {
         this.setState({ bg_image_path: img_path });
+        localStorage.setItem("bg-image", img_path);
     }
 
     hideSideBar = (objId, hide) => {

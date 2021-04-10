@@ -41,12 +41,25 @@ export class Trash extends Component {
         }
     }
 
+    componentDidMount() {
+        // get user preference from local-storage
+        let wasEmpty = localStorage.getItem("trash-empty");
+        if (wasEmpty !== null && wasEmpty !== undefined) {
+            if (wasEmpty === "true") this.setState({ empty: true });
+        }
+    }
+
     focusFile = (e) => {
         // icon
         $(e.target).children().get(0).classList.toggle("opacity-60");
         // file name
         $(e.target).children().get(1).classList.toggle("bg-ub-orange");
     }
+
+    emptyTrash = () => {
+        this.setState({ empty: true });
+        localStorage.setItem("trash-empty", true);
+    };
 
     emptyScreen = () => {
         return (
@@ -83,7 +96,7 @@ export class Trash extends Component {
                     <span className="font-bold ml-2">Trash</span>
                     <div className="flex">
                         <div className="border border-black bg-black bg-opacity-50 px-3 py-1 my-1 mx-1 rounded text-gray-300">Restore</div>
-                        <div onClick={() => { this.setState({ empty: true }) }} className="border border-black bg-black bg-opacity-50 px-3 py-1 my-1 mx-1 rounded hover:bg-opacity-80">Empty</div>
+                        <div onClick={this.emptyTrash} className="border border-black bg-black bg-opacity-50 px-3 py-1 my-1 mx-1 rounded hover:bg-opacity-80">Empty</div>
                     </div>
                 </div>
                 {
