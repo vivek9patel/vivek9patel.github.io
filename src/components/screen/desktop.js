@@ -41,6 +41,7 @@ export class Desktop extends Component {
 
         document.addEventListener('contextmenu', (e) => {
             e.preventDefault();
+            this.hideAllContextMenu();
             switch (e.target.dataset.context) {
                 case "desktop-area":
                     showContextMenu(e, "desktop");

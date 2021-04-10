@@ -4,6 +4,7 @@ import displayTeams from './components/apps/msteams';
 import displaySpotify from './components/apps/spotify';
 import { displayTerminal } from './components/apps/terminal';
 import { displaySettings } from './components/apps/settings';
+import { displayChrome } from './components/apps/chrome';
 
 const apps = [
     {
@@ -13,7 +14,7 @@ const apps = [
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
-        screen: () => { },
+        screen: displayChrome,
     },
     {
         id: "todo-ist",
