@@ -15,16 +15,6 @@ const apps = [
         desktop_shortcut: true,
         screen: () => { },
     },
-
-    {
-        id: "file-manager",
-        title: "Files",
-        icon: './themes/Yaru/apps/filemanager-app.png',
-        disabled: false,
-        favourite: true,
-        desktop_shortcut: false,
-        screen: () => { },
-    },
     {
         id: "todo-ist",
         title: "Todoist",
