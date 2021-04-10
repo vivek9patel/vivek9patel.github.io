@@ -65,7 +65,7 @@ export default class Navbar extends Component {
                 </div>
                 <div className={"relative pr-3 pl-3 transition duration-100 ease-in-out navbar-box status-bar-icons" + (this.state.status_card_focused ? " navbar-box-active" : "")} data-nav-comp="status" onClick={this.display_btm_bar}>
                     <Status />
-                    <StatusCard visible={this.state.status_card_focused} />
+                    <StatusCard lockScreen={this.props.lockScreen} visible={this.state.status_card_focused} />
                 </div>
             </div>
         )

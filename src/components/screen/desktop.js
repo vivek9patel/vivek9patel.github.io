@@ -28,58 +28,55 @@ export class Desktop extends Component {
                 default: false,
             },
             showNameBar: false,
-            bg_image_path: "./images/wallpapers/wall-2.png",
         }
     }
 
     componentDidMount() {
         this.fetchAppsData();
         this.setContextListeners();
-        this.getLocalData();
     }
 
-    getLocalData = () => {
-        // Get Previously selected Background Image
-        let bg_image_path = localStorage.getItem("bg-image");
-        if (bg_image_path !== null && bg_image_path !== undefined) {
-            this.setState({ bg_image_path });
-        }
+    componentWillUnmount() {
+        this.removeContextListeners();
     }
 
     setContextListeners = () => {
-
-        document.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            this.hideAllContextMenu();
-            switch (e.target.dataset.context) {
-                case "desktop-area":
-                    showContextMenu(e, "desktop");
-                    break;
-                default:
-                    showContextMenu(e, "default");
-            }
-        });
-
+        document.addEventListener('contextmenu', this.checkContextMenu);
         // on click, anywhere, hide all menus
-        document.addEventListener('click', () => {
-            this.hideAllContextMenu();
-        });
+        document.addEventListener('click', this.hideAllContextMenu);
+    }
 
-        let showContextMenu = (e, menuName /* context menu name */) => {
-            let { posx, posy } = this.getMenuPosition(e);
-            let contextMenu = document.getElementById(`${menuName}-menu`);
+    removeContextListeners = () => {
+        document.removeEventListener("contextmenu", this.checkContextMenu);
+        document.removeEventListener("click", this.hideAllContextMenu);
+    }
 
-            if (posx + $(contextMenu).width() > window.innerWidth) posx -= $(contextMenu).width();
-            if (posy + $(contextMenu).height() > window.innerHeight) posy -= $(contextMenu).height();
-
-            posx = posx.toString() + "px";
-            posy = posy.toString() + "px";
-
-            contextMenu.style.left = posx;
-            contextMenu.style.top = posy;
-
-            this.setState({ context_menus: { ...this.state.context_menus, [menuName]: true } });
+    checkContextMenu = (e) => {
+        e.preventDefault();
+        this.hideAllContextMenu();
+        switch (e.target.dataset.context) {
+            case "desktop-area":
+                this.showContextMenu(e, "desktop");
+                break;
+            default:
+                this.showContextMenu(e, "default");
         }
+    }
+
+    showContextMenu = (e, menuName /* context menu name */) => {
+        let { posx, posy } = this.getMenuPosition(e);
+        let contextMenu = document.getElementById(`${menuName}-menu`);
+
+        if (posx + $(contextMenu).width() > window.innerWidth) posx -= $(contextMenu).width();
+        if (posy + $(contextMenu).height() > window.innerHeight) posy -= $(contextMenu).height();
+
+        posx = posx.toString() + "px";
+        posy = posy.toString() + "px";
+
+        contextMenu.style.left = posx;
+        contextMenu.style.top = posy;
+
+        this.setState({ context_menus: { ...this.state.context_menus, [menuName]: true } });
     }
 
     hideAllContextMenu = () => {
@@ -207,16 +204,11 @@ export class Desktop extends Component {
         apps.forEach((app, index) => {
             if (this.state.closed_windows[app.id] === false) {
                 windowsJsx.push(
-                    <Window key={index} title={app.title} id={app.id} screen={app.screen} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} hasMinimised={this.hasMinimised} minimized={this.state.minimized_windows[app.id]} changeBackgroundImage={this.changeBackgroundImage} bg_image_path={this.state.bg_image_path} />
+                    <Window key={index} title={app.title} id={app.id} screen={app.screen} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} hasMinimised={this.hasMinimised} minimized={this.state.minimized_windows[app.id]} changeBackgroundImage={this.props.changeBackgroundImage} bg_image_path={this.props.bg_image_path} />
                 )
             }
         });
         return windowsJsx;
-    }
-
-    changeBackgroundImage = (img_path) => {
-        this.setState({ bg_image_path: img_path });
-        localStorage.setItem("bg-image", img_path);
     }
 
     hideSideBar = (objId, hide) => {
@@ -400,7 +392,7 @@ export class Desktop extends Component {
                 </div>
 
                 {/* Background Image */}
-                <BackgroundImage img={this.state.bg_image_path} />
+                <BackgroundImage img={this.props.bg_image_path} />
 
                 {/* Ubuntu Side Menu Bar */}
                 <SideBar apps={apps} hide={this.state.hideSideBar} hideSideBar={this.hideSideBar} favourite_apps={this.state.favourite_apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} isMinimized={this.state.minimized_windows} openAppByAppId={this.openApp} />

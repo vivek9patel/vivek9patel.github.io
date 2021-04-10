@@ -73,7 +73,6 @@ export class StatusCard extends Component {
                     </div>
                     <div className="w-2/3 flex items-center justify-between">
                         <span>Settings</span>
-                        <SmallArrow angle="right" />
                     </div>
                 </div>
                 <div className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
@@ -82,10 +81,9 @@ export class StatusCard extends Component {
                     </div>
                     <div className="w-2/3 flex items-center justify-between">
                         <span>Lock</span>
-                        <SmallArrow angle="right" />
                     </div>
                 </div>
-                <div className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
+                <div onClick={this.props.lockScreen} className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
                     <div className="w-8">
                         <img src="./themes/Yaru/status/system-shutdown-symbolic.svg" alt="ubuntu battery" />
                     </div>

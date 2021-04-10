@@ -37,8 +37,14 @@ export default class Clock extends Component {
 
         if (this.state.hour_12 && hour > 12) hour -= 12;
 
-        let display_time = day + " " + month + " " + date + " " + hour + ":" + minute + " " + meridiem;
-
+        let display_time;
+        if (this.props.onlyTime !== undefined && this.props.onlyTime !== null) {
+            display_time = hour + ":" + minute + " " + meridiem;
+        }
+        else if (this.props.onlyDay !== undefined && this.props.onlyDay !== null) {
+            display_time = day + " " + month + " " + date;
+        }
+        else display_time = day + " " + month + " " + date + " " + hour + ":" + minute + " " + meridiem;
         return display_time;
     }
 }
