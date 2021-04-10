@@ -130,7 +130,7 @@ export class Window extends Component {
             var r = document.querySelector("#" + this.id);
             this.setWinowsPosition();
             // translate window to maximize position
-            r.style.transform = `translate(0px,-3px)`;
+            r.style.transform = `translate(0px,-4px)`;
             this.setState({ maximized: true, height: 95.5, width: 100 });
             this.props.hideSideBar(this.id, true);
         }
