@@ -5,10 +5,10 @@ export default function LockScreen(props) {
 
     useEffect(() => {
         window.addEventListener('click', unLockScreen);
-        window.addEventListener('keydown', unLockScreen);
+        window.addEventListener('keypress', unLockScreen);
         return () => {
             window.removeEventListener('click', unLockScreen);
-            window.removeEventListener('keydown', unLockScreen);
+            window.removeEventListener('keypress', unLockScreen);
         }
     });
 

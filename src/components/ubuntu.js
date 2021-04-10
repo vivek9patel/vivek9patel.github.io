@@ -22,14 +22,22 @@ export default class Ubuntu extends Component {
     if (bg_image_path !== null && bg_image_path !== undefined) {
       this.setState({ bg_image_path });
     }
+
+    // Get previous screen state
+    let screen_locked = localStorage.getItem("screen-locked");
+    if (screen_locked !== null && screen_locked !== undefined) {
+      this.setState({ screen_locked: (screen_locked === "true" ? true : false) });
+    }
   }
 
   lockScreen = () => {
     this.setState({ screen_locked: true });
+    localStorage.setItem("screen-locked", true);
   }
 
   unLockScreen = () => {
     this.setState({ screen_locked: false });
+    localStorage.setItem("screen-locked", false);
   }
 
   changeBackgroundImage = (img_path) => {
