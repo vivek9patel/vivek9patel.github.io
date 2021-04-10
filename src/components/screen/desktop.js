@@ -28,7 +28,7 @@ export class Desktop extends Component {
                 default: false,
             },
             showNameBar: false,
-            bg_image_path: "./images/wallpapers/wall-1.jpg",
+            bg_image_path: "./images/wallpapers/wall-2.png",
         }
     }
 

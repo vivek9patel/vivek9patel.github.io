@@ -19,14 +19,14 @@ export function Settings(props) {
 
     return (
         <div className={"w-full flex-col flex-grow z-20 max-h-full overflow-y-auto windowMainScreen select-none bg-ub-cool-grey"}>
-            <div className="flex justify-center items-center my-4">
-                <img className=" w-2/5" src={props.currBgImg} alt="Ubuntu Current Wallpaper" />
+            <div className=" md:w-2/5 w-2/3 h-1/3 m-auto my-4" style={{ backgroundImage: `url(${props.currBgImg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}>
+                {/* <img className=" w-2/5" src={props.currBgImg} alt="Ubuntu Current Wallpaper" /> */}
             </div>
             <div className="flex flex-wrap justify-center items-center border-t border-gray-900">
                 {
                     wallpapers.map(wallpaper => {
                         return (
-                            <div tabIndex="2" onFocus={changeBackgroundImage} data-path={wallpaper.path} className={((wallpaper.path === props.currBgImg) ? " border-yellow-700 " : " border-transparent ") + " px-28 py-20 outline-none border-4 border-opacity-80 m-4"} style={{ backgroundImage: `url(${wallpaper.path})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
+                            <div tabIndex="2" onFocus={changeBackgroundImage} data-path={wallpaper.path} className={((wallpaper.path === props.currBgImg) ? " border-yellow-700 " : " border-transparent ") + " md:px-28 md:py-20 md:m-4 m-2 px-14 py-10 outline-none border-4 border-opacity-80"} style={{ backgroundImage: `url(${wallpaper.path})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
                         );
                     })
                 }
