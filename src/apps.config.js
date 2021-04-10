@@ -3,6 +3,7 @@ import displayTodoist from './components/apps/todoist';
 import displayTeams from './components/apps/msteams';
 import displaySpotify from './components/apps/spotify';
 import { displayTerminal } from './components/apps/terminal';
+import { displaySettings } from './components/apps/settings';
 
 const apps = [
     {
@@ -73,10 +74,10 @@ const apps = [
         id: "settings",
         title: "Settings",
         icon: './themes/Yaru/apps/gnome-control-center.png',
-        disabled: true,
+        disabled: false,
         favourite: true,
         desktop_shortcut: false,
-        screen: () => { },
+        screen: displaySettings,
     },
     {
         id: "store",
