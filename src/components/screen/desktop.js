@@ -5,6 +5,8 @@ import apps from '../../apps.config';
 import Window from '../base/window';
 import UbuntuApp from '../base/ubuntu_app';
 import DesktopMenu from '../context menus/desktop-menu';
+import DefaultMenu from '../context menus/default';
+import $ from 'jquery';
 
 export class Desktop extends Component {
     constructor() {
@@ -23,6 +25,7 @@ export class Desktop extends Component {
             desktop_apps: [],
             context_menus: {
                 desktop: false,
+                default: false,
             },
             showNameBar: false,
             bg_image_path: "./images/wallpapers/wall-1.jpg",
@@ -35,25 +38,38 @@ export class Desktop extends Component {
     }
 
     setContextListeners = () => {
-        let desktop = 'desktop-area';
 
-        // Disabling Global context menu
         document.addEventListener('contextmenu', (e) => {
             e.preventDefault();
-        })
+            switch (e.target.dataset.context) {
+                case "desktop-area":
+                    showContextMenu(e, "desktop");
+                    break;
+                default:
+                    showContextMenu(e, "default");
+            }
+        });
 
         // on click, anywhere, hide all menus
         document.addEventListener('click', () => {
             this.hideAllContextMenu();
-        })
+        });
 
-        // Context Menu for Desktop
-        document.getElementById(desktop).addEventListener('contextmenu', (e) => {
+        let showContextMenu = (e, menuName /* context menu name */) => {
             let { posx, posy } = this.getMenuPosition(e);
-            document.getElementById("desktop-menu").style.left = posx;
-            document.getElementById("desktop-menu").style.top = posy;
-            this.setState({ context_menus: { ...this.state.context_menus, desktop: true } });
-        })
+            let contextMenu = document.getElementById(`${menuName}-menu`);
+
+            if (posx + $(contextMenu).width() > window.innerWidth) posx -= $(contextMenu).width();
+            if (posy + $(contextMenu).height() > window.innerHeight) posy -= $(contextMenu).height();
+
+            posx = posx.toString() + "px";
+            posy = posy.toString() + "px";
+
+            contextMenu.style.left = posx;
+            contextMenu.style.top = posy;
+
+            this.setState({ context_menus: { ...this.state.context_menus, [menuName]: true } });
+        }
     }
 
     hideAllContextMenu = () => {
@@ -79,8 +95,6 @@ export class Desktop extends Component {
             posy = e.clientY + document.body.scrollTop +
                 document.documentElement.scrollTop;
         }
-        posx = posx.toString() + "px";
-        posy = posy.toString() + "px";
         return {
             posx, posy
         }
@@ -370,7 +384,7 @@ export class Desktop extends Component {
             <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full flex flex-col items-end justify-start content-end flex-wrap pt-8 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
 
                 {/* Window Area */}
-                <div className="absolute h-full w-full bg-transparent" id="desktop-area">
+                <div className="absolute h-full w-full bg-transparent" data-context="desktop-area">
                     {this.renderWindows()}
                 </div>
 
@@ -385,6 +399,7 @@ export class Desktop extends Component {
 
                 {/* Context Menus */}
                 <DesktopMenu active={this.state.context_menus.desktop} openApp={this.openApp} addNewFolder={this.addNewFolder} />
+                <DefaultMenu active={this.state.context_menus.default} />
 
                 {/* Folder Input Name Bar */}
                 {
