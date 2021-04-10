@@ -5,6 +5,7 @@ import displaySpotify from './components/apps/spotify';
 import { displayTerminal } from './components/apps/terminal';
 import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
+import { displayTrash } from './components/apps/trash';
 
 const apps = [
     {
@@ -93,10 +94,10 @@ const apps = [
         id: "trash",
         title: "Trash",
         icon: './themes/Yaru/system/user-trash-full.png',
-        disabled: true,
+        disabled: false,
         favourite: false,
         desktop_shortcut: true,
-        screen: () => { },
+        screen: displayTrash,
     },
 ]
 
