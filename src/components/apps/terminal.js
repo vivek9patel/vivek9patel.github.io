@@ -10,7 +10,7 @@ export class Terminal extends Component {
         this.curr_dir_name = "root";
         this.child_directories = {
             root: ["books", "PDPU", "projects", "personals"],
-            books: [" Deep-Learning-with-PyTorch.pdf", "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.pdf", "Elon Musk: How the Billionaire CEO of SpaceX.pdf"],
+            books: ["Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.pdf", "Elon Musk: How the Billionaire CEO of SpaceX.pdf", "The $100 Startup_CHRIS_GUILLEBEAU.pdf", "The_Magic_of_Thinking_Big.pdf"],
             PDPU: ['Outline of Curriculum UG-CE PDPU.pdf', 'Sem - 6'],
             projects: ["vivek9patel-personal-portfolio", "synonyms-list-react", "economist.com-unlocked", "Improve-Codeforces", "flutter-banking-app", "Meditech-Healthcare", "CPU-Scheduling-APP-React-Native"],
         };
@@ -137,10 +137,10 @@ export class Terminal extends Component {
         words.shift()
         let result = "";
         let rest = words.join(" ");
-
+        rest = rest.trim();
         switch (main) {
             case "cd":
-                if (words.length === 0) {
+                if (words.length === 0 || rest === "") {
                     this.current_directory = "~";
                     this.curr_dir_name = "root"
                     break;
