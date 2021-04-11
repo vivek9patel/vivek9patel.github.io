@@ -36,10 +36,33 @@ export class Desktop extends Component {
         this.fetchAppsData();
         this.setContextListeners();
         this.setEventListeners();
+        this.checkForNewFolders();
     }
 
     componentWillUnmount() {
         this.removeContextListeners();
+    }
+
+    checkForNewFolders = () => {
+        var new_folders = localStorage.getItem('new_folders');
+        if (new_folders === null && new_folders !== undefined) {
+            localStorage.setItem("new_folders", JSON.stringify([]));
+        }
+        else {
+            new_folders = JSON.parse(new_folders);
+            new_folders.forEach(folder => {
+                apps.push({
+                    id: `new-folder-${folder.id}`,
+                    title: folder.name,
+                    icon: './themes/Yaru/system/folder.png',
+                    disabled: true,
+                    favourite: false,
+                    desktop_shortcut: true,
+                    screen: () => { },
+                });
+            });
+            this.updateAppsData();
+        }
     }
 
     setEventListeners = () => {
@@ -369,6 +392,11 @@ export class Desktop extends Component {
                 desktop_shortcut: true,
                 screen: () => { },
             });
+            // store in local storage
+            var new_folders = JSON.parse(localStorage.getItem('new_folders'));
+            new_folders.push({ id: `new-folder-${folder_id}`, name: folder_name });
+            localStorage.setItem("new_folders", JSON.stringify(new_folders));
+
             this.setState({ showNameBar: false }, this.updateAppsData);
         }
 
