@@ -32,7 +32,7 @@ export class SideBarApp extends Component {
     render() {
         return (
             <div
-                tabIndex="1"
+                tabIndex="0"
                 onClick={this.openApp}
                 onMouseEnter={() => {
                     this.setState({ showTitle: true });

@@ -76,7 +76,7 @@ export class Trash extends Component {
                 {
                     this.trashItems.map(item => {
                         return (
-                            <div tabIndex="2" onFocus={this.focusFile} onBlur={this.focusFile} className="flex flex-col items-center text-sm outline-none w-16 my-2 mx-4">
+                            <div tabIndex="1" onFocus={this.focusFile} onBlur={this.focusFile} className="flex flex-col items-center text-sm outline-none w-16 my-2 mx-4">
                                 <div className="w-16 h-16 flex items-center justify-center">
                                     <img src={item.icon} alt="Ubuntu File Icons" />
                                 </div>

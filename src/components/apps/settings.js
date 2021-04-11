@@ -26,7 +26,7 @@ export function Settings(props) {
                 {
                     wallpapers.map((wallpaper, index) => {
                         return (
-                            <div key={index} tabIndex="2" onFocus={changeBackgroundImage} data-path={wallpaper.path} className={((wallpaper.path === props.currBgImg) ? " border-yellow-700 " : " border-transparent ") + " md:px-28 md:py-20 md:m-4 m-2 px-14 py-10 outline-none border-4 border-opacity-80"} style={{ backgroundImage: `url(${wallpaper.path})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
+                            <div key={index} tabIndex="1" onFocus={changeBackgroundImage} data-path={wallpaper.path} className={((wallpaper.path === props.currBgImg) ? " border-yellow-700 " : " border-transparent ") + " md:px-28 md:py-20 md:m-4 m-2 px-14 py-10 outline-none border-4 border-opacity-80"} style={{ backgroundImage: `url(${wallpaper.path})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }}></div>
                         );
                     })
                 }

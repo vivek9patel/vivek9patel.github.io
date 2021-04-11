@@ -55,7 +55,7 @@ export class StatusCard extends Component {
                     <div className="w-8">
                         <img src="./themes/Yaru/status/network-wireless-signal-good-symbolic.svg" alt="ubuntu wifi" />
                     </div>
-                    <div className="w-2/3 flex items-center justify-between">
+                    <div className="w-2/3 flex items-center justify-between text-gray-400">
                         <span>OnePlus 8 Pro</span>
                         <SmallArrow angle="right" />
                     </div>
@@ -64,7 +64,7 @@ export class StatusCard extends Component {
                     <div className="w-8">
                         <img src="./themes/Yaru/status/bluetooth-symbolic.svg" alt="ubuntu bluetooth" />
                     </div>
-                    <div className="w-2/3 flex items-center justify-between">
+                    <div className="w-2/3 flex items-center justify-between text-gray-400">
                         <span>Off</span>
                         <SmallArrow angle="right" />
                     </div>
@@ -73,7 +73,7 @@ export class StatusCard extends Component {
                     <div className="w-8">
                         <img src="./themes/Yaru/status/battery-good-symbolic.svg" alt="ubuntu battery" />
                     </div>
-                    <div className="w-2/3 flex items-center justify-between">
+                    <div className="w-2/3 flex items-center justify-between text-gray-400">
                         <span>2:40 Remaining (75%)</span>
                         <SmallArrow angle="right" />
                     </div>
