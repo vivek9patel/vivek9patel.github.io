@@ -17,7 +17,7 @@ export default function LockScreen(props) {
     }
 
     return (
-        <div style={{ backgroundImage: `url(${props.bgImgPath})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPositionX: "center" }} className=" absolute top-0 right-0 overflow-hidden m-0 p-0 h-screen w-screen bg-opacity-50">
+        <div style={{ backgroundImage: `url(${props.bgImgPath})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPositionX: "center" }} className=" absolute select-none top-0 right-0 overflow-hidden m-0 p-0 h-screen w-screen bg-opacity-50">
             <div className="lock-screen flex flex-col justify-center items-center text-white">
                 <div className=" text-7xl">
                     <Clock onlyTime={true} />

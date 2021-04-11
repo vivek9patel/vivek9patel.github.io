@@ -13,6 +13,7 @@ export class Desktop extends Component {
         super();
         this.app_stack = [];
         this.initFavourite = {};
+        this.allWindowClosed = false;
         this.state = {
             cursorWait: false,
             focused_windows: {},
@@ -34,10 +35,23 @@ export class Desktop extends Component {
     componentDidMount() {
         this.fetchAppsData();
         this.setContextListeners();
+        this.setEventListeners();
     }
 
     componentWillUnmount() {
         this.removeContextListeners();
+    }
+
+    componentDidUpdate() {
+        if (this.props.closeAllApps && !this.allWindowClosed) {
+            this.closeAllApps();
+        }
+    }
+
+    setEventListeners = () => {
+        document.getElementById("open-settings").addEventListener("click", () => {
+            this.openApp("settings");
+        });
     }
 
     setContextListeners = () => {
@@ -325,6 +339,17 @@ export class Desktop extends Component {
         if (this.initFavourite[objId] === false) favourite_apps[objId] = false; // if user default app is not favourite, remove from sidebar
         closed_windows[objId] = true; // closes the app's window
 
+        this.setState({ closed_windows, favourite_apps });
+    }
+
+    closeAllApps = () => {
+        let closed_windows = this.state.closed_windows;
+        let favourite_apps = this.state.favourite_apps;
+        for (const key in closed_windows) {
+            if (this.initFavourite[key] === false) favourite_apps[key] = false; // if user default app is not favourite, remove from sidebar
+            closed_windows[key] = true;
+        }
+        this.allWindowClosed = true;
         this.setState({ closed_windows, favourite_apps });
     }
 

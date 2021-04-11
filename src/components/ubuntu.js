@@ -9,6 +9,7 @@ export default class Ubuntu extends Component {
     this.state = {
       screen_locked: false,
       bg_image_path: "./images/wallpapers/wall-2.png",
+      close_all_windows: false,
     }
   }
 
@@ -31,12 +32,18 @@ export default class Ubuntu extends Component {
   }
 
   lockScreen = () => {
-    this.setState({ screen_locked: true });
+    this.setState({ close_all_windows: true });
+    setTimeout(() => {
+      this.setState({ screen_locked: true });
+    }, 400);
     localStorage.setItem("screen-locked", true);
   }
 
   unLockScreen = () => {
-    this.setState({ screen_locked: false });
+    this.setState({ close_all_windows: false });
+    setTimeout(() => {
+      this.setState({ screen_locked: false });
+    }, 400);
     localStorage.setItem("screen-locked", false);
   }
 
@@ -54,7 +61,7 @@ export default class Ubuntu extends Component {
             :
             <>
               <Navbar lockScreen={this.lockScreen} />
-              <Desktop bg_image_path={this.state.bg_image_path} changeBackgroundImage={this.changeBackgroundImage} />
+              <Desktop bg_image_path={this.state.bg_image_path} changeBackgroundImage={this.changeBackgroundImage} closeAllApps={this.state.close_all_windows} />
             </>
           )
         }

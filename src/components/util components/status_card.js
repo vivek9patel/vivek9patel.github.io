@@ -10,12 +10,26 @@ export class StatusCard extends Component {
         }
     }
 
+    componentDidMount() {
+        let sound_level = localStorage.getItem("sound-level");
+        if (sound_level !== null && sound_level !== undefined) {
+            this.setState({ sound_level });
+        }
+
+        let brightness_level = localStorage.getItem("brightness-level");
+        if (brightness_level !== null && brightness_level !== undefined) {
+            this.setState({ brightness_level });
+        }
+    }
+
     handleBrightness = (e) => {
         this.setState({ brightness_level: e.target.value });
+        localStorage.setItem("brightness-level", e.target.value);
     }
 
     handleSound = (e) => {
         this.setState({ sound_level: e.target.value });
+        localStorage.setItem("sound-level", e.target.value);
     }
 
     render() {
@@ -67,17 +81,17 @@ export class StatusCard extends Component {
                 <div className="w-64 flex content-center justify-center">
                     <div className="w-2/4 border-black border-opacity-50 border-b my-2 border-solid"></div>
                 </div>
-                <div className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
+                <div id="open-settings" className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
                     <div className="w-8">
-                        <img src="./themes/Yaru/status/emblem-system-symbolic.svg" alt="ubuntu battery" />
+                        <img src="./themes/Yaru/status/emblem-system-symbolic.svg" alt="ubuntu settings" />
                     </div>
                     <div className="w-2/3 flex items-center justify-between">
                         <span>Settings</span>
                     </div>
                 </div>
-                <div className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
+                <div onClick={this.props.lockScreen} className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
                     <div className="w-8">
-                        <img src="./themes/Yaru/status/changes-prevent-symbolic.svg" alt="ubuntu battery" />
+                        <img src="./themes/Yaru/status/changes-prevent-symbolic.svg" alt="ubuntu lock" />
                     </div>
                     <div className="w-2/3 flex items-center justify-between">
                         <span>Lock</span>
@@ -85,7 +99,7 @@ export class StatusCard extends Component {
                 </div>
                 <div onClick={this.props.lockScreen} className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
                     <div className="w-8">
-                        <img src="./themes/Yaru/status/system-shutdown-symbolic.svg" alt="ubuntu battery" />
+                        <img src="./themes/Yaru/status/system-shutdown-symbolic.svg" alt="ubuntu power" />
                     </div>
                     <div className="w-2/3 flex items-center justify-between">
                         <span>Power Off / Log Out</span>

@@ -82,7 +82,7 @@ const apps = [
     },
     {
         id: "home_folder",
-        title: "Home",
+        title: "Vivek",
         icon: './themes/Yaru/system/user-home.png',
         disabled: true,
         favourite: false,
