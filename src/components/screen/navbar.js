@@ -24,7 +24,7 @@ export default class Navbar extends Component {
                 </div>
                 <div id="status-bar" tabIndex="0" onFocus={() => { this.setState({ status_card: true }) }} onBlur={() => { this.setState({ status_card: false }) }} className={"relative pr-3 pl-3 outline-none transition duration-100 ease-in-out border-b-2 border-transparent focus:border-ubb-orange py-1 "} >
                     <Status />
-                    <StatusCard lockScreen={this.props.lockScreen} visible={this.state.status_card} />
+                    <StatusCard shutDown={this.props.shutDown} lockScreen={this.props.lockScreen} visible={this.state.status_card} />
                 </div>
             </div>
         )

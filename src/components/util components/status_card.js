@@ -97,7 +97,7 @@ export class StatusCard extends Component {
                         <span>Lock</span>
                     </div>
                 </div>
-                <div onClick={this.props.lockScreen} className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
+                <div onClick={this.props.shutDown} className="w-64 py-1.5 flex items-center justify-center bg-ub-cool-grey hover:bg-ub-warm-grey hover:bg-opacity-20">
                     <div className="w-8">
                         <img src="./themes/Yaru/status/system-shutdown-symbolic.svg" alt="ubuntu power" />
                     </div>
