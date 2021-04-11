@@ -10,7 +10,6 @@ export default class Ubuntu extends Component {
     this.state = {
       screen_locked: false,
       bg_image_path: "./images/wallpapers/wall-2.png",
-      close_all_windows: false,
       booting_screen: true,
       shutDownScreen: false,
     }
@@ -57,10 +56,10 @@ export default class Ubuntu extends Component {
   }
 
   lockScreen = () => {
-    this.setState({ close_all_windows: true });
+    document.getElementById("status-bar").blur();
     setTimeout(() => {
       this.setState({ screen_locked: true });
-    }, 400); // waiting for all windows to close (transition-duration)
+    }, 100); // waiting for all windows to close (transition-duration)
     localStorage.setItem("screen-locked", true);
   }
 
@@ -75,6 +74,7 @@ export default class Ubuntu extends Component {
   }
 
   shutDown = () => {
+    document.getElementById("status-bar").blur();
     this.setState({ shutDownScreen: true });
     localStorage.setItem("shut-down", true);
   }
@@ -88,17 +88,10 @@ export default class Ubuntu extends Component {
   render() {
     return (
       <div className="w-screen h-screen overflow-hidden">
-        {
-          (this.state.screen_locked
-            ? <LockScreen bgImgPath={this.state.bg_image_path} unLockScreen={this.unLockScreen} />
-            :
-            <>
-              <BootingScreen visible={this.state.booting_screen} isShutDown={this.state.shutDownScreen} turnOn={this.turnOn} />
-              <Navbar lockScreen={this.lockScreen} shutDown={this.shutDown} />
-              <Desktop bg_image_path={this.state.bg_image_path} changeBackgroundImage={this.changeBackgroundImage} closeAllApps={this.state.close_all_windows} />
-            </>
-          )
-        }
+        <LockScreen isLocked={this.state.screen_locked} bgImgPath={this.state.bg_image_path} unLockScreen={this.unLockScreen} />
+        <BootingScreen visible={this.state.booting_screen} isShutDown={this.state.shutDownScreen} turnOn={this.turnOn} />
+        <Navbar lockScreen={this.lockScreen} shutDown={this.shutDown} />
+        <Desktop bg_image_path={this.state.bg_image_path} changeBackgroundImage={this.changeBackgroundImage} />
       </div>
     );
   }
