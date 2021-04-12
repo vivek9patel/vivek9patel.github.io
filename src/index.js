@@ -1,13 +1,13 @@
-import ReactGA from 'react-ga';
-const TRACKING_ID = "UA-182113713-1";
-ReactGA.initialize(TRACKING_ID);
-
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/main.css";
 import "./styles/test.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+import ReactGA from 'react-ga';
+const TRACKING_ID = "UA-182113713-1";
+ReactGA.initialize(TRACKING_ID);
 
 ReactDOM.render(
   <React.StrictMode>
