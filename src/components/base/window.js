@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import Settings from '../apps/settings';
+import ReactGA from 'react-ga';
 
 export class Window extends Component {
     constructor() {
@@ -24,6 +25,13 @@ export class Window extends Component {
     componentDidMount() {
         this.id = this.props.id;
         this.setDefaultWindowDimenstion();
+
+        // google analytics
+        ReactGA.pageview(`/${this.id}`);
+    }
+
+    componentWillUnmount() {
+        ReactGA.pageview("/desktop");
     }
 
     setDefaultWindowDimenstion = () => {
