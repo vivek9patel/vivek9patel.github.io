@@ -235,7 +235,7 @@ export class Desktop extends Component {
         apps.forEach((app, index) => {
             if (this.state.closed_windows[app.id] === false) {
                 windowsJsx.push(
-                    <Window key={index} title={app.title} id={app.id} screen={app.screen} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} hasMinimised={this.hasMinimised} minimized={this.state.minimized_windows[app.id]} changeBackgroundImage={this.props.changeBackgroundImage} bg_image_path={this.props.bg_image_path} />
+                    <Window key={index} title={app.title} id={app.id} screen={app.screen} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} hasMinimised={this.hasMinimised} minimized={this.state.minimized_windows[app.id]} changeBackgroundImage={this.props.changeBackgroundImage} bg_image_name={this.props.bg_image_name} />
                 )
             }
         });
@@ -428,7 +428,7 @@ export class Desktop extends Component {
                 </div>
 
                 {/* Background Image */}
-                <BackgroundImage img={this.props.bg_image_path} />
+                <BackgroundImage img={this.props.bg_image_name} />
 
                 {/* Ubuntu Side Menu Bar */}
                 <SideBar apps={apps} hide={this.state.hideSideBar} hideSideBar={this.hideSideBar} favourite_apps={this.state.favourite_apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} isMinimized={this.state.minimized_windows} openAppByAppId={this.openApp} />

@@ -9,7 +9,7 @@ export default class Ubuntu extends Component {
     super();
     this.state = {
       screen_locked: false,
-      bg_image_path: "./images/wallpapers/wall-2.png",
+      bg_image_name: "wall-2",
       booting_screen: true,
       shutDownScreen: false,
     }
@@ -27,9 +27,9 @@ export default class Ubuntu extends Component {
 
   getLocalData = () => {
     // Get Previously selected Background Image
-    let bg_image_path = localStorage.getItem("bg-image");
-    if (bg_image_path !== null && bg_image_path !== undefined) {
-      this.setState({ bg_image_path });
+    let bg_image_name = localStorage.getItem("bg-image");
+    if (bg_image_name !== null && bg_image_name !== undefined) {
+      this.setState({ bg_image_name });
     }
 
     let booting_screen = localStorage.getItem("booting_screen");
@@ -68,9 +68,9 @@ export default class Ubuntu extends Component {
     localStorage.setItem("screen-locked", false);
   }
 
-  changeBackgroundImage = (img_path) => {
-    this.setState({ bg_image_path: img_path });
-    localStorage.setItem("bg-image", img_path);
+  changeBackgroundImage = (img_name) => {
+    this.setState({ bg_image_name: img_name });
+    localStorage.setItem("bg-image", img_name);
   }
 
   shutDown = () => {
@@ -88,10 +88,10 @@ export default class Ubuntu extends Component {
   render() {
     return (
       <div className="w-screen h-screen overflow-hidden">
-        <LockScreen isLocked={this.state.screen_locked} bgImgPath={this.state.bg_image_path} unLockScreen={this.unLockScreen} />
+        <LockScreen isLocked={this.state.screen_locked} bgImgPath={this.state.bg_image_name} unLockScreen={this.unLockScreen} />
         <BootingScreen visible={this.state.booting_screen} isShutDown={this.state.shutDownScreen} turnOn={this.turnOn} />
         <Navbar lockScreen={this.lockScreen} shutDown={this.shutDown} />
-        <Desktop bg_image_path={this.state.bg_image_path} changeBackgroundImage={this.changeBackgroundImage} />
+        <Desktop bg_image_name={this.state.bg_image_name} changeBackgroundImage={this.changeBackgroundImage} />
       </div>
     );
   }

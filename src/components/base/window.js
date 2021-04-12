@@ -169,7 +169,7 @@ export class Window extends Component {
                     <WindowTopBar title={this.props.title} />
                     <WindowEditButtons minimize={this.minimizeWindow} maximize={this.maximizeWindow} isMaximised={this.state.maximized} close={this.closeWindow} />
                     {(this.id === "settings"
-                        ? <Settings changeBackgroundImage={this.props.changeBackgroundImage} currBgImg={this.props.bg_image_path} />
+                        ? <Settings changeBackgroundImage={this.props.changeBackgroundImage} currBgImgName={this.props.bg_image_name} />
                         : <WindowMainScreen screen={this.props.screen} title={this.props.title} />)}
                 </div>
             </Draggable >
