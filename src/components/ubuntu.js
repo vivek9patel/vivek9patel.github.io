@@ -64,6 +64,9 @@ export default class Ubuntu extends Component {
   }
 
   unLockScreen = () => {
+    window.removeEventListener('click', this.unLockScreen);
+    window.removeEventListener('keypress', this.unLockScreen);
+
     this.setState({ screen_locked: false });
     localStorage.setItem("screen-locked", false);
   }
@@ -88,7 +91,7 @@ export default class Ubuntu extends Component {
   render() {
     return (
       <div className="w-screen h-screen overflow-hidden">
-        <LockScreen isLocked={this.state.screen_locked} bgImgPath={this.state.bg_image_name} unLockScreen={this.unLockScreen} />
+        <LockScreen isLocked={this.state.screen_locked} bgImgName={this.state.bg_image_name} unLockScreen={this.unLockScreen} />
         <BootingScreen visible={this.state.booting_screen} isShutDown={this.state.shutDownScreen} turnOn={this.turnOn} />
         <Navbar lockScreen={this.lockScreen} shutDown={this.shutDown} />
         <Desktop bg_image_name={this.state.bg_image_name} changeBackgroundImage={this.changeBackgroundImage} />
