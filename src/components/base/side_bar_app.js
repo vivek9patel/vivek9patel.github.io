@@ -17,7 +17,7 @@ export class SideBarApp extends Component {
     scaleImage = () => {
         setTimeout(() => {
             this.setState({ scaleImage: false });
-        }, 400);
+        }, 1000);
         this.setState({ scaleImage: true });
     }
 

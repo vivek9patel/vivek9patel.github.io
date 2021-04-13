@@ -9,7 +9,7 @@ export class Terminal extends Component {
         this.current_directory = "~";
         this.curr_dir_name = "root";
         this.child_directories = {
-            root: ["books", "PDPU", "projects", "personals"],
+            root: ["books", "PDPU", "projects", "personal-documents"],
             books: ["Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.pdf", "Elon Musk: How the Billionaire CEO of SpaceX.pdf", "The $100 Startup_CHRIS_GUILLEBEAU.pdf", "The_Magic_of_Thinking_Big.pdf"],
             PDPU: ['Outline of Curriculum UG-CE PDPU.pdf', 'Sem - 6'],
             projects: ["vivek9patel-personal-portfolio", "synonyms-list-react", "economist.com-unlocked", "Improve-Codeforces", "flutter-banking-app", "Meditech-Healthcare", "CPU-Scheduling-APP-React-Native"],
@@ -150,7 +150,7 @@ export class Terminal extends Component {
                     break;
                 }
 
-                if (rest === "personals") {
+                if (rest === "personal-documents") {
                     result = "Well, that's private! 😏";
                     break;
                 }
@@ -178,7 +178,7 @@ export class Terminal extends Component {
                 if (target in this.child_directories) {
                     result = this.childDirectories(target).join("");
                 }
-                else if (target === "personals") {
+                else if (target === "personal-documents") {
                     result = "Nope! 🙃";
                     break;
                 }

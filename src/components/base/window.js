@@ -52,7 +52,6 @@ export class Window extends Component {
                 ,
                 width: window.innerWidth // parent width
                     - (window.innerWidth * (this.state.width / 100.0)) //this window's width
-                    - 4 // some padding,
             }
         });
     }
@@ -138,7 +137,7 @@ export class Window extends Component {
             var r = document.querySelector("#" + this.id);
             this.setWinowsPosition();
             // translate window to maximize position
-            r.style.transform = `translate(0px,-4px)`;
+            r.style.transform = `translate(0px,-2pt)`;
             this.setState({ maximized: true, height: 95.5, width: 100 });
             this.props.hideSideBar(this.id, true);
         }

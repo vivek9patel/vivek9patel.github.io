@@ -181,13 +181,13 @@ export class Desktop extends Component {
             if (app.desktop_shortcut) desktop_apps.push(app.id);
         });
         this.setState({
-            focused_windows: focused_windows,
-            closed_windows: closed_windows,
-            disabled_apps: disabled_apps,
-            favourite_apps: favourite_apps,
-            overlapped_windows: overlapped_windows,
-            minimized_windows: minimized_windows,
-            desktop_apps: desktop_apps
+            focused_windows,
+            closed_windows,
+            disabled_apps,
+            favourite_apps,
+            overlapped_windows,
+            minimized_windows,
+            desktop_apps
         });
         this.initFavourite = { ...favourite_apps };
     }
@@ -219,12 +219,12 @@ export class Desktop extends Component {
             if (app.desktop_shortcut) desktop_apps.push(app.id);
         });
         this.setState({
-            focused_windows: focused_windows,
-            closed_windows: closed_windows,
-            disabled_apps: disabled_apps,
-            minimized_windows: minimized_windows,
-            favourite_apps: favourite_apps,
-            desktop_apps: desktop_apps
+            focused_windows,
+            closed_windows,
+            disabled_apps,
+            minimized_windows,
+            favourite_apps,
+            desktop_apps
         });
         this.initFavourite = { ...favourite_apps };
     }
@@ -284,27 +284,28 @@ export class Desktop extends Component {
     }
 
     hasMinimised = (objId) => {
-        // tell child that this app has been minimised
         let minimized_windows = this.state.minimized_windows;
+        var focused_windows = this.state.focused_windows;
+
+        // remove focus and minimise this window
         minimized_windows[objId] = true;
-
-        this.setState({ minimized_windows });
-
-        // remove focus from this window & give focus to last opened window
-        if (this.app_stack.length > 1) {
-            let indexOfLastOpenedWindow = this.app_stack.indexOf(objId);
-            this.focus(this.app_stack[(indexOfLastOpenedWindow === 0 ? indexOfLastOpenedWindow + 1 : indexOfLastOpenedWindow - 1)]);
-        }
+        focused_windows[objId] = false;
+        this.setState({ minimized_windows, focused_windows });
 
         this.hideSideBar(null, false);
 
-        // if all apps are minimised remove focus from all & show sidebar
-        if (this.checkAllMinimised()) {
-            var focused_windows = this.state.focused_windows;
-            for (let key in focused_windows) {
-                focused_windows[key] = false;
+        this.giveFocusToLastApp();
+    }
+
+    giveFocusToLastApp = () => {
+        // if there is atleast one app opened, give it focus
+        if (!this.checkAllMinimised()) {
+            for (const index in this.app_stack) {
+                if (!this.state.minimized_windows[this.app_stack[index]]) {
+                    this.focus(this.app_stack[index]);
+                    break;
+                }
             }
-            this.setState({ focused_windows });
         }
     }
 
@@ -361,11 +362,12 @@ export class Desktop extends Component {
     }
 
     closeApp = (objId) => {
-        // give focus to last opened window
+
+        // remove app from the app stack
         this.app_stack.splice(this.app_stack.indexOf(objId), 1);
-        if (this.app_stack.length !== 0) {
-            this.focus(this.app_stack[this.app_stack.length - 1]);
-        }
+
+        this.giveFocusToLastApp();
+
         this.hideSideBar(null, false);
 
         // close window
@@ -439,7 +441,7 @@ export class Desktop extends Component {
 
     render() {
         return (
-            <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full flex flex-col items-end justify-start content-end flex-wrap pt-8 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
+            <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full flex flex-col items-end justify-start content-start flex-wrap-reverse pt-8 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
 
                 {/* Window Area */}
                 <div className="absolute h-full w-full bg-transparent" data-context="desktop-area">
