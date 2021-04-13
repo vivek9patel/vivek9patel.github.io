@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import $ from 'jquery';
+import ReactGA from 'react-ga';
 
 export class Terminal extends Component {
     constructor() {
@@ -8,11 +9,16 @@ export class Terminal extends Component {
         this.terminal_rows = 1;
         this.current_directory = "~";
         this.curr_dir_name = "root";
+        this.prev_commands = [];
+        this.commands_index = -1;
         this.child_directories = {
-            root: ["books", "PDPU", "projects", "personal-documents"],
+            root: ["books", "projects", "personal-documents", "skills", "languages", "PDPU", "interests"],
+            PDPU: ["Sem-6"],
             books: ["Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.pdf", "Elon Musk: How the Billionaire CEO of SpaceX.pdf", "The $100 Startup_CHRIS_GUILLEBEAU.pdf", "The_Magic_of_Thinking_Big.pdf"],
-            PDPU: ['Outline of Curriculum UG-CE PDPU.pdf', 'Sem - 6'],
+            skills: ["Front-end development", "React.js", "jQuery", "Flutter", "Express.js", "SQL", "Firebase"],
             projects: ["vivek9patel-personal-portfolio", "synonyms-list-react", "economist.com-unlocked", "Improve-Codeforces", "flutter-banking-app", "Meditech-Healthcare", "CPU-Scheduling-APP-React-Native"],
+            interests: ["Software Engineering", "Deep Learning", "Computer Vision"],
+            languages: ["Javascript", "C++", "Java", "Dart"],
         };
         this.state = {
             terminal: [],
@@ -56,7 +62,7 @@ export class Terminal extends Component {
                         <div className="text-white mx-px font-medium mr-1">$</div>
                     </div>
                     <div id="cmd" onClick={this.focusCursor} className=" bg-transperent relative flex-1 overflow-hidden">
-                        <span id={`show-${id}`} className=" float-left whitespace-pre pb-1 opacity-1 font-normal tracking-wider"></span>
+                        <span id={`show-${id}`} className=" float-left whitespace-pre pb-1 opacity-100 font-normal tracking-wider"></span>
                         <div id={`cursor-${id}`} className=" float-left mt-1 w-1.5 h-3.5 bg-white"></div>
                         <input id={`terminal-input-${id}`} data-row-id={id} onKeyDown={this.checkKey} onBlur={this.unFocusCursor} className=" absolute top-0 left-0 w-full opacity-0 outline-none bg-transparent" spellCheck={false} autoFocus={true} autoComplete="off" type="text" />
                     </div>
@@ -115,7 +121,40 @@ export class Terminal extends Component {
                 this.removeCursor(terminal_row_id);
                 this.handleCommands(command, terminal_row_id);
             }
+            // push to history
+            this.prev_commands.push(command);
+            this.commands_index = this.prev_commands.length - 1;
+
             this.clearInput(terminal_row_id);
+        }
+        else if (e.key === "ArrowUp") {
+            let prev_command;
+
+            if (this.commands_index <= -1) prev_command = "";
+            else prev_command = this.prev_commands[this.commands_index];
+
+            let terminal_row_id = $(e.target).data("row-id");
+
+            $(`input#terminal-input-${terminal_row_id}`).val(prev_command);
+            $(`#show-${terminal_row_id}`).text(prev_command);
+
+            this.commands_index--;
+        }
+        else if (e.key === "ArrowDown") {
+            let prev_command;
+
+            if (this.commands_index >= this.prev_commands.length) return;
+            if (this.commands_index <= -1) this.commands_index = 0;
+
+            if (this.commands_index === this.prev_commands.length) prev_command = "";
+            else prev_command = this.prev_commands[this.commands_index];
+
+            let terminal_row_id = $(e.target).data("row-id");
+
+            $(`input#terminal-input-${terminal_row_id}`).val(prev_command);
+            $(`#show-${terminal_row_id}`).text(prev_command);
+
+            this.commands_index++;
         }
     }
 
@@ -151,7 +190,7 @@ export class Terminal extends Component {
                 }
 
                 if (rest === "personal-documents") {
-                    result = "Well, that's private! 😏";
+                    result = `bash /${this.curr_dir_name} : Permission denied 😏`;
                     break;
                 }
 
@@ -160,7 +199,7 @@ export class Terminal extends Component {
                     this.curr_dir_name = rest;
                 }
                 else if (rest === ".." || rest === "../") {
-                    result = "Type 'cd' for this 😅";
+                    result = "Type 'cd' to go back 😅";
                     break;
                 }
                 else {
@@ -192,6 +231,15 @@ export class Terminal extends Component {
             case "clear":
                 this.reStartTerminal();
                 return;
+            case "sudo":
+
+                ReactGA.event({
+                    category: "Sudo Access",
+                    action: "lol",
+                });
+
+                result = "<img class=' w-2/5' src='./images/memes/used-sudo-command.jpg' />";
+                break;
             default:
                 result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear ]";
         }
