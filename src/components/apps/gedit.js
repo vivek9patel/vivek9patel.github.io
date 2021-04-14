@@ -36,7 +36,6 @@ export class Gedit extends Component {
         if (error) return;
 
         this.setState({ sending: true });
-
         await fetch("https://formspree.io/f/xeqvqbwk", {
             method: 'POST',
             headers: {
@@ -50,7 +49,7 @@ export class Gedit extends Component {
             })
         }).then(() => {
             this.setState({ sending: false });
-            // props.closeApp("gedit");
+            $("#close-gedit").trigger('click'); // will close the gedit window
         })
             .catch(error => {
                 console.log(error);

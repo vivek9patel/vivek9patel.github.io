@@ -234,8 +234,16 @@ export class Desktop extends Component {
         let appsJsx = [];
         apps.forEach((app, index) => {
             if (this.state.desktop_apps.includes(app.id)) {
+
+                const props = {
+                    name: app.title,
+                    id: app.id,
+                    icon: app.icon,
+                    openApp: this.openApp
+                }
+
                 appsJsx.push(
-                    <UbuntuApp key={index} name={app.title} id={app.id} icon={app.icon} openApp={this.openApp} />
+                    <UbuntuApp key={index} {...props} />
                 );
             }
         });
@@ -246,8 +254,23 @@ export class Desktop extends Component {
         let windowsJsx = [];
         apps.forEach((app, index) => {
             if (this.state.closed_windows[app.id] === false) {
+
+                const props = {
+                    title: app.title,
+                    id: app.id,
+                    screen: app.screen,
+                    closed: this.closeApp,
+                    focus: this.focus,
+                    isFocused: this.state.focused_windows[app.id],
+                    hideSideBar: this.hideSideBar,
+                    hasMinimised: this.hasMinimised,
+                    minimized: this.state.minimized_windows[app.id],
+                    changeBackgroundImage: this.props.changeBackgroundImage,
+                    bg_image_name: this.props.bg_image_name,
+                }
+
                 windowsJsx.push(
-                    <Window key={index} title={app.title} id={app.id} screen={app.screen} closed={this.closeApp} focus={this.focus} isFocused={this.state.focused_windows[app.id]} hideSideBar={this.hideSideBar} hasMinimised={this.hasMinimised} minimized={this.state.minimized_windows[app.id]} changeBackgroundImage={this.props.changeBackgroundImage} bg_image_name={this.props.bg_image_name} />
+                    <Window key={index} {...props} />
                 )
             }
         });

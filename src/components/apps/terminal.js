@@ -52,8 +52,8 @@ export class Terminal extends Component {
     }
 
     terminalRow = (id) => {
-        let row =
-            (<React.Fragment key={id}>
+        return (
+            <React.Fragment key={id}>
                 <div className="flex w-full h-5">
                     <div className="flex">
                         <div className=" text-ubt-green">vivek@Dell</div>
@@ -69,8 +69,7 @@ export class Terminal extends Component {
                 </div>
                 <div id={`row-result-${id}`} className={"my-2 font-normal"}></div>
             </React.Fragment>
-            );
-        return row;
+        );
 
     }
 
