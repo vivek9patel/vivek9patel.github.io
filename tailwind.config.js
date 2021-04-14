@@ -14,6 +14,7 @@ module.exports = {
       'ub-window-title': "#201f1f",
       'ub-gedit-dark': "#021B33",
       'ub-gedit-light': "#003B70",
+      'ub-gedit-darker': "#010D1A",
     }),
     textColor: theme => ({
       ...theme('colors'),
@@ -24,6 +25,7 @@ module.exports = {
       'ubt-green': "#4E9A06",
       'ubt-gedit-orange': "#F39A21",
       'ubt-gedit-blue': "#50B6C6",
+      'ubt-gedit-dark': "#003B70",
     }),
     borderColor: theme => ({
       ...theme('colors'),
