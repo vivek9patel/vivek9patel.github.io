@@ -2565,6 +2565,16 @@ video {
   background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
 }
 
+.bg-ub-gedit-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+}
+
+.bg-ub-gedit-light {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:bg-transparent {
   background-color: transparent;
 }
@@ -3021,6 +3031,16 @@ video {
 .group:hover .group-hover\:bg-ub-window-title {
   --tw-bg-opacity: 1;
   background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-ub-gedit-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-ub-gedit-light {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
 }
 
 .focus-within\:bg-transparent:focus-within {
@@ -3481,6 +3501,16 @@ video {
   background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-ub-gedit-dark:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+}
+
+.focus-within\:bg-ub-gedit-light:focus-within {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -3939,6 +3969,16 @@ video {
   background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
 }
 
+.hover\:bg-ub-gedit-dark:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+}
+
+.hover\:bg-ub-gedit-light:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -4395,6 +4435,16 @@ video {
 .focus\:bg-ub-window-title:focus {
   --tw-bg-opacity: 1;
   background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+}
+
+.focus\:bg-ub-gedit-dark:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+}
+
+.focus\:bg-ub-gedit-light:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
 }
 
 .bg-none {
@@ -24887,6 +24937,16 @@ video {
   color: rgba(78, 154, 6, var(--tw-text-opacity));
 }
 
+.text-ubt-gedit-orange {
+  --tw-text-opacity: 1;
+  color: rgba(243, 154, 33, var(--tw-text-opacity));
+}
+
+.text-ubt-gedit-blue {
+  --tw-text-opacity: 1;
+  color: rgba(80, 182, 198, var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:text-transparent {
   color: transparent;
 }
@@ -25328,6 +25388,16 @@ video {
 .group:hover .group-hover\:text-ubt-green {
   --tw-text-opacity: 1;
   color: rgba(78, 154, 6, var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-ubt-gedit-orange {
+  --tw-text-opacity: 1;
+  color: rgba(243, 154, 33, var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-ubt-gedit-blue {
+  --tw-text-opacity: 1;
+  color: rgba(80, 182, 198, var(--tw-text-opacity));
 }
 
 .focus-within\:text-transparent:focus-within {
@@ -25773,6 +25843,16 @@ video {
   color: rgba(78, 154, 6, var(--tw-text-opacity));
 }
 
+.focus-within\:text-ubt-gedit-orange:focus-within {
+  --tw-text-opacity: 1;
+  color: rgba(243, 154, 33, var(--tw-text-opacity));
+}
+
+.focus-within\:text-ubt-gedit-blue:focus-within {
+  --tw-text-opacity: 1;
+  color: rgba(80, 182, 198, var(--tw-text-opacity));
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -26216,6 +26296,16 @@ video {
   color: rgba(78, 154, 6, var(--tw-text-opacity));
 }
 
+.hover\:text-ubt-gedit-orange:hover {
+  --tw-text-opacity: 1;
+  color: rgba(243, 154, 33, var(--tw-text-opacity));
+}
+
+.hover\:text-ubt-gedit-blue:hover {
+  --tw-text-opacity: 1;
+  color: rgba(80, 182, 198, var(--tw-text-opacity));
+}
+
 .focus\:text-transparent:focus {
   color: transparent;
 }
@@ -26657,6 +26747,16 @@ video {
 .focus\:text-ubt-green:focus {
   --tw-text-opacity: 1;
   color: rgba(78, 154, 6, var(--tw-text-opacity));
+}
+
+.focus\:text-ubt-gedit-orange:focus {
+  --tw-text-opacity: 1;
+  color: rgba(243, 154, 33, var(--tw-text-opacity));
+}
+
+.focus\:text-ubt-gedit-blue:focus {
+  --tw-text-opacity: 1;
+  color: rgba(80, 182, 198, var(--tw-text-opacity));
 }
 
 .text-opacity-0 {
@@ -33885,6 +33985,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .sm\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .group:hover .sm\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -34341,6 +34451,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .sm\:group-hover\:bg-ub-window-title {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .sm\:focus-within\:bg-transparent:focus-within {
@@ -34801,6 +34921,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-ub-gedit-dark:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus-within\:bg-ub-gedit-light:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -35259,6 +35389,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .sm\:hover\:bg-ub-gedit-dark:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .sm\:hover\:bg-ub-gedit-light:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -35715,6 +35855,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .sm\:focus\:bg-ub-window-title:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-ub-gedit-dark:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-ub-gedit-light:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .sm\:bg-none {
@@ -56194,6 +56344,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .sm\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .sm\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .group:hover .sm\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -56635,6 +56795,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .sm\:group-hover\:text-ubt-green {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .sm\:focus-within\:text-transparent:focus-within {
@@ -57080,6 +57250,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .sm\:focus-within\:text-ubt-gedit-orange:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .sm\:focus-within\:text-ubt-gedit-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -57523,6 +57703,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .sm\:hover\:text-ubt-gedit-orange:hover {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .sm\:hover\:text-ubt-gedit-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .sm\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -57964,6 +58154,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .sm\:focus\:text-ubt-green:focus {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .sm\:focus\:text-ubt-gedit-orange:focus {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .sm\:focus\:text-ubt-gedit-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .sm\:text-opacity-0 {
@@ -64861,6 +65061,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .md\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .md\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .group:hover .md\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -65317,6 +65527,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .md\:group-hover\:bg-ub-window-title {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .md\:focus-within\:bg-transparent:focus-within {
@@ -65777,6 +65997,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-ub-gedit-dark:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .md\:focus-within\:bg-ub-gedit-light:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -66235,6 +66465,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .md\:hover\:bg-ub-gedit-dark:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .md\:hover\:bg-ub-gedit-light:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -66691,6 +66931,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .md\:focus\:bg-ub-window-title:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-ub-gedit-dark:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-ub-gedit-light:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .md\:bg-none {
@@ -87170,6 +87420,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .md\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .md\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .group:hover .md\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -87611,6 +87871,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .md\:group-hover\:text-ubt-green {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .group:hover .md\:group-hover\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .group:hover .md\:group-hover\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .md\:focus-within\:text-transparent:focus-within {
@@ -88056,6 +88326,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .md\:focus-within\:text-ubt-gedit-orange:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .md\:focus-within\:text-ubt-gedit-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -88499,6 +88779,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .md\:hover\:text-ubt-gedit-orange:hover {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .md\:hover\:text-ubt-gedit-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .md\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -88940,6 +89230,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .md\:focus\:text-ubt-green:focus {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .md\:focus\:text-ubt-gedit-orange:focus {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .md\:focus\:text-ubt-gedit-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .md\:text-opacity-0 {
@@ -95837,6 +96137,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .lg\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .group:hover .lg\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -96293,6 +96603,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .lg\:group-hover\:bg-ub-window-title {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .lg\:focus-within\:bg-transparent:focus-within {
@@ -96753,6 +97073,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-ub-gedit-dark:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus-within\:bg-ub-gedit-light:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -97211,6 +97541,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-ub-gedit-dark:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-ub-gedit-light:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -97667,6 +98007,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .lg\:focus\:bg-ub-window-title:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-ub-gedit-dark:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-ub-gedit-light:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .lg\:bg-none {
@@ -118146,6 +118496,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .lg\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .lg\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .group:hover .lg\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -118587,6 +118947,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .lg\:group-hover\:text-ubt-green {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .lg\:focus-within\:text-transparent:focus-within {
@@ -119032,6 +119402,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .lg\:focus-within\:text-ubt-gedit-orange:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .lg\:focus-within\:text-ubt-gedit-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -119475,6 +119855,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .lg\:hover\:text-ubt-gedit-orange:hover {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .lg\:hover\:text-ubt-gedit-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .lg\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -119916,6 +120306,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .lg\:focus\:text-ubt-green:focus {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .lg\:focus\:text-ubt-gedit-orange:focus {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .lg\:focus\:text-ubt-gedit-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .lg\:text-opacity-0 {
@@ -126813,6 +127213,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .xl\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .group:hover .xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -127269,6 +127679,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .xl\:group-hover\:bg-ub-window-title {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .xl\:focus-within\:bg-transparent:focus-within {
@@ -127729,6 +128149,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-ub-gedit-dark:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus-within\:bg-ub-gedit-light:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -128187,6 +128617,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .xl\:hover\:bg-ub-gedit-dark:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .xl\:hover\:bg-ub-gedit-light:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -128643,6 +129083,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .xl\:focus\:bg-ub-window-title:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-ub-gedit-dark:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-ub-gedit-light:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .xl\:bg-none {
@@ -149122,6 +149572,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .xl\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .xl\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .group:hover .xl\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -149563,6 +150023,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .xl\:group-hover\:text-ubt-green {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .xl\:focus-within\:text-transparent:focus-within {
@@ -150008,6 +150478,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .xl\:focus-within\:text-ubt-gedit-orange:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .xl\:focus-within\:text-ubt-gedit-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -150451,6 +150931,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .xl\:hover\:text-ubt-gedit-orange:hover {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .xl\:hover\:text-ubt-gedit-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -150892,6 +151382,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .xl\:focus\:text-ubt-green:focus {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .xl\:focus\:text-ubt-gedit-orange:focus {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .xl\:focus\:text-ubt-gedit-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .xl\:text-opacity-0 {
@@ -157789,6 +158289,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:bg-transparent {
     background-color: transparent;
   }
@@ -158245,6 +158755,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .\32xl\:group-hover\:bg-ub-window-title {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-ub-gedit-dark {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-ub-gedit-light {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within {
@@ -158705,6 +159225,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-ub-gedit-dark:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus-within\:bg-ub-gedit-light:focus-within {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .\32xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -159163,6 +159693,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
   }
 
+  .\32xl\:hover\:bg-ub-gedit-dark:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:hover\:bg-ub-gedit-light:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -159619,6 +160159,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .\32xl\:focus\:bg-ub-window-title:focus {
     --tw-bg-opacity: 1;
     background-color: rgba(32, 31, 31, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-ub-gedit-dark:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(2, 27, 51, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-ub-gedit-light:focus {
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 59, 112, var(--tw-bg-opacity));
   }
 
   .\32xl\:bg-none {
@@ -180098,6 +180648,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .\32xl\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .\32xl\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:text-transparent {
     color: transparent;
   }
@@ -180539,6 +181099,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .group:hover .\32xl\:group-hover\:text-ubt-green {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:text-ubt-gedit-orange {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:text-ubt-gedit-blue {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .\32xl\:focus-within\:text-transparent:focus-within {
@@ -180984,6 +181554,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .\32xl\:focus-within\:text-ubt-gedit-orange:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .\32xl\:focus-within\:text-ubt-gedit-blue:focus-within {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .\32xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -181427,6 +182007,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
     color: rgba(78, 154, 6, var(--tw-text-opacity));
   }
 
+  .\32xl\:hover\:text-ubt-gedit-orange:hover {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .\32xl\:hover\:text-ubt-gedit-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
+  }
+
   .\32xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -181868,6 +182458,16 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
   .\32xl\:focus\:text-ubt-green:focus {
     --tw-text-opacity: 1;
     color: rgba(78, 154, 6, var(--tw-text-opacity));
+  }
+
+  .\32xl\:focus\:text-ubt-gedit-orange:focus {
+    --tw-text-opacity: 1;
+    color: rgba(243, 154, 33, var(--tw-text-opacity));
+  }
+
+  .\32xl\:focus\:text-ubt-gedit-blue:focus {
+    --tw-text-opacity: 1;
+    color: rgba(80, 182, 198, var(--tw-text-opacity));
   }
 
   .\32xl\:text-opacity-0 {

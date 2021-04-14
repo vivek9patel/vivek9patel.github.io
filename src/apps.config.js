@@ -1,11 +1,10 @@
-import displayUbuntuStore from './components/apps/ubuntuStore';
 import displayTodoist from './components/apps/todoist';
-import displayTeams from './components/apps/msteams';
 import displaySpotify from './components/apps/spotify';
 import { displayTerminal } from './components/apps/terminal';
 import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
 import { displayTrash } from './components/apps/trash';
+import { displayGedit } from './components/apps/gedit';
 
 const apps = [
     {
@@ -36,15 +35,6 @@ const apps = [
         screen: () => { },
     },
     {
-        id: "msteams",
-        title: "Microsoft Teams",
-        icon: './themes/Yaru/apps/msteams.png',
-        disabled: true,
-        favourite: true,
-        desktop_shortcut: false,
-        screen: displayTeams,
-    },
-    {
         id: "terminal",
         title: "Terminal",
         icon: './themes/Yaru/apps/bash.png',
@@ -72,15 +62,6 @@ const apps = [
         screen: displaySettings,
     },
     {
-        id: "store",
-        title: "Software Store",
-        icon: './themes/Yaru/apps/software-store.png',
-        disabled: true,
-        favourite: true,
-        desktop_shortcut: false,
-        screen: displayUbuntuStore,
-    },
-    {
         id: "home_folder",
         title: "Vivek",
         icon: './themes/Yaru/system/user-home.png',
@@ -89,7 +70,6 @@ const apps = [
         desktop_shortcut: true,
         screen: () => { },
     },
-
     {
         id: "trash",
         title: "Trash",
@@ -98,6 +78,15 @@ const apps = [
         favourite: false,
         desktop_shortcut: true,
         screen: displayTrash,
+    },
+    {
+        id: "gedit",
+        title: "Send a Message",
+        icon: './themes/Yaru/apps/gedit.png',
+        disabled: false,
+        favourite: false,
+        desktop_shortcut: true,
+        screen: displayGedit,
     },
 ]
 

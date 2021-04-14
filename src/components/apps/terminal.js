@@ -53,8 +53,8 @@ export class Terminal extends Component {
 
     terminalRow = (id) => {
         let row =
-            (<>
-                <div key={id} className="flex w-full h-5">
+            (<React.Fragment key={id}>
+                <div className="flex w-full h-5">
                     <div className="flex">
                         <div className=" text-ubt-green">vivek@Dell</div>
                         <div className="text-white mx-px font-medium">:</div>
@@ -67,8 +67,8 @@ export class Terminal extends Component {
                         <input id={`terminal-input-${id}`} data-row-id={id} onKeyDown={this.checkKey} onBlur={this.unFocusCursor} className=" absolute top-0 left-0 w-full opacity-0 outline-none bg-transparent" spellCheck={false} autoFocus={true} autoComplete="off" type="text" />
                     </div>
                 </div>
-                <div key={id + 1} id={`row-result-${id}`} className={"my-2 font-normal"}></div>
-            </>
+                <div id={`row-result-${id}`} className={"my-2 font-normal"}></div>
+            </React.Fragment>
             );
         return row;
 

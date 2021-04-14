@@ -12,6 +12,8 @@ module.exports = {
       'ub-med-abrgn': "#5E2750",
       'ub-drk-abrgn': "#2C001E",
       'ub-window-title': "#201f1f",
+      'ub-gedit-dark': "#021B33",
+      'ub-gedit-light': "#003B70",
     }),
     textColor: theme => ({
       ...theme('colors'),
@@ -20,6 +22,8 @@ module.exports = {
       'ubt-cool-grey': "#333333",
       'ubt-blue': "#3465A4",
       'ubt-green': "#4E9A06",
+      'ubt-gedit-orange': "#F39A21",
+      'ubt-gedit-blue': "#50B6C6",
     }),
     borderColor: theme => ({
       ...theme('colors'),
