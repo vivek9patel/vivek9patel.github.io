@@ -28,10 +28,14 @@ export class Window extends Component {
 
         // google analytics
         ReactGA.pageview(`/${this.id}`);
+
+        // on window resize, resize boundary
+        window.addEventListener('resize', this.resizeBoundries);
     }
 
     componentWillUnmount() {
         ReactGA.pageview("/desktop");
+        window.removeEventListener('resize', this.resizeBoundries);
     }
 
     setDefaultWindowDimenstion = () => {
