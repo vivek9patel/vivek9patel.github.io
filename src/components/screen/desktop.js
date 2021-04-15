@@ -16,7 +16,6 @@ export class Desktop extends Component {
         this.initFavourite = {};
         this.allWindowClosed = false;
         this.state = {
-            cursorWait: false,
             focused_windows: {},
             closed_windows: {},
             overlapped_windows: {},
@@ -41,6 +40,7 @@ export class Desktop extends Component {
         this.setContextListeners();
         this.setEventListeners();
         this.checkForNewFolders();
+        this.openApp("home_folder");
     }
 
     componentWillUnmount() {
@@ -373,14 +373,11 @@ export class Desktop extends Component {
         else {
             let closed_windows = this.state.closed_windows;
             let favourite_apps = this.state.favourite_apps;
-            // set cursor to wait until window opens
-            this.setState({ cursorWait: true });
-            setTimeout(() => {
-                favourite_apps[objId] = true; // adds opened app to sideBar
-                closed_windows[objId] = false; // openes app's window
-                this.setState({ closed_windows, favourite_apps, cursorWait: false }, this.focus(objId));
-                this.app_stack.push(objId);
-            }, Math.random() * 1000);
+
+            favourite_apps[objId] = true; // adds opened app to sideBar
+            closed_windows[objId] = false; // openes app's window
+            this.setState({ closed_windows, favourite_apps }, this.focus(objId));
+            this.app_stack.push(objId);
         }
     }
 
@@ -464,7 +461,7 @@ export class Desktop extends Component {
 
     render() {
         return (
-            <div className={(this.state.cursorWait ? " cursor-wait " : " cursor-default ") + " h-full w-full flex flex-col items-end justify-start content-start flex-wrap-reverse pt-8 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
+            <div className={" h-full w-full flex flex-col items-end justify-start content-start flex-wrap-reverse pt-8 bg-transparent relative overflow-hidden overscroll-none window-parent"}>
 
                 {/* Window Area */}
                 <div className="absolute h-full w-full bg-transparent" data-context="desktop-area">
