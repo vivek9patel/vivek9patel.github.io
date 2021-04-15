@@ -31761,6 +31761,14 @@ video {
           animation: bounce 1s infinite;
 }
 
+/* Ubuntu Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+.ubuntu-font {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 /* Top NavBar styling */
 
 .top-arrow-up {

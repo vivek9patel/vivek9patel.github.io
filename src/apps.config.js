@@ -5,6 +5,7 @@ import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
 import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
+import { displayAboutVivek } from './components/apps/vivek';
 
 const apps = [
     {
@@ -24,6 +25,15 @@ const apps = [
         favourite: true,
         desktop_shortcut: false,
         screen: displayTodoist,
+    },
+    {
+        id: "about-vivek",
+        title: "About Vivek",
+        icon: './themes/Yaru/system/user-home.png',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: true,
+        screen: displayAboutVivek,
     },
     {
         id: "vscode",
@@ -60,15 +70,6 @@ const apps = [
         favourite: true,
         desktop_shortcut: false,
         screen: displaySettings,
-    },
-    {
-        id: "home_folder",
-        title: "Vivek",
-        icon: './themes/Yaru/system/user-home.png',
-        disabled: true,
-        favourite: false,
-        desktop_shortcut: true,
-        screen: () => { },
     },
     {
         id: "trash",
