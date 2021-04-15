@@ -372,11 +372,12 @@ export class Desktop extends Component {
         else {
             let closed_windows = this.state.closed_windows;
             let favourite_apps = this.state.favourite_apps;
-
-            favourite_apps[objId] = true; // adds opened app to sideBar
-            closed_windows[objId] = false; // openes app's window
-            this.setState({ closed_windows, favourite_apps }, this.focus(objId));
-            this.app_stack.push(objId);
+            setTimeout(() => {
+                favourite_apps[objId] = true; // adds opened app to sideBar
+                closed_windows[objId] = false; // openes app's window
+                this.setState({ closed_windows, favourite_apps }, this.focus(objId));
+                this.app_stack.push(objId);
+            }, 200);
         }
     }
 
