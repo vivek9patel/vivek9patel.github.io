@@ -11,6 +11,9 @@
 # production
 /build
 
+#email api keys
+/src/backend/email_apis.js
+
 # misc
 .DS_Store
 .env.local

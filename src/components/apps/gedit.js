@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import ReactGA from 'react-ga';
+import emailjs from 'emailjs-com';
+import apiKeys from '../../backend/email_apis';
 
 export class Gedit extends Component {
 
@@ -9,6 +11,10 @@ export class Gedit extends Component {
         this.state = {
             sending: false,
         }
+    }
+
+    componentDidMount() {
+        emailjs.init("user_Ng0SSE6X3VcLn768qyWq6");
     }
 
     sendMessage = async () => {
@@ -36,24 +42,22 @@ export class Gedit extends Component {
         if (error) return;
 
         this.setState({ sending: true });
-        await fetch("https://formspree.io/f/xeqvqbwk", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: name,
-                subject: subject,
-                message: message
-            })
-        }).then(() => {
+
+        const serviceID = apiKeys.SERVICE_ID;
+        const templateID = apiKeys.TEMPLATE_ID;
+        const templateParams = {
+            'name': name,
+            'subject': subject,
+            'message': message,
+        }
+
+        emailjs.send(serviceID, templateID, templateParams).then(() => {
             this.setState({ sending: false });
-            $("#close-gedit").trigger('click'); // will close the gedit window
+            $("#close-gedit").trigger("click");
+        }).catch(() => {
+            this.setState({ sending: false });
+            $("#close-gedit").trigger("click");
         })
-            .catch(error => {
-                console.log(error);
-            });
 
         ReactGA.event({
             category: "Send Message",
