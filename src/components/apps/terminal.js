@@ -169,6 +169,10 @@ export class Terminal extends Component {
         return files;
     }
 
+    closeTerminal = () => {
+        $("#close-terminal").trigger('click');
+    }
+
     handleCommands = (command, rowId) => {
         let words = command.split(' ');
         let main = words[0];
@@ -230,6 +234,9 @@ export class Terminal extends Component {
             case "clear":
                 this.reStartTerminal();
                 return;
+            case "exit":
+                this.closeTerminal();
+                return;
             case "sudo":
 
                 ReactGA.event({
@@ -240,7 +247,7 @@ export class Terminal extends Component {
                 result = "<img class=' w-2/5' src='./images/memes/used-sudo-command.jpg' />";
                 break;
             default:
-                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear ]";
+                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear, exit ]";
         }
         document.getElementById(`row-result-${rowId}`).innerHTML = result;
         this.appendTerminalRow();
