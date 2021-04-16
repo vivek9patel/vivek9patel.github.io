@@ -32027,6 +32027,30 @@ input[type=range].ubuntu-slider::-webkit-slider-thumb {
           filter: blur(15px);
 }
 
+.emoji-list>li {
+  padding-left: 10px;
+}
+
+.list-pc {
+  list-style: "🏫";
+}
+
+.list-building {
+  list-style: "👨🏻‍💻";
+}
+
+.list-time {
+  list-style: "🎲";
+}
+
+.list-star {
+  list-style: "🌟";
+}
+
+.list-arrow {
+  list-style: "⇀";
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

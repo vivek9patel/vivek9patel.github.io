@@ -1,3 +1,24 @@
+# To Run this on localhost
+
+- you need to make a folder named _backend_ and inside that make a file name _email_apis.js_.
+- Get your apis from [emailjs](https://www.emailjs.com/).
+  follow this [docs](https://www.emailjs.com/docs)
+- inside that file you need to declare your api keys for _emailjs_, below is the sample code
+- your api keys will be here: [page](https://dashboard.emailjs.com/admin/integration)
+
+```
+
+// add this in your email_apis.js file
+
+const apiKeys = {
+    USER_ID: 'YOUR_USER_ID',
+    TEMPLATE_ID: 'YOUR_TEMPLATE_ID',
+    SERVICE_ID: 'YOUR_SERVICE_ID',
+}
+export default apiKeys;
+
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

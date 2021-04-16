@@ -14,7 +14,7 @@ export class Gedit extends Component {
     }
 
     componentDidMount() {
-        emailjs.init("user_Ng0SSE6X3VcLn768qyWq6");
+        emailjs.init(apiKeys.USER_ID);
     }
 
     sendMessage = async () => {
