@@ -1,5 +1,6 @@
 import displayTodoist from './components/apps/todoist';
 import displaySpotify from './components/apps/spotify';
+import displayVsCode from './components/apps/vscode';
 import { displayTerminal } from './components/apps/terminal';
 import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
@@ -39,10 +40,10 @@ const apps = [
         id: "vscode",
         title: "Visual Studio Code",
         icon: './themes/Yaru/apps/vscode.png',
-        disabled: true,
+        disabled: false,
         favourite: true,
         desktop_shortcut: false,
-        screen: () => { },
+        screen: displayVsCode,
     },
     {
         id: "terminal",
