@@ -1,21 +1,26 @@
-# To Run this on localhost
+# To run this on localhost
 
-- you need to make a folder named _backend_ and inside that make a file name _email_apis.js_.
+- Make _.env_ file in root folder
+<!-- to get api keys -->
+
+### Get API keys from emailjs
+
 - Get your apis from [emailjs](https://www.emailjs.com/).
   follow this [docs](https://www.emailjs.com/docs)
 - inside that file you need to declare your api keys for _emailjs_, below is the sample code
 - your api keys will be here: [page](https://dashboard.emailjs.com/admin/integration)
+<!-- to get google analytics tracking id -->
+
+### Get Tracking ID from google analytics
+
+- follow this [docs](https://support.google.com/analytics/answer/10269537?ref_topic=1009620) to get your Tracking ID
 
 ```
 
-// add this in your email_apis.js file
-
-const apiKeys = {
-    USER_ID: 'YOUR_USER_ID',
-    TEMPLATE_ID: 'YOUR_TEMPLATE_ID',
-    SERVICE_ID: 'YOUR_SERVICE_ID',
-}
-export default apiKeys;
+REACT_APP_TRACKING_ID = "GOOGLE_ANALYTICS_TRACKING_ID"
+REACT_APP_USER_ID = 'YOUR_USER_ID'
+REACT_APP_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
+REACT_APP_SERVICE_ID = 'YOUR_SERVICE_ID'
 
 ```
 

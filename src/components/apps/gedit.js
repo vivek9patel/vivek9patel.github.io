@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import ReactGA from 'react-ga';
 import emailjs from 'emailjs-com';
-import apiKeys from '../../backend/email_apis';
 
 export class Gedit extends Component {
 
@@ -14,7 +13,7 @@ export class Gedit extends Component {
     }
 
     componentDidMount() {
-        emailjs.init(apiKeys.USER_ID);
+        emailjs.init(process.env.REACT_APP_USER_ID);
     }
 
     sendMessage = async () => {
@@ -43,8 +42,8 @@ export class Gedit extends Component {
 
         this.setState({ sending: true });
 
-        const serviceID = apiKeys.SERVICE_ID;
-        const templateID = apiKeys.TEMPLATE_ID;
+        const serviceID = process.env.REACT_APP_SERVICE_ID;
+        const templateID = process.env.REACT_APP_TEMPLATE_ID;
         const templateParams = {
             'name': name,
             'subject': subject,
