@@ -14,6 +14,7 @@
 ### Get Tracking ID from google analytics
 
 - follow this [docs](https://support.google.com/analytics/answer/10269537?ref_topic=1009620) to get your Tracking ID
+- add your keys to .env file just like below given template.
 
 ```
 
