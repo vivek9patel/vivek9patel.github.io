@@ -115,8 +115,8 @@ export class Terminal extends Component {
     checkKey = (e) => {
         if (e.key === "Enter") {
             let terminal_row_id = $(e.target).data("row-id");
-            let command = $(`input#terminal-input-${terminal_row_id}`).val();
-            if (command.trim().length !== 0) {
+            let command = $(`input#terminal-input-${terminal_row_id}`).val().trim();
+            if (command.length !== 0) {
                 this.removeCursor(terminal_row_id);
                 this.handleCommands(command, terminal_row_id);
             }
