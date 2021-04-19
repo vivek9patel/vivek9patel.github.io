@@ -229,7 +229,7 @@ export class Terminal extends Component {
                 }
                 break;
             case "echo":
-                result = words.join(" ");
+                result = this.xss(words.join(" "));
                 break;
             case "clear":
                 this.reStartTerminal();
@@ -251,6 +251,28 @@ export class Terminal extends Component {
         }
         document.getElementById(`row-result-${rowId}`).innerHTML = result;
         this.appendTerminalRow();
+    }
+
+    xss(str) {
+        if (!str) return;
+        return str.split('').map(char => {
+            switch (char) {
+                case '&':
+                    return '&amp';
+                case '<':
+                    return '&lt';
+                case '>':
+                    return '&gt';
+                case '"':
+                    return '&quot';
+                case "'":
+                    return '&#x27';
+                case '/':
+                    return '&#x2F';
+                default:
+                    return char;
+            }
+        }).join('');
     }
 
     render() {
