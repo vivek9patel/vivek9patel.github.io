@@ -1,5 +1,5 @@
 {
-  "short_name": "Vivek9patel Portfolio",
+  "short_name": "vivek9patel Portfolio",
   "name": "vivek9patel Personal Portfolio Website",
   "icons": [
     {
@@ -15,6 +15,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#E95420",
   "background_color": "#ffffff"
 }
