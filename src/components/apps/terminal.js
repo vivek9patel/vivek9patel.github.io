@@ -228,6 +228,10 @@ export class Terminal extends Component {
                     result = `ls: cannot access '${words}': No such file or directory                    `;
                 }
                 break;
+            case "mkdir" : 
+                this.props.addFolder(words[0]); 
+                result = `Successfully added ${words[0]} folder in desktop`;
+                break;
             case "echo":
                 result = this.xss(words.join(" "));
                 break;
@@ -288,6 +292,6 @@ export class Terminal extends Component {
 
 export default Terminal
 
-export const displayTerminal = () => {
-    return <Terminal> </Terminal>;
+export const displayTerminal = (addFolder) => {
+    return <Terminal addFolder={addFolder}> </Terminal>;
 }

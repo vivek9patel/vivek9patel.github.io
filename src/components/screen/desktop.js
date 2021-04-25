@@ -258,6 +258,7 @@ export class Desktop extends Component {
                     title: app.title,
                     id: app.id,
                     screen: app.screen,
+                    addFolder : this.addFolder,
                     closed: this.closeApp,
                     focus: this.focus,
                     isFocused: this.state.focused_windows[app.id],
@@ -419,28 +420,32 @@ export class Desktop extends Component {
         this.setState({ showNameBar: true });
     }
 
+    addFolder = (folder_name) => {
+        folder_name = folder_name.trim();
+        let folder_id = folder_name.replace(/\s+/g, '-').toLowerCase();
+        apps.push({
+            id: `new-folder-${folder_id}`,
+            title: folder_name,
+            icon: './themes/Yaru/system/folder.png',
+            disabled: true,
+            favourite: false,
+            desktop_shortcut: true,
+            screen: () => { },
+        });
+        // store in local storage
+        var new_folders = JSON.parse(localStorage.getItem('new_folders'));
+        new_folders.push({ id: `new-folder-${folder_id}`, name: folder_name });
+        localStorage.setItem("new_folders", JSON.stringify(new_folders));
+
+        this.setState({ showNameBar: false }, this.updateAppsData);
+    }
+
     renderNameBar = () => {
-        let addFolder = () => {
+        let addtheFolder = ()=>{
             let folder_name = document.getElementById("folder-name-input").value;
-            folder_name = folder_name.trim();
-            let folder_id = folder_name.replace(/\s+/g, '-').toLowerCase();
-            apps.push({
-                id: `new-folder-${folder_id}`,
-                title: folder_name,
-                icon: './themes/Yaru/system/folder.png',
-                disabled: true,
-                favourite: false,
-                desktop_shortcut: true,
-                screen: () => { },
-            });
-            // store in local storage
-            var new_folders = JSON.parse(localStorage.getItem('new_folders'));
-            new_folders.push({ id: `new-folder-${folder_id}`, name: folder_name });
-            localStorage.setItem("new_folders", JSON.stringify(new_folders));
-
-            this.setState({ showNameBar: false }, this.updateAppsData);
+            this.addFolder(folder_name);
         }
-
+        
         let removeCard = () => {
             this.setState({ showNameBar: false });
         }
@@ -452,7 +457,7 @@ export class Desktop extends Component {
                     <input className="outline-none mt-5 px-1 w-10/12  context-menu-bg border-2 border-yellow-700 rounded py-0.5" id="folder-name-input" type="text" autoComplete="off" spellCheck="false" autoFocus={true} />
                 </div>
                 <div className="flex">
-                    <div onClick={addFolder} className="w-1/2 px-4 py-2 border border-gray-900 border-opacity-50 border-r-0 hover:bg-ub-warm-grey hover:bg-opacity-10 hover:border-opacity-50">Create</div>
+                    <div onClick={addtheFolder} className="w-1/2 px-4 py-2 border border-gray-900 border-opacity-50 border-r-0 hover:bg-ub-warm-grey hover:bg-opacity-10 hover:border-opacity-50">Create</div>
                     <div onClick={removeCard} className="w-1/2 px-4 py-2 border border-gray-900 border-opacity-50 hover:bg-ub-warm-grey hover:bg-opacity-10 hover:border-opacity-50">Cancel</div>
                 </div>
             </div>
