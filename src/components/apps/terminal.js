@@ -229,8 +229,12 @@ export class Terminal extends Component {
                 }
                 break;
             case "mkdir" : 
-                this.props.addFolder(words[0]); 
-                result = `Successfully added ${words[0]} folder in desktop`;
+                if(words[0]!==undefined && words[0]!==""){
+                    this.props.addFolder(words[0]); 
+                    result="";
+                } else {
+                    result="mkdir: missing operand";
+                }
                 break;
             case "echo":
                 result = this.xss(words.join(" "));
@@ -251,7 +255,7 @@ export class Terminal extends Component {
                 result = "<img class=' w-2/5' src='./images/memes/used-sudo-command.jpg' />";
                 break;
             default:
-                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear, exit ]";
+                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear, exit, mkdir ]";
         }
         document.getElementById(`row-result-${rowId}`).innerHTML = result;
         this.appendTerminalRow();

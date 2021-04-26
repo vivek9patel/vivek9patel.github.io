@@ -258,7 +258,7 @@ export class Desktop extends Component {
                     title: app.title,
                     id: app.id,
                     screen: app.screen,
-                    addFolder : this.addFolder,
+                    addFolder : this.addToDesktop,
                     closed: this.closeApp,
                     focus: this.focus,
                     isFocused: this.state.focused_windows[app.id],
@@ -420,7 +420,7 @@ export class Desktop extends Component {
         this.setState({ showNameBar: true });
     }
 
-    addFolder = (folder_name) => {
+    addToDesktop = (folder_name) => {
         folder_name = folder_name.trim();
         let folder_id = folder_name.replace(/\s+/g, '-').toLowerCase();
         apps.push({
@@ -441,9 +441,9 @@ export class Desktop extends Component {
     }
 
     renderNameBar = () => {
-        let addtheFolder = ()=>{
+        let addFolder = ()=>{
             let folder_name = document.getElementById("folder-name-input").value;
-            this.addFolder(folder_name);
+            this.addToDesktop(folder_name);
         }
         
         let removeCard = () => {
@@ -457,7 +457,7 @@ export class Desktop extends Component {
                     <input className="outline-none mt-5 px-1 w-10/12  context-menu-bg border-2 border-yellow-700 rounded py-0.5" id="folder-name-input" type="text" autoComplete="off" spellCheck="false" autoFocus={true} />
                 </div>
                 <div className="flex">
-                    <div onClick={addtheFolder} className="w-1/2 px-4 py-2 border border-gray-900 border-opacity-50 border-r-0 hover:bg-ub-warm-grey hover:bg-opacity-10 hover:border-opacity-50">Create</div>
+                    <div onClick={addFolder} className="w-1/2 px-4 py-2 border border-gray-900 border-opacity-50 border-r-0 hover:bg-ub-warm-grey hover:bg-opacity-10 hover:border-opacity-50">Create</div>
                     <div onClick={removeCard} className="w-1/2 px-4 py-2 border border-gray-900 border-opacity-50 hover:bg-ub-warm-grey hover:bg-opacity-10 hover:border-opacity-50">Cancel</div>
                 </div>
             </div>
