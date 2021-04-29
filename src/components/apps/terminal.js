@@ -174,7 +174,7 @@ export class Terminal extends Component {
     }
 
     handleCommands = (command, rowId) => {
-        let words = command.split(' ');
+        let words = command.split(' ').filter(Boolean);
         let main = words[0];
         words.shift()
         let result = "";
@@ -228,7 +228,7 @@ export class Terminal extends Component {
                     result = `ls: cannot access '${words}': No such file or directory                    `;
                 }
                 break;
-            case "mkdir" : 
+            case "mkdir":
                 if(words[0]!==undefined && words[0]!==""){
                     this.props.addFolder(words[0]); 
                     result="";
