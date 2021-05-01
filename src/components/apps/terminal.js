@@ -120,6 +120,7 @@ export class Terminal extends Component {
                 this.removeCursor(terminal_row_id);
                 this.handleCommands(command, terminal_row_id);
             }
+            else return;
             // push to history
             this.prev_commands.push(command);
             this.commands_index = this.prev_commands.length - 1;
@@ -229,11 +230,11 @@ export class Terminal extends Component {
                 }
                 break;
             case "mkdir":
-                if(words[0]!==undefined && words[0]!==""){
-                    this.props.addFolder(words[0]); 
-                    result="";
+                if (words[0] !== undefined && words[0] !== "") {
+                    this.props.addFolder(words[0]);
+                    result = "";
                 } else {
-                    result="mkdir: missing operand";
+                    result = "mkdir: missing operand";
                 }
                 break;
             case "echo":
