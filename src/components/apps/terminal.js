@@ -236,6 +236,13 @@ export class Terminal extends Component {
                     result="mkdir: missing operand";
                 }
                 break;
+            case "code":
+                if(words[0]==="."){
+                    this.props.openApp("vscode");
+                } else {
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear, exit, mkdir,code . ]"; 
+                }
+                break;
             case "echo":
                 result = this.xss(words.join(" "));
                 break;
@@ -255,7 +262,7 @@ export class Terminal extends Component {
                 result = "<img class=' w-2/5' src='./images/memes/used-sudo-command.jpg' />";
                 break;
             default:
-                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear, exit, mkdir ]";
+                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear, exit, mkdir,code .]";
         }
         document.getElementById(`row-result-${rowId}`).innerHTML = result;
         this.appendTerminalRow();
@@ -296,6 +303,6 @@ export class Terminal extends Component {
 
 export default Terminal
 
-export const displayTerminal = (addFolder) => {
-    return <Terminal addFolder={addFolder}> </Terminal>;
+export const displayTerminal = (addFolder,openApp) => {
+    return <Terminal addFolder={addFolder} openApp={openApp}> </Terminal>;
 }
