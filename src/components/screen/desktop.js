@@ -376,12 +376,35 @@ export class Desktop extends Component {
         else {
             let closed_windows = this.state.closed_windows;
             let favourite_apps = this.state.favourite_apps;
+            var frequentApps = localStorage.getItem('frequentApps') ? JSON.parse(localStorage.getItem('frequentApps')) : [];
+            var currentApp = frequentApps.find(app=>app.id===objId);
+            if(currentApp){
+                frequentApps.forEach((app)=>{
+                    if(app.id===currentApp.id){
+                        app.frequency +=1;
+                    }
+                });
+            }else {
+                frequentApps.push({ id: objId , frequency : 1 });
+            }
+
+            frequentApps.sort(( a, b )=> {
+                if ( a.frequency < b.frequency ){
+                    return 1;
+                }
+                if ( a.frequency > b.frequency ){
+                    return -1;
+                }
+                return 0;
+            });
+                
+            localStorage.setItem("frequentApps", JSON.stringify(frequentApps));
+
             setTimeout(() => {
                 favourite_apps[objId] = true; // adds opened app to sideBar
                 closed_windows[objId] = false; // openes app's window
-                this.setState({ closed_windows, favourite_apps }, this.focus(objId));
+                this.setState({ closed_windows, favourite_apps,allAppsView : false }, this.focus(objId));
                 this.app_stack.push(objId);
-                this.setState({allAppsView : false })
             }, 200);
         }
     }
