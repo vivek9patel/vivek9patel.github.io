@@ -381,11 +381,11 @@ export class Desktop extends Component {
             if(currentApp){
                 frequentApps.forEach((app)=>{
                     if(app.id===currentApp.id){
-                        app.frequency +=1;
+                        app.frequency +=1; // increase the frequency if app is found 
                     }
                 });
             }else {
-                frequentApps.push({ id: objId , frequency : 1 });
+                frequentApps.push({ id: objId , frequency : 1 }); // new app opened
             }
 
             frequentApps.sort(( a, b )=> {
@@ -395,7 +395,7 @@ export class Desktop extends Component {
                 if ( a.frequency > b.frequency ){
                     return -1;
                 }
-                return 0;
+                return 0; // sort according to decreasing frequencies
             });
                 
             localStorage.setItem("frequentApps", JSON.stringify(frequentApps));
