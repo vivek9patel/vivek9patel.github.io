@@ -3,9 +3,6 @@ import SmallArrow from './small_arrow';
 import onClickOutside from 'react-onclickoutside';
 
 class Slider extends Component {
-	handleClickOutside = () => {
-		// this.props.setVisible(false);
-	};
 	render() {
 		return (
 			<input
@@ -17,8 +14,6 @@ class Slider extends Component {
 				max="100"
 				value={this.props.value}
 				step="1"
-				onFocus={this.props.onFocus}
-				onBlur={this.props.onBlur}
 			/>
 		);
 	}
@@ -33,7 +28,6 @@ export class StatusCard extends Component {
 			brightness_level: localStorage.getItem('brightness-level') || 100 // setting default value to 100 so that by default its always full.
 		};
 	}
-	SliderComp = onClickOutside(Slider);
 	handleClickOutside = () => {
 		this.props.toggleVisible();
 	};

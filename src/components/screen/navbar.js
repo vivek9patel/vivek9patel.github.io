@@ -8,16 +8,9 @@ export default class Navbar extends Component {
 	constructor() {
 		super();
 		this.state = {
-			status_card: false,
-			disableOnClickOutside: false
+			status_card: false
 		};
 	}
-
-	clickOutsideConfig = {
-		handleClickOutside: () => this.setState({ status_card: !this.state.status_card })
-	};
-
-	TestCard = onClickOutside(StatusCard, this.clickOutsideConfig);
 
 	render() {
 		return (
