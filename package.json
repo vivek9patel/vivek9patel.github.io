@@ -16,6 +16,7 @@
     "react-dom": "^17.0.1",
     "react-draggable": "^4.4.3",
     "react-ga": "^3.3.0",
+    "react-onclickoutside": "^6.10.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.0"
   },
