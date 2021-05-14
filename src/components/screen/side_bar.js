@@ -34,26 +34,27 @@ export default function SideBar(props) {
                             : null
                     )
                 }
-                <AllApps />
+                <AllApps showApps = {props.showAllApps} />
             </div>
             <div onMouseEnter={showSideBar} onMouseLeave={hideSideBar} className={"w-1 h-full absolute top-0 left-0 bg-transparent z-50"}></div>
         </>
     )
 }
 
-export function AllApps() {
+export function AllApps(props) {
 
     const [title, setTitle] = useState(false);
 
     return (
         <div
-            className="absolute bottom-0 w-10 h-10 rounded m-1 hover:bg-white hover:bg-opacity-10 flex items-center justify-center"
+            className={`absolute bottom-0 w-10 h-10 rounded m-1 hover:bg-white hover:bg-opacity-10 flex items-center justify-center`}
             onMouseEnter={() => {
                 setTitle(true);
             }}
             onMouseLeave={() => {
                 setTitle(false);
             }}
+            onClick={props.showApps}
         >
             <img className="w-7" src="./themes/Yaru/system/view-app-grid-symbolic.svg" alt="Ubuntu view app" />
             <div

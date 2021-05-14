@@ -4,6 +4,7 @@ import SideBar from './side_bar';
 import apps from '../../apps.config';
 import Window from '../base/window';
 import UbuntuApp from '../base/ubuntu_app';
+import AllApplications from '../screen/all-applications'
 import DesktopMenu from '../context menus/desktop-menu';
 import DefaultMenu from '../context menus/default';
 import $ from 'jquery';
@@ -14,10 +15,11 @@ export class Desktop extends Component {
         super();
         this.app_stack = [];
         this.initFavourite = {};
-        this.allWindowClosed = false;
+        this.allWindowClosed =  false;
         this.state = {
             focused_windows: {},
             closed_windows: {},
+            allAppsView : false,
             overlapped_windows: {},
             disabled_apps: {},
             favourite_apps: {},
@@ -260,6 +262,7 @@ export class Desktop extends Component {
                     screen: app.screen,
                     addFolder : this.addToDesktop,
                     closed: this.closeApp,
+                    openApp : this.openApp,
                     focus: this.focus,
                     isFocused: this.state.focused_windows[app.id],
                     hideSideBar: this.hideSideBar,
@@ -373,10 +376,34 @@ export class Desktop extends Component {
         else {
             let closed_windows = this.state.closed_windows;
             let favourite_apps = this.state.favourite_apps;
+            var frequentApps = localStorage.getItem('frequentApps') ? JSON.parse(localStorage.getItem('frequentApps')) : [];
+            var currentApp = frequentApps.find(app=>app.id===objId);
+            if(currentApp){
+                frequentApps.forEach((app)=>{
+                    if(app.id===currentApp.id){
+                        app.frequency +=1; // increase the frequency if app is found 
+                    }
+                });
+            }else {
+                frequentApps.push({ id: objId , frequency : 1 }); // new app opened
+            }
+
+            frequentApps.sort(( a, b )=> {
+                if ( a.frequency < b.frequency ){
+                    return 1;
+                }
+                if ( a.frequency > b.frequency ){
+                    return -1;
+                }
+                return 0; // sort according to decreasing frequencies
+            });
+                
+            localStorage.setItem("frequentApps", JSON.stringify(frequentApps));
+
             setTimeout(() => {
                 favourite_apps[objId] = true; // adds opened app to sideBar
                 closed_windows[objId] = false; // openes app's window
-                this.setState({ closed_windows, favourite_apps }, this.focus(objId));
+                this.setState({ closed_windows, favourite_apps,allAppsView : false }, this.focus(objId));
                 this.app_stack.push(objId);
             }, 200);
         }
@@ -440,6 +467,8 @@ export class Desktop extends Component {
         this.setState({ showNameBar: false }, this.updateAppsData);
     }
 
+    showAllApps = ()=>{ this.setState({allAppsView : !this.state.allAppsView })}
+
     renderNameBar = () => {
         let addFolder = ()=>{
             let folder_name = document.getElementById("folder-name-input").value;
@@ -477,7 +506,16 @@ export class Desktop extends Component {
                 <BackgroundImage img={this.props.bg_image_name} />
 
                 {/* Ubuntu Side Menu Bar */}
-                <SideBar apps={apps} hide={this.state.hideSideBar} hideSideBar={this.hideSideBar} favourite_apps={this.state.favourite_apps} closed_windows={this.state.closed_windows} focused_windows={this.state.focused_windows} isMinimized={this.state.minimized_windows} openAppByAppId={this.openApp} />
+                <SideBar apps={apps}
+                 hide={this.state.hideSideBar}
+                 hideSideBar={this.hideSideBar}
+                 favourite_apps={this.state.favourite_apps}
+                 showAllApps =  {this.showAllApps}
+                 allAppsView ={this.state.allAppsView}
+                 closed_windows={this.state.closed_windows} 
+                 focused_windows={this.state.focused_windows} 
+                 isMinimized={this.state.minimized_windows} 
+                 openAppByAppId={this.openApp} />
 
                 {/* Desktop Apps */}
                 {this.renderDesktopApps()}
@@ -493,6 +531,12 @@ export class Desktop extends Component {
                         : null
                     )
                 }
+                
+                { this.state.allAppsView ? 
+                    <AllApplications apps={apps}
+                    recentApps={this.app_stack} 
+                    openApp={this.openApp}/> : null}
+
             </div>
         )
     }

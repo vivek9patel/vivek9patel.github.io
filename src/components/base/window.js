@@ -183,7 +183,8 @@ export class Window extends Component {
                     {(this.id === "settings"
                         ? <Settings changeBackgroundImage={this.props.changeBackgroundImage} currBgImgName={this.props.bg_image_name} />
                         : <WindowMainScreen screen={this.props.screen} title={this.props.title} 
-                        addFolder={this.props.id === "terminal" ? this.props.addFolder : null} />)}
+                        addFolder={this.props.id === "terminal" ? this.props.addFolder : null}
+                        openApp={this.props.openApp} />)}
                 </div>
             </Draggable >
         )
@@ -288,7 +289,7 @@ export class WindowMainScreen extends Component {
     render() {
         return (
             <div className={"w-full flex-grow z-20 max-h-full overflow-y-auto windowMainScreen" + (this.state.setDarkBg ? " bg-ub-drk-abrgn " : " bg-ub-cool-grey")}>
-                {this.props.addFolder ? displayTerminal(this.props.addFolder) :  this.props.screen()}
+                {this.props.addFolder ? displayTerminal(this.props.addFolder,this.props.openApp) :  this.props.screen()}
             </div>
         )
     }
