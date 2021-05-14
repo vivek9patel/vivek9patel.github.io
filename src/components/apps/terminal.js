@@ -240,7 +240,7 @@ export class Terminal extends Component {
                 if(words[0]==="."){
                     this.props.openApp("vscode");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear, exit, mkdir,code . ]"; 
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, echo, clear, exit, mkdir,code]"; 
                 }
                 break;
             case "echo":
