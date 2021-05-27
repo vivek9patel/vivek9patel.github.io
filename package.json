@@ -7,8 +7,10 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
+    "browserslist": "^4.16.6",
     "emailjs-com": "^2.6.4",
     "gh-pages": "^3.1.0",
+    "hosted-git-info": "^4.0.2",
     "is-svg": "^4.3.1",
     "jquery": "^3.6.0",
     "react": "^17.0.1",
@@ -50,7 +52,7 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
+    "postcss": "^8.2.10",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
   }
 }
