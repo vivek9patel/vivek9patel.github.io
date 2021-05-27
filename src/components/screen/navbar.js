@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Clock from '../util components/clock';
 import Status from '../util components/status';
 import StatusCard from '../util components/status_card';
-import onClickOutside from 'react-onclickoutside';
 
 export default class Navbar extends Component {
 	constructor() {
