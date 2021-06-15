@@ -33,12 +33,14 @@ export class AllApplications extends React.Component {
         let frequentAppsInfo = JSON.parse(localStorage.getItem("frequentApps"));
         let getFrequentApps = () => {
             let frequentApps = [];
-            frequentAppsInfo.forEach((app_info) => {
-                let app = this.props.apps.find(app => app.id === app_info.id);
-                if (app) {
-                    frequentApps.push(app);
-                }
-            })
+            if (frequentAppsInfo) {
+                frequentAppsInfo.forEach((app_info) => {
+                    let app = this.props.apps.find(app => app.id === app_info.id);
+                    if (app) {
+                        frequentApps.push(app);
+                    }
+                })
+            }
             return frequentApps;
         }
 

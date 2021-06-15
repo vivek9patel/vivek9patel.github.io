@@ -5,6 +5,10 @@
 /* Ubuntu Font */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .ubuntu-font {
     font-family: 'Ubuntu', sans-serif;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import Settings from '../apps/settings';
 import ReactGA from 'react-ga';
-import {displayTerminal} from '../apps/terminal'
+import { displayTerminal } from '../apps/terminal'
 
 export class Window extends Component {
     constructor() {
@@ -182,9 +182,9 @@ export class Window extends Component {
                     <WindowEditButtons minimize={this.minimizeWindow} maximize={this.maximizeWindow} isMaximised={this.state.maximized} close={this.closeWindow} id={this.id} />
                     {(this.id === "settings"
                         ? <Settings changeBackgroundImage={this.props.changeBackgroundImage} currBgImgName={this.props.bg_image_name} />
-                        : <WindowMainScreen screen={this.props.screen} title={this.props.title} 
-                        addFolder={this.props.id === "terminal" ? this.props.addFolder : null}
-                        openApp={this.props.openApp} />)}
+                        : <WindowMainScreen screen={this.props.screen} title={this.props.title}
+                            addFolder={this.props.id === "terminal" ? this.props.addFolder : null}
+                            openApp={this.props.openApp} />)}
                 </div>
             </Draggable >
         )
@@ -289,7 +289,7 @@ export class WindowMainScreen extends Component {
     render() {
         return (
             <div className={"w-full flex-grow z-20 max-h-full overflow-y-auto windowMainScreen" + (this.state.setDarkBg ? " bg-ub-drk-abrgn " : " bg-ub-cool-grey")}>
-                {this.props.addFolder ? displayTerminal(this.props.addFolder,this.props.openApp) :  this.props.screen()}
+                {this.props.addFolder ? displayTerminal(this.props.addFolder, this.props.openApp) : this.props.screen()}
             </div>
         )
     }
