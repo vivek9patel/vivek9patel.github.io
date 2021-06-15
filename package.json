@@ -12,9 +12,11 @@
     "dns-packet": "^5.2.4",
     "emailjs-com": "^2.6.4",
     "gh-pages": "^3.1.0",
+    "glob-parent": "^6.0.0",
     "hosted-git-info": "^4.0.2",
     "is-svg": "^4.3.1",
     "jquery": "^3.6.0",
+    "normalize-url": "^6.0.1",
     "react": "^17.0.1",
     "react-dev-utils": "^11.0.4",
     "react-dom": "^17.0.1",
@@ -22,7 +24,8 @@
     "react-ga": "^3.3.0",
     "react-onclickoutside": "^6.10.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.0"
+    "web-vitals": "^1.1.0",
+    "ws": "^7.4.6"
   },
   "scripts": {
     "start": "craco start",
