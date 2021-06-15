@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://vivek9patel.github.io/",
   "dependencies": {
+    "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
@@ -24,9 +25,9 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "build:css": "tailwind build src/styles/styles.css -o src/styles/main.css",
     "predeploy": "npm run build",
@@ -53,7 +54,7 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "autoprefixer": "^9.8.6",
-    "postcss": "^8.2.10",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
   }
 }
