@@ -3,14 +3,19 @@
 - Make _.env_ file in root folder
 <!-- to get api keys -->
 
-- follow this [docs](https://support.google.com/analytics/answer/10269537?ref_topic=1009620) to get your Tracking ID
-- make an account on sendgrid and get your api key from there
-- add your keys to .env file just like below given template.
+### Get API keys from emailjs
+
+- Get your apis from [emailjs](https://www.emailjs.com/).
+  follow this [docs](https://www.emailjs.com/docs)
+- inside that file you need to declare your api keys for _emailjs_, below is the sample code
+- your api keys will be here: [page](https://dashboard.emailjs.com/admin/integration)
+<!-- to get google analytics tracking id -->
 
 ```
 
-REACT_APP_TRACKING_ID = "GOOGLE_ANALYTICS_TRACKING_ID"
-REACT_APP_SENDGRID_API_KEY="send grid api key"
+REACT_APP_USER_ID = 'YOUR_USER_ID'
+REACT_APP_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
+REACT_APP_SERVICE_ID = 'YOUR_SERVICE_ID'
 
 ```
 
