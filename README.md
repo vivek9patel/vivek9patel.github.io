@@ -1,20 +1,22 @@
 # Ubuntu ReactJS clone
 This is a personal portfolio website of theme Ubuntu 20.04, made using React.js & tailwind CSS.
-If you want to edit this. Clone this project and edit the files in /src/components. 
+If you want to edit this. Clone this project and edit the files in ```/src/components```. 
 
 
 
 To run this on localhost
-type **npm start** and when u are done coding type **npm run build** to build your app.
-*NOTE: if you have yarn just replace npm start and npm run build with yarn start and yarn build.*
+type ```npm start``` and when u are done coding type ```npm run build``` to build your app.
+
+*NOTE: if you have yarn just replace ```npm start``` and ```npm run build``` with ```yarn start``` and ```yarn build```.*
 
 
 ### To make the contact form work
 
--Create a account in [emailjs](https://www.emailjs.com/) create also new Outlook or Gmail account to be able
-to send email. Create a new service, select and log in to your newly created outlook or gmail account on EmailJS.
-Go back to the dashboard and get the Service ID copy it.
-Create a .env file in your root folder and put 
+- Create a account in [emailjs](https://www.emailjs.com/) create also new Outlook or Gmail account to be able
+to send email. 
+- Create a new service, select and log in to your newly created outlook or gmail account on EmailJS.
+- Go back to the dashboard and get the Service ID copy it.
+- Create a .env file in your root folder and put 
 ```
 
 REACT_APP_USER_ID = 'YOUR_USER_ID'
@@ -23,7 +25,7 @@ REACT_APP_SERVICE_ID = 'YOUR_SERVICE_ID'
 
 ```
 into it. Replace *your user id and your service ID with your values in your EmailJS service. Delete the second line with 
-**YOUR_TEMPLATE_ID** and ur done
+**YOUR_TEMPLATE_ID** and you're done
 
 
 
