@@ -20,14 +20,11 @@ to send email.
 ```
 
 REACT_APP_USER_ID = 'YOUR_USER_ID'
-REACT_APP_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
+REACT_APP_TEMPLATE_ID = 'template_fqqqb9g'
 REACT_APP_SERVICE_ID = 'YOUR_SERVICE_ID'
 
 ```
-into it. Replace *your user id and your service ID with your values in your EmailJS service. Delete the second line with 
-**YOUR_TEMPLATE_ID** and you're done
-
-
+into it. Replace *your user id and your service ID with your values in your EmailJS service. 
 
 
 
