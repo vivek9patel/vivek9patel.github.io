@@ -237,7 +237,7 @@ export class Desktop extends Component {
             if (this.state.desktop_apps.includes(app.id)) {
 
                 const props = {
-                    name: app.title,
+                    name: app.title.slice(0, 10) + (app.title.length > 10 ? "..." : ""),
                     id: app.id,
                     icon: app.icon,
                     openApp: this.openApp
