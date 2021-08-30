@@ -7,6 +7,7 @@ import { displayChrome } from './components/apps/chrome';
 import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
 import { displayAboutVivek } from './components/apps/vivek';
+import { displayTerminalCalc } from './components/apps/calc';
 
 const apps = [
     {
@@ -26,6 +27,15 @@ const apps = [
         favourite: true,
         desktop_shortcut: false,
         screen: displayTodoist,
+    },
+    {
+        id: "calc",
+        title: "Calc",
+        icon: './themes/Yaru/apps/calc.png',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: false,
+        screen: displayTerminalCalc,
     },
     {
         id: "about-vivek",
