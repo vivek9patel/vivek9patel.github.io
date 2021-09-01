@@ -93,7 +93,7 @@ const apps = [
     },
     {
         id: "gedit",
-        title: "Send a Message",
+        title: "Contact",
         icon: './themes/Yaru/apps/gedit.png',
         disabled: false,
         favourite: false,
