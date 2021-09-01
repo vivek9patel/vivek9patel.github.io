@@ -142,8 +142,8 @@ export class Window extends Component {
             var r = document.querySelector("#" + this.id);
             this.setWinowsPosition();
             // translate window to maximize position
-            r.style.transform = `translate(0px,-2pt)`;
-            this.setState({ maximized: true, height: 95.5, width: 100 });
+            r.style.transform = `translate(-1pt,-2pt)`;
+            this.setState({ maximized: true, height: 96.3, width: 100.2 });
             this.props.hideSideBar(this.id, true);
         }
     }

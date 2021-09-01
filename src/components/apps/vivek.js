@@ -121,7 +121,7 @@ function About() {
                 <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-0"></div>
             </div>
             <ul className=" leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
-                <li className=" list-pc">I'm a 3<sup>rd</sup> year <span className=" font-medium">computer Science student</span> pursuing my Btech degree from <a href="https://www.pdpu.ac.in/" rel="noreferrer" target="_blank">PDEU, Gandhinagar</a>.</li>
+                <li className=" list-pc">I'm a final year <span className=" font-medium">Computer Engineering student</span> pursuing my Btech degree from <a href="https://www.pdpu.ac.in/" rel="noreferrer" target="_blank">PDEU, Gandhinagar</a>.</li>
                 <li className=" mt-3 list-building"> I enjoy building awesome softwares that solve practical problems.</li>
                 <li className=" mt-3 list-time"> When I am not coding my next project, I like to spend my time reading books, playing minecraft or watching <a href="https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A" target="_blank" rel="noreferrer"> tom scott's videos.</a></li>
                 <li className=" mt-3 list-star"> And I also have interest in Deep Learning & Computer Vision!</li>
@@ -146,7 +146,7 @@ function Education() {
                     </div>
                     <div className=" text-sm text-gray-400 mt-0.5">2018 - 2022</div>
                     <div className=" text-sm md:text-base">Computer Science & Engineering</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">CGPA &nbsp; 9.07/10</div>
+                    <div className="text-sm text-gray-300 font-bold mt-1">CGPA &nbsp; 9.26/10</div>
                 </li>
                 <li className="list-disc mt-5">
                     <div className=" text-lg md:text-xl text-left font-bold leading-tight">

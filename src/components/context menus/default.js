@@ -11,7 +11,7 @@ function DefaultMenu(props) {
     }
 
     return (
-        <div id="default-menu" className={(props.active ? " block " : " hidden ") + " w-52 context-menu-bg border text-left border-gray-900 rounded text-white py-4 absolute z-50 text-sm"}>
+        <div id="default-menu" className={(props.active ? " block " : " hidden ") + " cursor-default w-52 context-menu-bg border text-left border-gray-900 rounded text-white py-4 absolute z-50 text-sm"}>
             <a rel="noreferrer noopener" href="https://github.com/vivek9patel/vivek9patel.github.io" target="_blank" className="w-full block cursor-default py-0.5 hover:bg-ub-warm-grey hover:bg-opacity-20 mb-1.5">
                 <span className="ml-5">🌟</span> <span className="ml-2">Star this Project</span>
             </a>
