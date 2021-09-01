@@ -47,7 +47,7 @@ export class AllApplications extends React.Component {
         let apps = this.state.category === 0 ? [...this.state.apps] : getFrequentApps();
         apps.forEach((app, index) => {
             const props = {
-                name: app.title.slice(0, 10) + (app.title.length > 10 ? "..." : ""),
+                name: app.title,
                 id: app.id,
                 icon: app.icon,
                 openApp: this.props.openApp

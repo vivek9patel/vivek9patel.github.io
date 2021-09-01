@@ -3,7 +3,6 @@ import BackgroundImage from '../util components/background-image';
 import SideBar from './side_bar';
 import apps from '../../apps.config';
 import Window from '../base/window';
-import calcWindow from '../base/calcWindow';
 import UbuntuApp from '../base/ubuntu_app';
 import AllApplications from '../screen/all-applications'
 import DesktopMenu from '../context menus/desktop-menu';
@@ -238,7 +237,7 @@ export class Desktop extends Component {
             if (this.state.desktop_apps.includes(app.id)) {
 
                 const props = {
-                    name: app.title.slice(0, 10) + (app.title.length > 10 ? "..." : ""),
+                    name: app.title,
                     id: app.id,
                     icon: app.icon,
                     openApp: this.openApp
@@ -279,34 +278,6 @@ export class Desktop extends Component {
             }
         });
         return windowsJsx;
-    }
-    renderCalcWindows = () => {
-        let calcWindowsJsx = [];
-        apps.forEach((app, index) => {
-            if (this.state.closed_windows[app.id] === false) {
-
-                const props = {
-                    title: app.title,
-                    id: app.id,
-                    screen: app.screen,
-                    addFolder: this.addToDesktop,
-                    closed: this.closeApp,
-                    openApp: this.openApp,
-                    focus: this.focus,
-                    isFocused: this.state.focused_windows[app.id],
-                    hideSideBar: this.hideSideBar,
-                    hasMinimised: this.hasMinimised,
-                    minimized: this.state.minimized_windows[app.id],
-                    changeBackgroundImage: this.props.changeBackgroundImage,
-                    bg_image_name: this.props.bg_image_name,
-                }
-
-                calcWindowsJsx.push(
-                    <calcWindow key={index} {...props} />
-                )
-            }
-        });
-        return calcWindowsJsx;
     }
 
     hideSideBar = (objId, hide) => {
@@ -529,11 +500,6 @@ export class Desktop extends Component {
                 {/* Window Area */}
                 <div className="absolute h-full w-full bg-transparent" data-context="desktop-area">
                     {this.renderWindows()}
-                </div>
-
-                {/* Window Area */}
-                <div className="absolute h-full w-full bg-transparent" data-context="desktop-area">
-                    {this.renderCalcWindows()}
                 </div>
 
                 {/* Background Image */}
