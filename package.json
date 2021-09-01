@@ -25,6 +25,8 @@
     "react-ga": "^3.3.0",
     "react-onclickoutside": "^6.10.0",
     "react-scripts": "4.0.3",
+    "tar": "^6.1.9",
+    "url-parse": "^1.5.2",
     "web-vitals": "^1.1.0",
     "ws": "^7.4.6"
   },

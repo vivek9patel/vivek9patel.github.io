@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export class UbuntuApp extends Component {
-    
+
     openApp = () => {
         this.props.openApp(this.props.id);
     }
@@ -15,8 +15,8 @@ export class UbuntuApp extends Component {
                 tabIndex={0}
             >
                 <img className="mb-1 w-10" src={this.props.icon} alt={"Ubuntu " + this.props.name} />
-                <div className="w-4/5 truncate ..."> {this.props.name}</div>
-                
+                {this.props.name}
+
             </div>
         )
     }
