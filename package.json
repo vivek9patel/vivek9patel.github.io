@@ -8,7 +8,7 @@
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "11.2.7",
     "@testing-library/user-event": "12.8.3",
-    "browserslist": "4.16.6",
+    "browserslist": "4.16.8",
     "dns-packet": "5.3.0",
     "emailjs-com": "2.6.4",
     "expr-eval": "2.0.2",
