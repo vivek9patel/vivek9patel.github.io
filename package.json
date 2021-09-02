@@ -28,7 +28,7 @@
     "tar": "6.1.11",
     "url-parse": "1.5.3",
     "web-vitals": "1.1.2",
-    "ws": "7.5.4"
+    "ws": "8.2.1"
   },
   "scripts": {
     "start": "craco start",
