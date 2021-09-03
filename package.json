@@ -27,7 +27,7 @@
     "react-scripts": "4.0.3",
     "tar": "6.1.11",
     "url-parse": "1.5.3",
-    "web-vitals": "1.1.2",
+    "web-vitals": "2.1.0",
     "ws": "8.2.1"
   },
   "scripts": {
