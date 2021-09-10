@@ -26,7 +26,7 @@ export default function SideBar(props) {
 
     return (
         <>
-            <div className={(props.hide ? " -translate-x-full " : "") + " absolute transform duration-300 select-none z-40 left-0 top-0 h-full pt-7 w-auto flex flex-col justify-start items-center border-black border-opacity-60 bg-black bg-opacity-50"}>
+            <div className={(props.hide ? " -translate-x-full " : "") + " absolute transform duration-300 select-none z-40 left-0 top-0 h-full pt-7 w-auto flex flex-col justify-start items-center border-black border-opacity-60 bg-black bg-opacity-50 overflow-scroll"}>
                 {
                     (
                         Object.keys(props.closed_windows).length !== 0
@@ -47,7 +47,8 @@ export function AllApps(props) {
 
     return (
         <div
-            className={`absolute bottom-0 w-10 h-10 rounded m-1 hover:bg-white hover:bg-opacity-10 flex items-center justify-center`}
+        className={`w-10 h-10 rounded m-1 hover:bg-white hover:bg-opacity-10 flex items-center justify-center`}
+        style={{marginTop: 'auto'}}
             onMouseEnter={() => {
                 setTitle(true);
             }}
