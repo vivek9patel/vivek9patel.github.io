@@ -27,6 +27,11 @@ jobs:
           cache: "npm"
       - run: npm i
       - run: npm run build
+        env:
+          NEXT_PUBLIC_TRACKING_ID: UA-182113713-1
+          NEXT_PUBLIC_SERVICE_ID: service_qt4ryip
+          NEXT_PUBLIC_TEMPLATE_ID: template_2ni69n8
+          NEXT_PUBLIC_USER_ID: user_Do31sKneP4eYfn5n1nLTD
       - run: npm run export
       - run: touch ./out/.nojekyll
 
