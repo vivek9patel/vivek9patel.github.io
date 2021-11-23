@@ -14,8 +14,8 @@
     "expr-eval": "^2.0.2",
     "jquery": "^3.6.0",
     "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0-beta-fdc1d617a-20211118",
+    "react-dom": "latest",
     "react-draggable": "^4.4.4",
     "react-ga": "^3.3.0",
     "react-onclickoutside": "^6.11.2"
