@@ -8,6 +8,8 @@ type `npm start` and when u are done coding type `npm run build` to build your a
 
 _NOTE: if you have yarn just replace `npm start` and `npm run build` with `yarn start` and `yarn build`._
 
+<a href="https://www.buymeacoffee.com/vivek9patel" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 140px !important;" ></a>
+
 ### To make the contact form work
 
 - Create a account in [emailjs](https://www.emailjs.com/) create also new Outlook or Gmail account to be able
