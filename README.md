@@ -28,7 +28,7 @@ NEXT_PUBLIC_SERVICE_ID = 'YOUR_SERVICE_ID'
 
 into it. Replace \*your user id and your service ID with your values in your EmailJS service.
 
-## This project was made using Create React App! Here is the scripts that u can run.
+## This project was made using Create React App! Here is the scripts that you can run.
 
 ### `npm start`
 
@@ -57,3 +57,38 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Added some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+# Add pages
+
+If you want more customization to your clone of this
+project you can create a custom page with your own content!
+
+Create a .js file in /components/apps and fill it out with this:
+`import React from 'react'
+
+export default function MyPage() {
+    return (
+        <div>
+   // your content here
+        </div>
+    )
+}
+
+export const displayMyPage = () => {
+    <MyPage> </MyPage>
+}
+`
+Replace **MyPage** with your own name.
+To make it display on the desktop go to /apps.config.js
+and add a new entry for your page!
+**Example**
+`{
+        id: "chrome",
+        title: "Google Chrome",
+        icon: './themes/Yaru/apps/chrome.png',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: true,
+        screen: displayChrome,
+    },`
+
