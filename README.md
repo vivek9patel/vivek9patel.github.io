@@ -1,6 +1,6 @@
 # Web simulation of UbuntuOS
 
-This is a personal portfolio website of theme Ubuntu 20.04, made using React.js & tailwind CSS.
+This is a personal portfolio website of theme Ubuntu 20.04, made using Next.js & tailwind CSS.
 If you want to edit this. Clone this project and edit the files in `/src/components`.
 
 To run this on localhost
@@ -28,7 +28,7 @@ NEXT_PUBLIC_SERVICE_ID = 'YOUR_SERVICE_ID'
 
 into it. Replace \*your user id and your service ID with your values in your EmailJS service.
 
-## This project was made using Create React App! Here is the scripts that u can run.
+## This project was made using Create Next App! Here is the scripts that u can run.
 
 ### `npm start`
 
