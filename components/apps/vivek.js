@@ -73,6 +73,9 @@ export class AboutVivek extends Component {
                     <img className=" w-3 md:w-4" alt="vivek's resume" src="./themes/Yaru/status/download.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
                 </div>
+                <div className='my-0.5 w-28 md:w-full h-8 px-2 md:px-2.5 flex' >
+                    <iframe src="https://github.com/sponsors/vivek9patel/button" title="Sponsor vivek9patel" width={"100%"} height={"100%"} ></iframe>
+                </div>
             </>
         );
     }
@@ -114,14 +117,14 @@ function About() {
             </div>
             <div className=" mt-4 md:mt-8 text-lg md:text-2xl text-center px-1">
                 <div>my name is <span className="font-bold">Vivek Patel</span> ,</div>
-                <div className="font-normal ml-1">I'm a <span className="text-pink-600 font-bold">Web Developer!</span></div>
+                <div className="font-normal ml-1">I'm a <span className="text-pink-600 font-bold">Software Engineer!</span></div>
             </div>
-            <div className=" my-4 relative md:my-8 pt-px bg-white w-32 md:w-48">
+            <div className=" mt-4 relative md:my-8 pt-px bg-white w-32 md:w-48">
                 <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-0"></div>
                 <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-0"></div>
             </div>
-            <ul className=" leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
-                <li className=" list-pc">I'm a final year <span className=" font-medium">Computer Engineering student</span> pursuing my Btech degree from <a href="https://www.pdpu.ac.in/" rel="noreferrer" target="_blank">PDEU, Gandhinagar</a>.</li>
+            <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
+                <li className=" list-pc">I'm a <span className=" font-medium">Computer Engineer</span> from Gujarat, India. Currently a SWE intern at <u className=' cursor-pointer '> <a href="https://en.wikipedia.org/wiki/HackerRank" target={"_blank"}>HackerRank</a> </u></li>
                 <li className=" mt-3 list-building"> I enjoy building awesome softwares that solve practical problems.</li>
                 <li className=" mt-3 list-time"> When I am not coding my next project, I like to spend my time reading books, playing minecraft or watching <a href="https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A" target="_blank" rel="noreferrer"> tom scott's videos.</a></li>
                 <li className=" mt-3 list-star"> And I also have interest in Deep Learning & Computer Vision!</li>
@@ -145,8 +148,8 @@ function Education() {
                         Pandit Deendayal Energy University- PDEU
                     </div>
                     <div className=" text-sm text-gray-400 mt-0.5">2018 - 2022</div>
-                    <div className=" text-sm md:text-base">Computer Science & Engineering</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">CGPA &nbsp; 9.26/10</div>
+                    <div className=" text-sm md:text-base">Computer Engineering</div>
+                    <div className="text-sm text-gray-300 font-bold mt-1">CGPA &nbsp; 9.35/10</div>
                 </li>
                 <li className="list-disc mt-5">
                     <div className=" text-lg md:text-xl text-left font-bold leading-tight">
@@ -222,6 +225,42 @@ function Skills() {
 function Projects() {
     const project_list = [
         {
+            name: "UbuntuOS Portfolio",
+            date: "Apr 2021",
+            link: "https://github.com/vivek9patel/vivek9patel.github.io",
+            description: [
+                "Personal portfolio website of theme Ubuntu 20.04, made using NEXT.js & tailwind CSS",
+            ],
+            domains: ["javascript", "next.js", "tailwindcss"]
+        },
+        {
+            name: "Chrome Extension React Bolierplate",
+            date: "Dec 2021",
+            link: "https://github.com/vivek9patel/chrome-extension-react-boilerplate",
+            description: [
+                "A boilerplate code to build a chrome extension with react and webpack",
+            ],
+            domains: ["javascript", "chrome-extension"]
+        },
+        {
+            name: "CodeConnect",
+            date: "Nov 2021",
+            link: "https://github.com/vivek9patel/CodeConnect-frontend",
+            description: [
+                "A multi-language pair-programming platform with the features of video meeting and whiteboard. Built with React.js, Tailwind CSS, Chakra UI, Express & Socket.io.",
+            ],
+            domains: ["javascript", "tailwindcss"]
+        },
+        {
+            name: "Ad Free Spotify",
+            date: "Jun 2021",
+            link: "https://github.com/vivek9patel/ad-free-spotify",
+            description: [
+                "Chrome extension to automatically mute/unmute Spotify tab when Advertisement starts and ends!",
+            ],
+            domains: ["javascript", "chrome-extension"]
+        },
+        {
             name: "economist.com Unlocked",
             date: "Mar 2021",
             link: "https://github.com/vivek9patel/economist.com-unlocked",
@@ -280,6 +319,7 @@ function Projects() {
         "javascript": "yellow-300",
         "firebase": "red-600",
         "firestore": "red-500",
+        "firebase auth": "red-400",
         "chrome-extension": "yellow-400",
         "flutter": "blue-400",
         "dart": "blue-500",
@@ -290,6 +330,8 @@ function Projects() {
         "django": "green-600",
         "python": "green-200",
         "codeforces-api": "gray-300",
+        "tailwindcss": "blue-300",
+        "next.js": "purple-600"
     }
 
     return (
@@ -301,13 +343,20 @@ function Projects() {
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
                 </div>
             </div>
+            <iframe src="https://github.com/sponsors/vivek9patel/card" title="Sponsor vivek9patel" className='my-4 w-5/6 md:w-3/4' ></iframe>
+
             {
                 project_list.map((project, index) => {
+                    const projectNameFromLink = project.link.split('/')
+                    const projectName = projectNameFromLink[projectNameFromLink.length - 1]
                     return (
                         <a key={index} href={project.link} target="_blank" rel="noreferrer" className="flex w-full flex-col px-4">
                             <div className="w-full py-1 px-2 my-2 border border-gray-50 border-opacity-10 rounded hover:bg-gray-50 hover:bg-opacity-5 cursor-pointer">
                                 <div className="flex flex-wrap justify-between items-center">
-                                    <div className=" text-base md:text-lg">{project.name.toLowerCase()}</div>
+                                    <div className='flex justify-center items-center'>
+                                        <div className=" text-base md:text-lg mr-2">{project.name.toLowerCase()}</div>
+                                        <iframe src={`https://ghbtns.com/github-btn.html?user=vivek9patel&repo=${projectName}&type=star&count=true`} frameBorder="0" scrolling="0" width="150" height="20" title={project.name.toLowerCase()+"-star"}></iframe>
+                                    </div>
                                     <div className="text-gray-300 font-light text-sm">{project.date}</div>
                                 </div>
                                 <ul className=" tracking-normal leading-tight text-sm font-light ml-4 mt-1">
@@ -321,8 +370,10 @@ function Projects() {
                                     {
                                         (project.domains ?
                                             project.domains.map((domain, index) => {
-                                                let tag_color = tag_colors[domain];
-                                                return <span key={index} style={{ borderWidth: "1pt" }} className={`px-1.5 py-0.5 w-max border-${tag_color} text-${tag_color} m-1 rounded-full`}>{domain}</span>
+                                                const borderColorClass = `border-${tag_colors[domain]}`
+                                                const textColorClass = `text-${tag_colors[domain]}`
+
+                                                return <span key={index} className={`px-1.5 py-0.5 w-max border ${borderColorClass} ${textColorClass} m-1 rounded-full`}>{domain}</span>
                                             })
 
                                             : null)
