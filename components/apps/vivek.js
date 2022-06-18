@@ -54,27 +54,27 @@ export class AboutVivek extends Component {
         return (
             <>
                 <div id="about" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "about" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="about vivek" src="./themes/Yaru/status/about.svg" />
+                    <img className=" w-3 md:w-4" alt="about Clouds" src="./themes/Yaru/status/about.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">About Me</span>
                 </div>
                 <div id="education" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "education" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="vivek' education" src="./themes/Yaru/status/education.svg" />
+                    <img className=" w-3 md:w-4" alt="Clouds' education" src="./themes/Yaru/status/education.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Education</span>
                 </div>
                 <div id="skills" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "skills" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="vivek' skills" src="./themes/Yaru/status/skills.svg" />
+                    <img className=" w-3 md:w-4" alt="Clouds' skills" src="./themes/Yaru/status/skills.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Skills</span>
                 </div>
                 <div id="projects" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "projects" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="vivek' projects" src="./themes/Yaru/status/projects.svg" />
+                    <img className=" w-3 md:w-4" alt="Clouds' projects" src="./themes/Yaru/status/projects.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Projects</span>
                 </div>
                 <div id="resume" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "resume" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="vivek's resume" src="./themes/Yaru/status/download.svg" />
+                    <img className=" w-3 md:w-4" alt="Clouds' resume" src="./themes/Yaru/status/download.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
                 </div>
                 <div className='my-0.5 w-28 md:w-full h-8 px-2 md:px-2.5 flex' >
-                    <iframe src="https://github.com/sponsors/vivek9patel/button" title="Sponsor vivek9patel" width={"100%"} height={"100%"} ></iframe>
+                    <iframe src="https://discord.cloudsofmana.com" title="Support IOTB" width={"100%"} height={"100%"} ></iframe>
                 </div>
             </>
         );
@@ -113,21 +113,21 @@ function About() {
     return (
         <>
             <div className="w-20 md:w-28 my-4 bg-white rounded-full">
-                <img className="w-full" src="./images/logos/bitmoji.png" alt="Vivek Patel Logo" />
+                <img className="w-full" src="./images/logos/bitmoji.png" alt="CloudsOfMana Logo" />
             </div>
             <div className=" mt-4 md:mt-8 text-lg md:text-2xl text-center px-1">
-                <div>my name is <span className="font-bold">Vivek Patel</span> ,</div>
-                <div className="font-normal ml-1">I'm a <span className="text-pink-600 font-bold">Software Engineer!</span></div>
+                <div>my name is <span className="font-bold">CloudsOfMana</span> ,</div>
+                <div className="font-normal ml-1">I'm a <span className="text-pink-600 font-bold">Network Engineer!</span></div>
             </div>
             <div className=" mt-4 relative md:my-8 pt-px bg-white w-32 md:w-48">
                 <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-0"></div>
                 <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-0"></div>
             </div>
             <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
-                <li className=" list-pc">I'm a <span className=" font-medium">Computer Engineer</span> from Gujarat, India. Currently a SWE intern at <u className=' cursor-pointer '> <a href="https://en.wikipedia.org/wiki/HackerRank" target={"_blank"}>HackerRank</a> </u></li>
-                <li className=" mt-3 list-building"> I enjoy building awesome softwares that solve practical problems.</li>
-                <li className=" mt-3 list-time"> When I am not coding my next project, I like to spend my time reading books, playing minecraft or watching <a href="https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A" target="_blank" rel="noreferrer"> tom scott's videos.</a></li>
-                <li className=" mt-3 list-star"> And I also have interest in Deep Learning & Computer Vision!</li>
+                <li className=" list-pc">I'm a <span className=" font-medium">Network Engineer </span> from Kansas, USA. Graduate in Computer Technology Networking and Administration <u className=' cursor-pointer '> <a href="https://en.wikipedia.org/wiki/HackerRank" target={"_blank"}>HackerRank</a> </u></li>
+                <li className=" mt-3 list-building"> I enjoy building software that solves practical problems.</li>
+                <li className=" mt-3 list-time"> When I am not working with computers, I tend to spend my time listening to music, playing games or watching over my pets. </a></li>
+                <li className=" mt-3 list-star"> I am passionate in pharmacology, harm reduction and offering peer support to those that need it</li>
             </ul>
         </>
     )
@@ -145,10 +145,10 @@ function Education() {
             <ul className=" w-10/12  mt-4 ml-4 px-0 md:px-1">
                 <li className="list-disc">
                     <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Pandit Deendayal Energy University- PDEU
+                        Wichita Technical Institute
                     </div>
                     <div className=" text-sm text-gray-400 mt-0.5">2018 - 2022</div>
-                    <div className=" text-sm md:text-base">Computer Engineering</div>
+                    <div className=" text-sm md:text-base">Network Engineering</div>
                     <div className="text-sm text-gray-300 font-bold mt-1">CGPA &nbsp; 9.35/10</div>
                 </li>
                 <li className="list-disc mt-5">
@@ -156,7 +156,7 @@ function Education() {
                         Class 12<sup>th</sup> (GSEB)
                     </div>
                     <div className=" text-sm text-gray-400 mt-0.5">2016 - 2018</div>
-                    <div className=" text-sm md:text-base">Maths, Physics, Chemistry</div>
+                    <div className=" text-sm md:text-base">Math, Physics, Chemistry, Orchestra, and Band.</div>
                     <div className="text-sm text-gray-300 font-bold mt-1">Percentile Rank &nbsp; 94.1%</div>
                 </li>
             </ul>
@@ -178,7 +178,7 @@ function Skills() {
                     I've worked with a wide variety of programming languages & frameworks.
                 </li>
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div> My areas of expertise are <strong className="text-ubt-gedit-orange">front-end development, React.js & javascript!</strong></div>
+                    <div> My areas of expertise are <strong className="text-ubt-gedit-orange">front-end development, Server, and Network Administration!</strong></div>
                 </li>
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
                     <div>Here are my most frequently used</div>
@@ -226,8 +226,8 @@ function Projects() {
     const project_list = [
         {
             name: "UbuntuOS Portfolio",
-            date: "Apr 2021",
-            link: "https://github.com/vivek9patel/vivek9patel.github.io",
+            date: "Jun 2022",
+            link: "https://github.com/CloudsOfMana/CloudsOfMana.github.io",
             description: [
                 "Personal portfolio website of theme Ubuntu 20.04, made using NEXT.js & tailwind CSS",
             ],
