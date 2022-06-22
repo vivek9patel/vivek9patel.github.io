@@ -5,7 +5,7 @@ import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
 import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
-import { displayAboutClouds } from './components/apps/Clouds';
+import { displayAboutClouds } from './components/apps/clouds';
 import { displayTerminalCalc } from './components/apps/calc';
 
 const apps = [
