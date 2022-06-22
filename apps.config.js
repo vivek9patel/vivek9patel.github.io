@@ -34,7 +34,7 @@ const apps = [
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
-        screen: displayAboutClouds,
+        screen: displayAboutVivek,
     },
     {
         id: "vscode",
