@@ -28,8 +28,8 @@ const apps = [
         screen: displayTerminalCalc,
     },
     {
-        id: "about-vivek",
-        title: "About Vivek",
+        id: "about-clouds",
+        title: "About Clouds",
         icon: './themes/Yaru/system/user-home.png',
         disabled: false,
         favourite: true,
@@ -61,7 +61,7 @@ const apps = [
         disabled: false,
         favourite: true,
         desktop_shortcut: false,
-        screen: displaySpotify, // India Top 50 Playlist 😅
+        screen: displaySpotify,
     },
     {
         id: "settings",
