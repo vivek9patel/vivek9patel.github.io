@@ -30,11 +30,11 @@ const apps = [
     {
         id: "about-clouds",
         title: "About Clouds",
-        icon: './themes/Yaru/system/user-home.png',
+        icon: './images/logos/android-chrome-192x192.png',
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
-        screen: displayAboutvivek,
+        screen: displayAboutVivek,
     },
     {
         id: "vscode",
