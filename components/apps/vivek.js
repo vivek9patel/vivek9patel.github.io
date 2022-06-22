@@ -18,7 +18,7 @@ export class AboutVivek extends Component {
             "about": <About />,
             "education": <Education />,
             "skills": <Skills />,
-            "projects": <Projects />,
+            "links": <links />,
             "resume": <Resume />,
         }
 
