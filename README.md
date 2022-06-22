@@ -1,21 +1,21 @@
-Https://CloudsOfMana.com
+https://CloudsOfMana.com
 
-discord.cloudsofmana.com - Isle Of the Blessed; harm reduction/peer support.
+https://discord.cloudsofmana.com - Isle Of the Blessed; harm reduction/peer support.
  
-pgp.cloudsofmana.com - pgp public key
+https://pgp.cloudsofmana.com - pgp public key
 
-steam.cloudsofmana.com - Add me on Steam!
+https://steam.cloudsofmana.com - Add me on Steam!
 
-zt.cloudsofmana.com - ZeroTier Lan 10.147.17.139/24
+https://zt.cloudsofmana.com - ZeroTier Lan 10.147.17.139/24
 
-snap.cloudsofmana.com - Add me on Snapchat!
+https://snap.cloudsofmana.com - Add me on Snapchat!
 
-insta.cloudsofmana.com - Follow me on Instagram!
+https://insta.cloudsofmana.com - Follow me on Instagram!
 
-git.cloudsofmana.com - Repositories and current projects of mine!
+https://git.cloudsofmana.com - Repositories and current projects of mine!
 
-red.cloudsofmana.com - Follow me on Reddit!
+https://red.cloudsofmana.com - Follow me on Reddit!
 
-sos.cloudsofmana.com - Request IT support or help.
+https://sos.cloudsofmana.com - Request IT support or help.
 
-se.cloudsofmana.com - www.stimulatedemissions.com
+https://se.cloudsofmana.com - www.stimulatedemissions.com
