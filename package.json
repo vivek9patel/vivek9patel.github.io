@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "2.0.0",
   "private": true,
-  "homepage": "https://cloudsport.github.io/",
+  "homepage": "https://cloudsofmana.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
