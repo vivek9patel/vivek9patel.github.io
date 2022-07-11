@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 export class Chrome extends Component {
     constructor() {
         super();
-        this.home_url ="https://pastebin.com/yp1Sj1kE';
+        this.home_url ="pastebin.com/yp1Sj1kE';
         this.state = {
-            url: "https://pastebin.com/yp1Sj1kE',
-            display_url: "home.cloudsofmana.com",
+            url: "pastebin.com/yp1Sj1kE',
+            display_url: "pastebin.com/yp1Sj1kE",
         }
     }
 
@@ -41,14 +41,14 @@ export class Chrome extends Component {
             if (url.length === 0) return;
 
             if (url.indexOf("http://") !== 0 && url.indexOf("https://") !== 0) {
-                url = "http://" + url;
+                url = "https://" + url;
             }
 
             url = encodeURI(url);
             display_url = url;
             if (url.includes("pastebin.com")) { // 😅
-                url = 'https://pastebin.com/yp1Sj1kE';
-                display_url = "home.cloudsofmana.com";
+                url = 'pastebin.com/yp1Sj1kE';
+                display_url = "pastebin.com/yp1Sj1kE";
             }
             this.setState({ url, display_url: url });
             this.storeVisitedUrl(url, display_url);
