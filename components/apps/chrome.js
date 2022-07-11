@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 export class Chrome extends Component {
     constructor() {
         super();
-        this.home_url = 'https://www.google.com/webhp?igu=1';
+        this.home_url = 'https://home.cloudsofmana.com';
         this.state = {
-            url: 'https://www.google.com/webhp?igu=1',
-            display_url: "https://www.google.com",
+            url: 'https://home.cloudsofmana.com',
+            display_url: "https://home.cloudsofmana.com",
         }
     }
 
@@ -46,9 +46,9 @@ export class Chrome extends Component {
 
             url = encodeURI(url);
             display_url = url;
-            if (url.includes("google.com")) { // 😅
-                url = 'https://www.google.com/webhp?igu=1';
-                display_url = "https://www.google.com";
+            if (url.includes("cloudsofmana.com")) { // 😅
+                url = 'https://home.cloudsofmana.com';
+                display_url = "https://home.cloudsofmana.com";
             }
             this.setState({ url, display_url: url });
             this.storeVisitedUrl(url, display_url);
