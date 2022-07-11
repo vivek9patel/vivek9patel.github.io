@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 export class Chrome extends Component {
     constructor() {
         super();
-        this.home_url = 'https://pastebin.com/yp1Sj1kE';
+        this.home_url = 'https://www.google.com/webhp?igu=1';
         this.state = {
-            url: 'https://pastebin.com/yp1Sj1kE',
-            display_url: "https://pastebin.com/yp1Sj1kE",
+            url: 'https://www.google.com/webhp?igu=1',
+            display_url: "https://www.google.com",
         }
     }
 
@@ -46,9 +46,9 @@ export class Chrome extends Component {
 
             url = encodeURI(url);
             display_url = url;
-            if (url.includes("pastebin.com")) { // 😅
-                url = 'https://pastebin.com/yp1Sj1kE';
-                display_url = "https://pastebin.com/yp1Sj1kE";
+            if (url.includes("google.com")) { // 😅
+                url = 'https://www.google.com/webhp?igu=1';
+                display_url = "https://www.google.com";
             }
             this.setState({ url, display_url: url });
             this.storeVisitedUrl(url, display_url);
