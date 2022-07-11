@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 export class Chrome extends Component {
     constructor() {
         super();
-        this.home_url ="pastebin.com/yp1Sj1kE';
+        this.home_url = 'https://pastebin.com/yp1Sj1kE';
         this.state = {
-            url: "pastebin.com/yp1Sj1kE',
-            display_url: "pastebin.com/yp1Sj1kE",
+            url: 'https://pastebin.com/yp1Sj1kE',
+            display_url: "https://pastebin.com/yp1Sj1kE",
         }
     }
 
@@ -28,7 +28,7 @@ export class Chrome extends Component {
     }
 
     goToHome = () => {
-        this.setState({ url: this.home_url, display_url: "home.cloudsofmana.com" });
+        this.setState({ url: this.home_url, display_url: "https://www.google.com" });
         this.refreshChrome();
     }
 
@@ -47,8 +47,8 @@ export class Chrome extends Component {
             url = encodeURI(url);
             display_url = url;
             if (url.includes("pastebin.com")) { // 😅
-                url = 'pastebin.com/yp1Sj1kE';
-                display_url = "pastebin.com/yp1Sj1kE";
+                url = 'https://pastebin.com/yp1Sj1kE';
+                display_url = "https://pastebin.com/yp1Sj1kE";
             }
             this.setState({ url, display_url: url });
             this.storeVisitedUrl(url, display_url);
