@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 export class Chrome extends Component {
     constructor() {
         super();
-        this.home_url = 'home.cloudsofmana.com';
+        this.home_url ="https://pastebin.com/yp1Sj1kE';
         this.state = {
-            url: "home.cloudsofmana.com',
+            url: "https://pastebin.com/yp1Sj1kE',
             display_url: "home.cloudsofmana.com",
         }
     }
@@ -28,7 +28,7 @@ export class Chrome extends Component {
     }
 
     goToHome = () => {
-        this.setState({ url: this.home_url, display_url: "https://www.google.com" });
+        this.setState({ url: this.home_url, display_url: "home.cloudsofmana.com" });
         this.refreshChrome();
     }
 
@@ -46,8 +46,8 @@ export class Chrome extends Component {
 
             url = encodeURI(url);
             display_url = url;
-            if (url.includes("cloudsofmana.com")) { // 😅
-                url = 'home.cloudsofmana.com';
+            if (url.includes("pastebin.com")) { // 😅
+                url = 'https://pastebin.com/yp1Sj1kE';
                 display_url = "home.cloudsofmana.com";
             }
             this.setState({ url, display_url: url });
