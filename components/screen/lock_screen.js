@@ -1,5 +1,6 @@
 import React from 'react';
 import Clock from '../util components/clock';
+import tailwind from '.../util components/clock';
 
 export default function LockScreen(props) {
 
@@ -30,7 +31,7 @@ export default function LockScreen(props) {
                     <Clock onlyDay={true} />
                 </div>
                 <div className=" mt-16 text-base">
-                    Click or Press a key to unlock
+                    Click or Press a key to unlok
                 </div>
             </div>
         </div>
