@@ -234,91 +234,75 @@ function Projects() {
     const project_list = [
         {
             name: "Opening Statement",
-            date: "-",
-            link: "https://github.com/vivek9patel/chrome-extension-react-boilerplate",
+            date: "10/1/2022",
+            link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "1. Accept for better or worse, that licit and illicit drug use is part of our world and chooses to work to minimize its harmful effects rather than simply ignore or condemn them",
+                "Harm reduction is a set of practical strategies and ideas aimed at reducing negative consequences associated with drug use. Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs.
             ],
-            domains: ["Acceptance", "Understanding"]
+            domains: ["Safety", "Social Justice"]
         },
         {
-            name: "Chrome Extension React Bolierplate",
-            date: "Dec 2021",
-            link: "https://github.com/vivek9patel/chrome-extension-react-boilerplate",
+            name: "Rule Numer 1",
+            date: "1",
+            link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "A boilerplate code to build a chrome extension with react and webpack",
+                "2. Understand drug use as a complex, multi-faceted phenomenon that encompasses a continuum of behaviors from severe use to total abstinence, and acknowledges that some ways of using drugs are clearly safer than others",
             ],
-            domains: ["javascript", "chrome-extension"]
+            domains: ["Risk", "Assesment"]
         },
         {
-            name: "CodeConnect",
-            date: "Nov 2021",
-            link: "https://github.com/vivek9patel/CodeConnect-frontend",
+            name: "Rule number 3",
+            date: "3",
+            link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "A multi-language pair-programming platform with the features of video meeting and whiteboard. Built with React.js, Tailwind CSS, Chakra UI, Express & Socket.io.",
+                "3. Establish quality of individual and community life and well-being — not necessarily cessation of all drug use — as the criteria for successful interventions and policies",
             ],
-            domains: ["javascript", "tailwindcss"]
+            domains: ["Serenity", "Quality"]
         },
         {
-            name: "Ad Free Spotify",
-            date: "Jun 2021",
-            link: "https://github.com/vivek9patel/ad-free-spotify",
+            name: "Rule Number 4",
+            date: "4",
+            link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "Chrome extension to automatically mute/unmute Spotify tab when Advertisement starts and ends!",
+                "4. Call for the non-judgmental, non-coercive provision of services and resources to people who use drugs and the communities in which they live in order to assist them in reducing attendant harm",
             ],
-            domains: ["javascript", "chrome-extension"]
+            domains: ["Resources", "Services"]
         },
         {
-            name: "economist.com Unlocked",
-            date: "Mar 2021",
-            link: "https://github.com/vivek9patel/economist.com-unlocked",
+            name: "Rule Number 5",
+            date: "5",
+            link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "A chrome extension to read Paid Articles for Free & with no Ads, no subscription, no memberships!",
+                "5. Ensure that people who use drugs and those with a history of drug use routinely have a real voice in the creation of programs and policies designed to serve them.",
             ],
-            domains: ["javascript", "chrome-extension"]
+            domains: ["Self-Reliance", "Independence"]
         },
         {
-            name: "Flutter banking app",
-            date: "Jan 2021",
-            link: "https://github.com/vivek9patel/flutter-banking-app",
+            name: "Rule Number 6",
+            date: "6",
+            link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "A Flutter & Firebase project for creating transactions between different Users and displaying the history of transactions done by all.",
             ],
-            domains: ["flutter", "firestore", "dart", "firebase auth"]
+            domains: ["Empower", "Responsibility"]
         },
         {
-            name: "CPU scheduling application",
-            date: "Dec 2020",
-            link: "https://github.com/vivek9patel/CPU-Scheduling-APP-React-Native",
+            name: "Rule Number 7",
+            date: "7",
+            link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "React Native Application to visualize the CPU Scheduling algorithms with different Processes and Animations with gannt chart.",
+                "7. Recognize that the realities of poverty, class, racism, social isolation, past trauma, sex-based discrimination, and other social inequalities affect both people’s vulnerability to and capacity for effectively dealing with drug-related harm",
             ],
-            domains: ["react-native", "javascript"]
+            domains: ["Background", "Personal Conditions"]
         },
         {
-            name: "Meditech Healthcare WebApp",
-            date: "Nov 2020",
-            link: "https://github.com/vivek9patel/Meditech-Healthcare",
+            name: "Rule Number 8",
+            date: "8",
+            link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "Developed Web Application to predict and diagnose diseases from x-ray images.",
+                "8. Do not attempt to minimize or ignore the real and tragic harm and danger that can be associated with illicit drug use",
             ],
-            domains: ["javascript", "html5", "sass", "firebase", "tensorflow"]
-        },
-        {
-            name: "Problem Recommendation System",
-            date: "Sep 2020",
-            link: "https://github.com/vivek9patel/Improve-Codeforces",
-            description: [
-                "Django web application to suggest practice problems from the areas in which the user struggles to get pass in code-forces.",
-            ],
-            domains: ["django", "python", "codeforces-api", "javascript"]
-        },
-        {
-            name: "Cleanliness Automation",
-            date: "Dec 2019",
-            link: "https://github.com/vivek9patel/CPU-Scheduling-APP-React-Native",
-            description: [
-                "Developed Web Applications to automate Garbage collection and extraction systems for SSIP hackathon",
+            domains: ["Awareness", "Educated", "Harm", "Assessment"]
             ],
         }
     ];
