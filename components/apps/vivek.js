@@ -171,7 +171,7 @@ function Education() {
                     <div className=" text-sm text-gray-400 mt-0.5">https://www.naloxoneforall.org/</div>
                     <div className=" text-sm md:text-base">Free Narcan, Free Delivery</div>
                 </li>
-            </div>
+			</ul>
         </>
     )
 }
