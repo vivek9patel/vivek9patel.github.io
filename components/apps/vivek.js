@@ -218,98 +218,49 @@ function Skills() {
     )
 }
 
-function Projects() {
+function Mission Statement() {
     const project_list = [
         {
-            name: "UbuntuOS Portfolio",
-            date: "Apr 2021",
-            link: "https://github.com/vivek9patel/vivek9patel.github.io",
-            description: [
-                "Personal portfolio website of theme Ubuntu 20.04, made using NEXT.js & tailwind CSS",
-            ],
-            domains: ["javascript", "next.js", "tailwindcss"]
-        },
-        {
-            name: "Chrome Extension React Bolierplate",
-            date: "Dec 2021",
-            link: "https://github.com/vivek9patel/chrome-extension-react-boilerplate",
-            description: [
-                "A boilerplate code to build a chrome extension with react and webpack",
-            ],
-            domains: ["javascript", "chrome-extension"]
-        },
-        {
-            name: "CodeConnect",
-            date: "Nov 2021",
-            link: "https://github.com/vivek9patel/CodeConnect-frontend",
-            description: [
-                "A multi-language pair-programming platform with the features of video meeting and whiteboard. Built with React.js, Tailwind CSS, Chakra UI, Express & Socket.io.",
-            ],
-            domains: ["javascript", "tailwindcss"]
-        },
-        {
-            name: "Ad Free Spotify",
-            date: "Jun 2021",
-            link: "https://github.com/vivek9patel/ad-free-spotify",
-            description: [
-                "Chrome extension to automatically mute/unmute Spotify tab when Advertisement starts and ends!",
-            ],
-            domains: ["javascript", "chrome-extension"]
-        },
-        {
-            name: "economist.com Unlocked",
-            date: "Mar 2021",
-            link: "https://github.com/vivek9patel/economist.com-unlocked",
-            description: [
-                "A chrome extension to read Paid Articles for Free & with no Ads, no subscription, no memberships!",
-            ],
-            domains: ["javascript", "chrome-extension"]
-        },
-        {
-            name: "Flutter banking app",
-            date: "Jan 2021",
-            link: "https://github.com/vivek9patel/flutter-banking-app",
-            description: [
-                "A Flutter & Firebase project for creating transactions between different Users and displaying the history of transactions done by all.",
-            ],
-            domains: ["flutter", "firestore", "dart", "firebase auth"]
-        },
-        {
-            name: "CPU scheduling application",
-            date: "Dec 2020",
-            link: "https://github.com/vivek9patel/CPU-Scheduling-APP-React-Native",
-            description: [
-                "React Native Application to visualize the CPU Scheduling algorithms with different Processes and Animations with gannt chart.",
-            ],
-            domains: ["react-native", "javascript"]
-        },
-        {
-            name: "Meditech Healthcare WebApp",
-            date: "Nov 2020",
-            link: "https://github.com/vivek9patel/Meditech-Healthcare",
-            description: [
-                "Developed Web Application to predict and diagnose diseases from x-ray images.",
-            ],
-            domains: ["javascript", "html5", "sass", "firebase", "tensorflow"]
-        },
-        {
-            name: "Problem Recommendation System",
-            date: "Sep 2020",
-            link: "https://github.com/vivek9patel/Improve-Codeforces",
-            description: [
-                "Django web application to suggest practice problems from the areas in which the user struggles to get pass in code-forces.",
-            ],
-            domains: ["django", "python", "codeforces-api", "javascript"]
-        },
-        {
-            name: "Cleanliness Automation",
-            date: "Dec 2019",
-            link: "https://github.com/vivek9patel/CPU-Scheduling-APP-React-Native",
-            description: [
-                "Developed Web Applications to automate Garbage collection and extraction systems for SSIP hackathon",
-            ],
-        }
-    ];
+             <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
+                Mental Health
+                <div className="absolute pt-px bg-white mt-px top-full w-full">
+                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
+                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
+                </div>
+            </div>
+            <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list">
+                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    Harm reduction is a set of practical strategies and ideas aimed at reducing negative consequences associated with drug use. Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs.
+                </li>
+                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    1. Accept for better or worse, that licit and illicit drug use is part of our world and chooses to work to minimize its harmful effects rather than simply ignore or condemn them
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    2. Understand drug use as a complex, multi-faceted phenomenon that encompasses a continuum of behaviors from severe use to total abstinence, and acknowledges that some ways of using drugs are clearly safer than others
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    3. Establish quality of individual and community life and well-being — not necessarily cessation of all drug use — as the criteria for successful interventions and policies
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    4. Call for the non-judgmental, non-coercive provision of services and resources to people who use drugs and the communities in which they live in order to assist them in reducing attendant harm
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    5. Ensure that people who use drugs and those with a history of drug use routinely have a real voice in the creation of programs and policies designed to serve them.
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    6. Affirm people who use drugs (PWUD) themselves as the primary agents of reducing the harms of their drug use and seeks to empower PWUD to share information and support each other in strategies which meet their actual conditions of use
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    7. Recognize that the realities of poverty, class, racism, social isolation, past trauma, sex-based discrimination, and other social inequalities affect both people’s vulnerability to and capacity for effectively dealing with drug-related harm
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    8. Do not attempt to minimize or ignore the real and tragic harm and danger that can be associated with illicit drug use
+                </li>
+            </ul>
+        </>
+    )
+}
+
 
     const tag_colors = {
         "javascript": "yellow-300",
