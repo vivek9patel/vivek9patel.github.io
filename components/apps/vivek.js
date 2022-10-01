@@ -238,8 +238,6 @@ function Projects() {
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "Harm reduction is a set of practical strategies and ideas aimed at reducing negative consequences associated with drug use. Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs.",
-            ],
-            domains: ["Safety", "Social Justice"]
         },
         {
             name: "Rule Numer 1",
@@ -247,17 +245,19 @@ function Projects() {
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "2. Understand drug use as a complex, multi-faceted phenomenon that encompasses a continuum of behaviors from severe use to total abstinence, and acknowledges that some ways of using drugs are clearly safer than others",
-            ],
-            domains: ["Risk", "Assesment"]
         },
         {
-            name: "Rule number 3",
+            name: "Rule number 2",
+            date: "2",
+            link: "https://discord.gg/dBZGS2NQvW",
+            description: [
+                "2. Understand drug use as a complex, multi-faceted phenomenon that encompasses a continuum of behaviors from severe use to total abstinence, and acknowledges that some ways of using drugs are clearly safer than others",
+        },
+		    name: "Rule Numer 3",
             date: "3",
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "3. Establish quality of individual and community life and well-being — not necessarily cessation of all drug use — as the criteria for successful interventions and policies",
-            ],
-            domains: ["Serenity", "Quality"]
         },
         {
             name: "Rule Number 4",
@@ -265,8 +265,6 @@ function Projects() {
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "4. Call for the non-judgmental, non-coercive provision of services and resources to people who use drugs and the communities in which they live in order to assist them in reducing attendant harm",
-            ],
-            domains: ["Resources", "Services"]
         },
         {
             name: "Rule Number 5",
@@ -274,8 +272,6 @@ function Projects() {
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "5. Ensure that people who use drugs and those with a history of drug use routinely have a real voice in the creation of programs and policies designed to serve them.",
-            ],
-            domains: ["Self-Reliance", "Independence"]
         },
         {
             name: "Rule Number 6",
@@ -283,8 +279,6 @@ function Projects() {
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "A Flutter & Firebase project for creating transactions between different Users and displaying the history of transactions done by all.",
-            ],
-            domains: ["Empower", "Responsibility"]
         },
         {
             name: "Rule Number 7",
@@ -292,8 +286,6 @@ function Projects() {
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "7. Recognize that the realities of poverty, class, racism, social isolation, past trauma, sex-based discrimination, and other social inequalities affect both people’s vulnerability to and capacity for effectively dealing with drug-related harm",
-            ],
-            domains: ["Background", "Personal Conditions"]
         },
         {
             name: "Rule Number 8",
