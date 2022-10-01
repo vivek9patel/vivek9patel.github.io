@@ -196,7 +196,6 @@ function Skills() {
                     <div>Here are my most frequently used</div>
                 </li>
             </ul>
-                </li>
         </>
     )
 }
