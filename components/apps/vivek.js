@@ -197,7 +197,6 @@ function Skills() {
                 </li>
             </ul>
                 </li>
-            </ul>
         </>
     )
 }
