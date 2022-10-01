@@ -125,10 +125,9 @@ function About() {
             </div>
             <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
                 <li className=" list-pc">Our primary <span className=" font-medium">platform</span> is <u className=' cursor-pointer '> <a href="https://discord.gg/dBZGS2NQvW" target={"_blank"}>Discord</a> </u>, and we work to minimize harmful effects of drug use rather than simply ignore or condemn them (Contact us at <a className='text-underline' href='mailto:support@isleoftheblessed.org'><u>support@isleoftheblessed.org</u></a> :) )</li>
-                <li className=" mt-3 list-building"> Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs..</li>
+                <li className=" mt-3 list-building"> Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs.</li>
                 <li className=" mt-3 list-time"> We accept drug use as a complex, multi-faceted phenomenon that encompasses a continuum of behaviors from severe use to total abstinence, and acknowledges that some ways of using drugs are clearly safer than others.</a></li>
-                <li className=" mt-3 list-star"> Our purpose is to establish quality of individual and community life and well-being — not necessarily cessation of all drug use.</a></li>
-				<li className=" mt-3 list-star"> We do not attempt to minimize or ignore the real and tragic harm and danger that can be associated with illicit drug use.</li>
+                <li className=" mt-3 list-star"> Our purpose is to establish quality of individual and community life and well-being, not necessarily cessation of all drug use.</li>
             </ul>
         </>
     )
