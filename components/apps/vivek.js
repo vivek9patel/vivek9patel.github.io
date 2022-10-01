@@ -73,9 +73,6 @@ export class AboutVivek extends Component {
                     <img className=" w-3 md:w-4" alt="vivek's resume" src="./themes/Yaru/status/download.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Harm Reduction</span>
                 </div>
-                <div className='my-0.5 w-28 md:w-full h-8 px-2 md:px-2.5 flex' >
-                    <iframe src="https://github.com/sponsors/vivek9patel/button" title="Sponsor vivek9patel" width={"100%"} height={"100%"} ></iframe>
-                </div>
             </>
         );
     }
@@ -230,7 +227,7 @@ function Skills() {
     )
 }
 
-function Projects() {
+function Mission() {
     const project_list = [
         {
             name: "Opening Statement",
