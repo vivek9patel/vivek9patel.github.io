@@ -196,10 +196,6 @@ function Skills() {
                     <div>Here are my most frequently used</div>
                 </li>
             </ul>
-                </div>
-            </div>
-            <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list mt-4">
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
                 </li>
             </ul>
         </>
