@@ -301,7 +301,6 @@ function Projects() {
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
                 "8. Do not attempt to minimize or ignore the real and tragic harm and danger that can be associated with illicit drug use",
-            domains: ["Awareness", "Educated", "Harm", "Assessment"]
             ],
         }
     ];
