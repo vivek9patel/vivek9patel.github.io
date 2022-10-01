@@ -365,7 +365,7 @@ function Projects() {
                                     {
                                         (project.domains ?
                                             project.domains.map((domain, index) => {
-                                                const borderColorClass = `border-${tag_colors[domain]}`
+                                                const borderColorClass = `border-${tag_colors[domain])`
                                                 const textColorClass = `text-${tag_colors[domain]}`
 
                                                 return <span key={index} className={`px-1.5 py-0.5 w-max border ${borderColorClass} ${textColorClass} m-1 rounded-full`}>{domain}</span>
