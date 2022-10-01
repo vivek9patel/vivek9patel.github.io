@@ -167,7 +167,7 @@ function Skills() {
     return (
         <>
             <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
-                Technical Skills
+                Mental Health
                 <div className="absolute pt-px bg-white mt-px top-full w-full">
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
@@ -175,13 +175,43 @@ function Skills() {
             </div>
             <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list">
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    I've worked with a wide variety of programming languages & frameworks.
+                    Addiction Resources - https://www.mediafire.com/file/2x329sxr471ek1t/Addiction-20220929T190937Z-001.zip/file
                 </li>
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div> My areas of expertise are <strong className="text-ubt-gedit-orange">front-end development, React.js & javascript!</strong></div>
+                    Anger Management - https://www.mediafire.com/file/sy328svufao8otr/Anger_Management-20220929T190942Z-001.zip/file
                 </li>
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div>Here are my most frequently used</div>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    Anxiety - https://www.mediafire.com/file/wwsirhzqpk3yy1x/Anxiety-20220929T190944Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    ASD - https://www.mediafire.com/file/obqshbbxvocb30f/ASD-20220929T190946Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    Bipolar - https://www.mediafire.com/file/1xlid70i08mud6y/Bipolar-20220929T190957Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    BPD - https://www.mediafire.com/file/b51vihl61jaijrd/BPD-20220929T191002Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    Cognitive Behavioural Therapy - https://www.mediafire.com/file/llgp84u8u0d177b/CT-20220929T191005Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    DBT - https://www.mediafire.com/file/okxu00nsgogvkuz/DBT-20220929T191007Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    Depression - https://www.mediafire.com/file/blr2y3wyq2ycykw/Depression-20220929T191014Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    DID - https://www.mediafire.com/file/oshdibo6gype2fi/DID-20220929T191016Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    Eating Disorders - https://www.mediafire.com/file/m1lo6ky40stzdni/Eating_Disorders-20220929T191024Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    General Psychology/Psychiatry - https://www.mediafire.com/file/jog9lcvcdhxipk3/Psychology%2526Psychiatry-20220929T191028Z-001.zip/file
+                </li>
+				<li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
+                    Trauma - https://www.mediafire.com/file/jk1mr1mmkee47b8/Trauma-20220929T191044Z-001.zip/file
                 </li>
             </ul>
         </>
