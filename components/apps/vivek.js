@@ -389,6 +389,6 @@ function Projects() {
 }
 function Resume() {
     return (
-        <iframe className="h-full w-full" src="./files/Vivek-Patel-Resume.pdf" title="vivek patel resume" frameBorder="0"></iframe>
+        <iframe className="h-full w-full" src="./files/Harm_Reduction.pdf" title="vivek patel resume" frameBorder="0"></iframe>
     )
 }
