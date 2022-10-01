@@ -218,7 +218,7 @@ function Skills() {
     )
 }
 
-function Mission Statement() {
+function Projects() {
     const project_list = [
         {
              <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
