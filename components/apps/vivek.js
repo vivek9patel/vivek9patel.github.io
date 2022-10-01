@@ -178,8 +178,9 @@ function Education() {
 function Skills() {
     return (
         <>
+        <>
             <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
-                Mental Health
+                Drug Safety
                 <div className="absolute pt-px bg-white mt-px top-full w-full">
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
@@ -188,33 +189,36 @@ function Skills() {
             <ul className=" w-10/12  mt-4 ml-4 px-0 md:px-1">
                 <li className="list-disc">
                     <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Mental Health Books and PDFs
+                        Psychonaut Wiki
                     </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">https://www.mediafire.com/folder/gwccgphr3ywci/Mental_Health</div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://psychonautwiki.org</div>
                     <div className=" text-sm md:text-base">Dosing, Subjective Effects. and Pharmacology</div>
                 </li>
-            <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
-                Technical Skills
-                <div className="absolute pt-px bg-white mt-px top-full w-full">
-                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
-                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
-                </div>
-            </div>
-            <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list">
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    I've worked with a wide variety of programming languages & frameworks.
+                <li className="list-disc mt-5">
+                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                        Erowid Vault
+                    </div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://www.erowid.org/</div>
+                    <div className=" text-sm md:text-base">Trip Reports, Pharmacology, and Classifications</div>
                 </li>
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div> My areas of expertise are <strong className="text-ubt-gedit-orange">front-end development, React.js & javascript!</strong></div>
+				<li className="list-disc mt-5">
+                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                        Tripsit Wiki
+                    </div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://tripsit.me/</div>
+                    <div className=" text-sm md:text-base">Tripsitting, Drug Combinations, and Guides</div>
                 </li>
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div>Here are my most frequently used</div>
+				<li className="list-disc mt-5">
+                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                        Naloxone For All
+                    </div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://www.naloxoneforall.org/</div>
+                    <div className=" text-sm md:text-base">Free Narcan, Free Delivery</div>
                 </li>
-			</ul>	
+            </ul>
         </>
     )
 }
-
 function Projects() {
     const project_list = [
         {
