@@ -350,7 +350,7 @@ function Projects() {
                                 <div className="flex flex-wrap justify-between items-center">
                                     <div className='flex justify-center items-center'>
                                         <div className=" text-base md:text-lg mr-2">{project.name.toLowerCase()}</div>
-                                        <iframe src={`https://ghbtns.com/github-btn.html?user=vivek9patel&repo=${projectName} frameBorder="0" scrolling="0" width="150" height="20" title={project.name.toLowerCase()+"-star"}></iframe>
+                                        <iframe src={`https://github.com/Clouds-Of-Mana/vivek9patel.github.io`} frameBorder="0" scrolling="0" width="150" height="20" title={project.name.toLowerCase()+"-star"}></iframe>
                                     </div>
                                     <div className="text-gray-300 font-light text-sm">{project.date}</div>
                                 </div>
@@ -365,7 +365,7 @@ function Projects() {
                                     {
                                         (project.domains ?
                                             project.domains.map((domain, index) => {
-                                                const borderColorClass = `border-${tag_colors[domain])`
+                                                const borderColorClass = `border-${tag_colors[domain]}`
                                                 const textColorClass = `text-${tag_colors[domain]}`
 
                                                 return <span key={index} className={`px-1.5 py-0.5 w-max border ${borderColorClass} ${textColorClass} m-1 rounded-full`}>{domain}</span>
