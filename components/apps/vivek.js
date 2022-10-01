@@ -132,11 +132,11 @@ function About() {
         </>
     )
 }
-function Education() {
+function Skills() {
     return (
         <>
             <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
-                Education
+                Drug Safety
                 <div className="absolute pt-px bg-white mt-px top-full w-full">
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
@@ -148,16 +148,28 @@ function Education() {
                         Psychonaut Wiki
                     </div>
                     <div className=" text-sm text-gray-400 mt-0.5">https://psychonautwiki.org</div>
-                    <div className=" text-sm md:text-base">Dosing and Subjective Effects</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">CGPA &nbsp; 9.35/10</div>
+                    <div className=" text-sm md:text-base">Dosing, Subjective Effects. and Pharmacology</div>
                 </li>
                 <li className="list-disc mt-5">
                     <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Class 12<sup>th</sup> (GSEB)
+                        Erowid Vault
                     </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">2016 - 2018</div>
-                    <div className=" text-sm md:text-base">Maths, Physics, Chemistry</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">Percentile Rank &nbsp; 94.1%</div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://www.erowid.org/</div>
+                    <div className=" text-sm md:text-base">Trip Reports, Pharmacology, and Classifications</div>
+                </li>
+				<li className="list-disc mt-5">
+                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                        Tripsit Wiki
+                    </div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://tripsit.me/</div>
+                    <div className=" text-sm md:text-base">Tripsitting, Drug Combinations, and Guides</div>
+                </li>
+				<li className="list-disc mt-5">
+                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                        Naloxone For All
+                    </div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://www.naloxoneforall.org/</div>
+                    <div className=" text-sm md:text-base">Free Narcan, Free Delivery</div>
                 </li>
             </ul>
         </>
