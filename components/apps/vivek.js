@@ -222,9 +222,12 @@ function Projects() {
     const project_list = [
         {
             name: "Opening Statement",
+            date: "-",
+            link: "https://github.com/vivek9patel/chrome-extension-react-boilerplate",
             description: [
                 "1. Accept for better or worse, that licit and illicit drug use is part of our world and chooses to work to minimize its harmful effects rather than simply ignore or condemn them",
             ],
+            domains: ["Acceptance", "Understanding"]
         },
         {
             name: "Chrome Extension React Bolierplate",
