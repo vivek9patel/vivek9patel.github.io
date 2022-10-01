@@ -349,7 +349,7 @@ function Projects() {
                             <div className="w-full py-1 px-2 my-2 border border-gray-50 border-opacity-10 rounded hover:bg-gray-50 hover:bg-opacity-5 cursor-pointer">
                                 <div className="flex flex-wrap justify-between items-center">
                                     <div className='flex justify-center items-center'>
-                                    </div>"Isle Of The Blessed"
+                                    </div>Isle Of The Blessed
                                     <div className="text-gray-300 font-light text-sm">{project.date}</div>
                                 </div>
                                 <ul className=" tracking-normal leading-tight text-sm font-light ml-4 mt-1">
