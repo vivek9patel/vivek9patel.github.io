@@ -185,6 +185,21 @@ function Skills() {
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
                 </div>
             </div>
+            <ul className=" w-10/12  mt-4 ml-4 px-0 md:px-1">
+                <li className="list-disc">
+                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                        Mental Health Books and PDFs
+                    </div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://www.mediafire.com/folder/gwccgphr3ywci/Mental_Health</div>
+                    <div className=" text-sm md:text-base">Dosing, Subjective Effects. and Pharmacology</div>
+                </li>
+            <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
+                Technical Skills
+                <div className="absolute pt-px bg-white mt-px top-full w-full">
+                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
+                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
+                </div>
+            </div>
             <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list">
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
                     I've worked with a wide variety of programming languages & frameworks.
@@ -194,6 +209,8 @@ function Skills() {
                 </li>
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
                     <div>Here are my most frequently used</div>
+                </li>
+            </ul>
                 </li>
             </ul>
         </>
