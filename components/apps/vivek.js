@@ -227,7 +227,7 @@ function Skills() {
     )
 }
 
-function Mission() {
+function Projects() {
     const project_list = [
         {
             name: "Opening Statement",
@@ -338,6 +338,7 @@ function Mission() {
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
                 </div>
             </div>
+           
 
             {
                 project_list.map((project, index) => {
