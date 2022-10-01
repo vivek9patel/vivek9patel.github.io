@@ -132,7 +132,7 @@ function About() {
         </>
     )
 }
-function Skills() {
+function Education() {
     return (
         <>
             <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
@@ -237,7 +237,7 @@ function Projects() {
             date: "10/1/2022",
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "Harm reduction is a set of practical strategies and ideas aimed at reducing negative consequences associated with drug use. Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs.
+                "Harm reduction is a set of practical strategies and ideas aimed at reducing negative consequences associated with drug use. Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs.",
             ],
             domains: ["Safety", "Social Justice"]
         },
