@@ -126,7 +126,7 @@ function About() {
             <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
                 <li className=" list-pc">Our primary <span className=" font-medium">platform</span> is <u className=' cursor-pointer '> <a href="https://discord.gg/dBZGS2NQvW" target={"_blank"}>Discord</a> </u>, and we work to minimize harmful effects of drug use rather than simply ignore or condemn them (Contact Us <a className='text-underline' href='mailto:support@isleoftheblessed.org'><u>support@isleoftheblessed.org</u></a> )</li>
                 <li className=" mt-3 list-building"> Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs.</li>
-                <li className=" mt-3 list-time"> When I am not coding my next project, I like to spend my time reading books, playing minecraft or watching <a href="https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A" target="_blank" rel="noreferrer"> tom scott's videos.</a></li>
+                <li className=" mt-3 list-time"> We accept drug use as a complex, multi-faceted phenomenon that encompasses a continuum of behaviors from severe use to total abstinence, and acknowledges that some ways of using drugs are clearly safer than others. <a href="https://cdn.discordapp.com/attachments/1023587164497391636/1023621137344770068/Combo_2.png" target="_blank" rel="noreferrer"> Drug Combination Chart.</a></li>
                 <li className=" mt-3 list-star"> And I also have interest in Deep Learning & Computer Vision!</li>
             </ul>
         </>
