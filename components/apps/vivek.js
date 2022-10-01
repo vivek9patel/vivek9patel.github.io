@@ -175,7 +175,7 @@ function Education() {
         </>
     )
 }
-function Education() {
+function Skills() {
     return (
         <>
             <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
