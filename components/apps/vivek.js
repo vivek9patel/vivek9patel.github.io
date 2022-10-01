@@ -164,6 +164,13 @@ function Education() {
                     <div className=" text-sm text-gray-400 mt-0.5">https://tripsit.me/</div>
                     <div className=" text-sm md:text-base">Tripsitting, Drug Combinations, and Guides</div>
                 </li>
+				<li className="list-disc mt-5">
+                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                        Naloxone For All
+                    </div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://www.naloxoneforall.org/</div>
+                    <div className=" text-sm md:text-base">Free Narcan, Free Delivery</div>
+                </li>
             </ul>
         </>
     )
