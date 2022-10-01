@@ -171,7 +171,7 @@ function Education() {
                     <div className=" text-sm text-gray-400 mt-0.5">https://www.naloxoneforall.org/</div>
                     <div className=" text-sm md:text-base">Free Narcan, Free Delivery</div>
                 </li>
-			</ul>
+            </ul>
         </>
     )
 }
@@ -210,7 +210,7 @@ function Skills() {
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
                     <div>Here are my most frequently used</div>
                 </li>
-				</div>
+			</ul>	
         </>
     )
 }
