@@ -157,6 +157,12 @@ function Education() {
                     <div className=" text-sm text-gray-400 mt-0.5">https://www.erowid.org/</div>
                     <div className=" text-sm md:text-base">Trip Reports, Pharmacology, and Classifications</div>
                 </li>
+				<li className="list-disc">
+                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                        Psychonaut Wiki
+                    </div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://psychonautwiki.org</div>
+                    <div className=" text-sm md:text-base">Dosing, Subjective Effects. and Pharmacology</div>
             </ul>
         </>
     )
