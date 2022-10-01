@@ -159,10 +159,10 @@ function Education() {
                 </li>
 				<li className="list-disc mt-5">
                     <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Erowid Vault
+                        Tripsit Wiki
                     </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">https://www.erowid.org/</div>
-                    <div className=" text-sm md:text-base">Trip Reports, Pharmacology, and Classifications</div>
+                    <div className=" text-sm text-gray-400 mt-0.5">https://tripsit.me/</div>
+                    <div className=" text-sm md:text-base">Tripsitting, Drug Combinations, and Guides</div>
                 </li>
             </ul>
         </>
