@@ -230,7 +230,7 @@ function Skills() {
     )
 }
 
-function Projects() {
+function Mission() {
     const project_list = [
         {
             name: "Opening Statement",
