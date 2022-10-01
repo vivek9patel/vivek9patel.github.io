@@ -128,6 +128,7 @@ function About() {
                 <li className=" mt-3 list-building"> Harm Reduction is also a movement for social justice built on a belief in, and respect for, the rights of people who use drugs..</li>
                 <li className=" mt-3 list-time"> We accept drug use as a complex, multi-faceted phenomenon that encompasses a continuum of behaviors from severe use to total abstinence, and acknowledges that some ways of using drugs are clearly safer than others.</a></li>
                 <li className=" mt-3 list-star"> Our purpose is to establish quality of individual and community life and well-being — not necessarily cessation of all drug use.</a></li>
+				<li className=" mt-3 list-star"> We do not attempt to minimize or ignore the real and tragic harm and danger that can be associated with illicit drug use.</li>
             </ul>
         </>
     )
