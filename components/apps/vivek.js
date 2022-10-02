@@ -287,7 +287,7 @@ function Projects() {
             date: "6",
             link: "https://discord.gg/dBZGS2NQvW",
             description: [
-                "6. Affirm people who use drugs (PWUD) themselves as the primary agents of reducing the harms of their drug use and seeks to empower PWUD to share information and support each other in strategies which meet their actual conditions of use.",
+                "A Flutter & Firebase project for creating transactions between different Users and displaying the history of transactions done by all.",
             ],
             domains: ["Empower", "Responsibility"]
         },
@@ -349,7 +349,9 @@ function Projects() {
                             <div className="w-full py-1 px-2 my-2 border border-gray-50 border-opacity-10 rounded hover:bg-gray-50 hover:bg-opacity-5 cursor-pointer">
                                 <div className="flex flex-wrap justify-between items-center">
                                     <div className='flex justify-center items-center'>
-                                    </div>Isle Of The Blessed
+                                        <div className=" text-base md:text-lg mr-2">{project.name.toLowerCase()}</div>
+                                        <iframe src={`https://cloudsofmana.com&repo=${projectName}&type=star&count=true`} frameBorder="0" scrolling="0" width="150" height="20" title={project.name.toLowerCase()+"-star"}></iframe>
+                                    </div>
                                     <div className="text-gray-300 font-light text-sm">{project.date}</div>
                                 </div>
                                 <ul className=" tracking-normal leading-tight text-sm font-light ml-4 mt-1">
