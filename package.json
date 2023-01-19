@@ -10,7 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.8.0",
+    "@emailjs/browser": "latest",
     "expr-eval": "^2.0.2",
     "jquery": "^3.6.0",
     "next": "latest",
