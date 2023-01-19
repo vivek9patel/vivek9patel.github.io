@@ -10,19 +10,19 @@
     "export": "next export"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.7.0",
+    "@emailjs/browser": "^3.10.0",
+    "autoprefixer": "^10.4.13",
     "expr-eval": "^2.0.2",
-    "jquery": "^3.6.0",
-    "next": "latest",
-    "react": "^18.0.0-beta-fdc1d617a-20211118",
-    "react-dom": "latest",
-    "react-draggable": "^4.4.4",
-    "react-ga": "^3.3.0",
-    "react-onclickoutside": "^6.11.2"
+    "jquery": "^3.6.3",
+    "next": "^13.1.2",
+    "postcss": "^8.4.21",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-draggable": "^4.4.5",
+    "react-ga": "^3.3.1",
+    "react-onclickoutside": "^6.12.2",
+    "tailwindcss": "^3.2.4"
   },
-  "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4"
-  }
+  "devDependencies": {}
 }
