@@ -9,6 +9,9 @@
     "start": "next start",
     "export": "next export"
   },
+  "engines": {
+    "node": ">=14.x"
+  },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "autoprefixer": "^10.4.13",
