@@ -189,7 +189,7 @@ export class Terminal extends Component {
                     break;
                 }
                 if (words.length > 1) {
-                    result = "too many arguments, arguments must me <1.";
+                    result = "too many arguments, arguments must be <1.";
                     break;
                 }
 
@@ -202,7 +202,7 @@ export class Terminal extends Component {
                     this.current_directory += "/" + rest;
                     this.curr_dir_name = rest;
                 }
-                else if (rest === ".." || rest === "../") {
+                else if (rest === "." || rest === ".." || rest === "../") {
                     result = "Type 'cd' to go back 😅";
                     break;
                 }
@@ -215,7 +215,7 @@ export class Terminal extends Component {
                 if (target === "" || target === undefined || target === null) target = this.curr_dir_name;
 
                 if (words.length > 1) {
-                    result = "too many arguments, arguments must me <1.";
+                    result = "too many arguments, arguments must be <1.";
                     break;
                 }
                 if (target in this.child_directories) {
