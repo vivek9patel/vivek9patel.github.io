@@ -18,7 +18,7 @@ export class Window extends Component {
             maximized: false,
             parentSize: {
                 height: 100,
-                width: 100
+                width: 105
             }
         }
     }
