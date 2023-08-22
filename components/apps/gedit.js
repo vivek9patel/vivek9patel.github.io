@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import emailjs from '@emailjs/browser';
 
 export class Gedit extends Component {

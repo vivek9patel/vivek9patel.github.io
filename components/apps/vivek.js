@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export class AboutVivek extends Component {
 
@@ -38,7 +38,8 @@ export class AboutVivek extends Component {
         localStorage.setItem("about-section", screen);
 
         // google analytics
-        ReactGA.pageview(`/${screen}`);
+        ReactGA.send({ hitType: "pageview", page: `/${screen}`, title: "Custom Title" });
+
 
         this.setState({
             screen: this.screens[screen],

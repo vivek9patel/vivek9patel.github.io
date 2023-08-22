@@ -3,7 +3,7 @@ import BootingScreen from './screen/booting_screen';
 import Desktop from './screen/desktop';
 import LockScreen from './screen/lock_screen';
 import Navbar from './screen/navbar';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export default class Ubuntu extends Component {
 	constructor() {
@@ -57,7 +57,7 @@ export default class Ubuntu extends Component {
 
 	lockScreen = () => {
 		// google analytics
-		ReactGA.pageview('/lock-screen');
+		ReactGA.send({ hitType: "pageview", page: "/lock-screen", title: "Lock Screen" });
 		ReactGA.event({
 			category: `Screen Change`,
 			action: `Set Screen to Locked`
@@ -71,7 +71,7 @@ export default class Ubuntu extends Component {
 	};
 
 	unLockScreen = () => {
-		ReactGA.pageview('/desktop');
+		ReactGA.send({ hitType: "pageview", page: "/desktop", title: "Custom Title" });
 
 		window.removeEventListener('click', this.unLockScreen);
 		window.removeEventListener('keypress', this.unLockScreen);
@@ -86,7 +86,8 @@ export default class Ubuntu extends Component {
 	};
 
 	shutDown = () => {
-		ReactGA.pageview('/switch-off');
+		ReactGA.send({ hitType: "pageview", page: "/switch-off", title: "Custom Title" });
+
 		ReactGA.event({
 			category: `Screen Change`,
 			action: `Switched off the Ubuntu`
@@ -98,7 +99,7 @@ export default class Ubuntu extends Component {
 	};
 
 	turnOn = () => {
-		ReactGA.pageview('/desktop');
+		ReactGA.send({ hitType: "pageview", page: "/desktop", title: "Custom Title" });
 
 		this.setState({ shutDownScreen: false, booting_screen: true });
 		this.setTimeOutBootScreen();

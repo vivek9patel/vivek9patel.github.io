@@ -23,7 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
-    "react-ga": "^3.3.1",
+    "react-ga4": "^2.1.0",
     "react-onclickoutside": "^6.12.2",
     "tailwindcss": "^3.2.4"
   }
