@@ -90,6 +90,27 @@ const apps = [
         desktop_shortcut: true,
         screen: displayGedit,
     },
+    {
+        id: "github",
+        title: "GitHub",
+        icon: './themes/Yaru/apps/github.png',
+        disabled: false,
+        favourite: false,
+        desktop_shortcut: true,
+        isExternalApp: true,
+        url: "https://github.com/vivek9patel",
+        screen: () => {},
+    },
+    {
+        id: "tars",
+        title: "Ask Tars",
+        icon: './themes/Yaru/apps/tars.svg',
+        disabled: false,
+        favourite: false,
+        desktop_shortcut: true,
+        isExternalApp: true,
+        url: "https://www.vivek9patel.com/tars"
+    },
 ]
 
 export default apps;

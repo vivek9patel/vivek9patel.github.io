@@ -240,7 +240,9 @@ export class Desktop extends Component {
                     name: app.title,
                     id: app.id,
                     icon: app.icon,
-                    openApp: this.openApp
+                    openApp: this.openApp,
+                    isExternalApp: app.isExternalApp,
+                    url: app.url
                 }
 
                 appsJsx.push(

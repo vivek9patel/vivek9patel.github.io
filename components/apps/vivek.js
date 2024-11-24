@@ -153,7 +153,7 @@ function Education() {
                     <div className="text-sm text-gray-300 font-bold mt-1">GPA &nbsp; 4.0/4.0</div>
                 </li>
                 <li className="list-disc">
-                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
+                    <div className=" text-lg md:text-xl mt-4 text-left font-bold leading-tight">
                         Pandit Deendayal Energy University - PDEU
                     </div>
                     <div className=" text-sm text-gray-400 mt-0.5">2018 - 2022</div>
@@ -162,7 +162,7 @@ function Education() {
                 </li>
                 <li className="list-disc mt-5">
                     <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Class 12<sup>th</sup> (GSEB)
+                        Class 12<sup>th</sup>
                     </div>
                     <div className=" text-sm text-gray-400 mt-0.5">2016 - 2018</div>
                     <div className=" text-sm md:text-base">Maths, Physics, Chemistry</div>
@@ -379,10 +379,7 @@ function Projects() {
                                     {
                                         (project.domains ?
                                             project.domains.map((domain, index) => {
-                                                const borderColorClass = `border-${tag_colors[domain]}`
-                                                const textColorClass = `text-${tag_colors[domain]}`
-
-                                                return <span key={index} className={`px-1.5 py-0.5 w-max border ${borderColorClass} ${textColorClass} m-1 rounded-full`}>{domain}</span>
+                                                return <span key={index} className={`px-1.5 py-0.5 w-max border border-${tag_colors[domain]} text-${tag_colors[domain]} m-1 rounded-full`}>{domain}</span>
                                             })
 
                                             : null)
