@@ -11,6 +11,7 @@ export class Terminal extends Component {
         this.curr_dir_name = "root";
         this.prev_commands = [];
         this.commands_index = -1;
+        this.start_time = Date.now();
         this.child_directories = {
             root: ["books", "projects", "personal-documents", "skills", "languages", "PDPU", "interests"],
             PDPU: ["Sem-6"],
@@ -170,6 +171,93 @@ export class Terminal extends Component {
         return files;
     }
 
+    treeDirectory = (dir, prefix = "") => {
+        let lines = [];
+        let dirCount = 0;
+        let fileCount = 0;
+        if (!(dir in this.child_directories)) return { lines, dirCount, fileCount };
+        const items = this.child_directories[dir];
+        items.forEach((item, index) => {
+            const isLast = index === items.length - 1;
+            const connector = isLast ? "└── " : "├── ";
+            const isDir = item in this.child_directories;
+            const colorClass = isDir ? "text-ubt-blue font-bold" : "text-white";
+            lines.push(`${prefix}${connector}<span class="${colorClass}">${item}</span>`);
+            if (isDir) {
+                dirCount++;
+                const newPrefix = prefix + (isLast ? "    " : "│   ");
+                const sub = this.treeDirectory(item, newPrefix);
+                lines = lines.concat(sub.lines);
+                dirCount += sub.dirCount;
+                fileCount += sub.fileCount;
+            } else {
+                fileCount++;
+            }
+        });
+        return { lines, dirCount, fileCount };
+    }
+
+    neofetch = () => {
+        const art = `<pre class="whitespace-pre leading-none text-[10px] sm:text-xs" style="color:#E95420;">         .-/+oossssoo+/-.
+     \`:+ssssssssssssssssss+:\`
+   -+ssssssssssssssssssyyssss+-
+  .ossssssssssssssssssdMMMNysssso.
+ /sssssssssshdmmNNmmyNMMMMhssssss/
++ssssssssshmydMMMMMMMNddddyssssssss+
+/sssssssshNMMMyhhyyyyhmNMMMNhssssssss/
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.
++sssshhhyNMMNyssssssssssssyNMMMysssssss+
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso
++sssshhhyNMMNyssssssssssssyNMMMysssssss+
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/
+  +sssssssssdmydMMMMMMMNddddyssssssss+
+   .ossssssssssssssssssdMMMNysssso.
+     \`:+ssssssssssssssssss+:\`
+         .-/+oossssoo+/-.</pre>`;
+
+        const uptimeSec = Math.floor((Date.now() - this.start_time) / 1000);
+        const minutes = Math.floor(uptimeSec / 60);
+        const seconds = uptimeSec % 60;
+        const uptime = minutes > 0 ? `${minutes} mins, ${seconds} secs` : `${seconds} secs`;
+        const resolution = typeof window !== "undefined" ? `${window.innerWidth}x${window.innerHeight}` : "1920x1080";
+
+        const header = "vivek@Dell";
+        const separator = "-".repeat(header.length);
+
+        const info = [
+            ["OS", "Ubuntu 22.04.3 LTS x86_64"],
+            ["Host", "vivek9patel.github.io"],
+            ["Kernel", "React 18.2.0"],
+            ["Uptime", uptime],
+            ["Packages", "3 (npm: next, react, tailwindcss)"],
+            ["Shell", "vivek-terminal"],
+            ["Resolution", resolution],
+            ["DE", "Ubuntu Desktop Clone"],
+            ["WM", "Custom React WM"],
+            ["Theme", "Yaru-dark [GTK3]"],
+            ["Icons", "Yaru [GTK3]"],
+            ["Terminal", "vivek-terminal"],
+            ["CPU", "Full-Stack Developer"],
+            ["GPU", "Tailwind CSS Renderer"],
+            ["Memory", "2048MiB / 8192MiB"],
+        ];
+
+        const infoHtml = info.map(([label, value]) =>
+            `<div><span class="font-bold" style="color:#E95420;">${label}:</span> ${value}</div>`
+        ).join("");
+
+        const palette = ["#2E3436", "#CC0000", "#4E9A06", "#C4A000", "#3465A4", "#75507B", "#06989A", "#D3D7CF"];
+        const brightPalette = ["#555753", "#EF2929", "#8AE234", "#FCE94F", "#729FCF", "#AD7FA8", "#34E2E2", "#EEEEEC"];
+        const swatchRow = (colors) => colors.map(c => `<div style="width:14px;height:14px;background-color:${c};display:inline-block;"></div>`).join("");
+        const colorBlocks = `<div style="display:flex;margin-top:6px;">${swatchRow(palette)}</div><div style="display:flex;">${swatchRow(brightPalette)}</div>`;
+
+        const infoBlock = `<div><span class="font-bold" style="color:#E95420;">${header}</span></div><div>${separator}</div>${infoHtml}${colorBlocks}`;
+
+        return `<div style="display:flex;flex-wrap:wrap;">${art}<div style="margin-left:16px;">${infoBlock}</div></div>`;
+    }
+
     closeTerminal = () => {
         $("#close-terminal").trigger('click');
     }
@@ -241,11 +329,46 @@ export class Terminal extends Component {
                 let str = this.current_directory;
                 result = str.replace("~", "/home/vivek")
                 break;
+            case "whoami":
+                if (words.length !== 0) {
+                    result = "too many arguments, arguments must be 0.";
+                    break;
+                }
+                result = "vivek";
+                break;
+            case "tree":
+                let tree_target = words[0];
+                if (tree_target === "" || tree_target === undefined || tree_target === null) tree_target = this.curr_dir_name;
+
+                if (words.length > 1) {
+                    result = "too many arguments, arguments must be <1.";
+                    break;
+                }
+                if (tree_target in this.child_directories) {
+                    const { lines, dirCount, fileCount } = this.treeDirectory(tree_target);
+                    const summary = `${dirCount} director${dirCount === 1 ? "y" : "ies"}, ${fileCount} file${fileCount === 1 ? "" : "s"}`;
+                    result = `<pre>.\n${lines.join("\n")}\n\n${summary}</pre>`;
+                }
+                else if (tree_target === "personal-documents") {
+                    result = "Nope! 🙃";
+                    break;
+                }
+                else {
+                    result = `tree: '${words}': No such file or directory`;
+                }
+                break;
+            case "neofetch":
+                if (words.length !== 0) {
+                    result = "too many arguments, arguments must be 0.";
+                    break;
+                }
+                result = this.neofetch();
+                break;
             case "code":
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("vscode");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands:[ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands:[ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg]";
                 }
                 break;
             case "echo":
@@ -255,56 +378,56 @@ export class Terminal extends Component {
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("spotify");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
                 }
                 break;
             case "chrome":
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("chrome");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
                 }
                 break;
             case "todoist":
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("todo-ist");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
                 }
                 break;
             case "trash":
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("trash");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
                 }
                 break;
             case "about-vivek":
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("about-vivek");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
                 }
                 break;
             case "terminal":
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("terminal");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
                 }
                 break;
             case "settings":
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("settings");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
                 }
                 break;
             case "sendmsg":
                 if (words[0] === "." || words.length === 0) {
                     this.props.openApp("gedit");
                 } else {
-                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                    result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
                 }
                 break;
             case "clear":
@@ -323,7 +446,7 @@ export class Terminal extends Component {
                 result = "<img class=' w-2/5' src='./images/memes/used-sudo-command.webp' />";
                 break;
             default:
-                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
+                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, tree, whoami, neofetch, echo, clear, exit, mkdir, code, spotify, chrome, about-vivek, todoist, trash, settings, sendmsg ]";
         }
         document.getElementById(`row-result-${rowId}`).innerHTML = result;
         this.appendTerminalRow();
